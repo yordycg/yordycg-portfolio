@@ -1,4 +1,5 @@
 # Justfile for yordycg-portfolio
+set shell := ["powershell.exe", "-NoProfile", "-Command"]
 
 # Levanta el entorno de desarrollo
 dev:

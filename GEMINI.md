@@ -40,5 +40,11 @@ This project follows a strict "Vanilla Web" philosophy to ensure high performanc
 
 - **Biome:** Used for linting and formatting.
 - **Just:** Command runner for common tasks.
-- **Docker:** Used for local development and production-ready serving with Nginx.
+- **Docker:** Used for local development and serving via Nginx.
+
+## Communication & Collaboration
+
+- **Discussion First:** Prioritize technical analysis, opinions, and recommendations before immediate code application.
+- **Inquiry vs. Directive:** Treat any question or opinion as an "Inquiry". Provide a reasoned response and only proceed to implementation (the "Directive" phase) once it is explicitly requested or confirmed.
+- **Socratic Method:** When appropriate, ask clarifying questions about the architectural impact of a choice before proposing a solution.
 
