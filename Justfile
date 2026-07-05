@@ -2,7 +2,7 @@
 
 # Levanta el entorno de desarrollo
 dev:
-  docker-compose up
+  podman compose up
 
 # Ejecuta el linter (Biome) via npx
 lint:
