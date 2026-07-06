@@ -1,14 +1,27 @@
-/**
- * Main Application Logic
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Portfolio initialized with Vanilla JS!');
   
-  // Example of modular interaction
-  initTheme();
+  // Inicializar interacción de scroll para el header (Opción B)
+  initHeaderScroll();
 });
 
-function initTheme() {
-  console.log('Setting up theme system...');
+/**
+ * Controla la visibilidad del header al hacer scroll
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    // Si bajamos más de 120px, revelamos el header
+    if (window.scrollY > 120) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  // Ejecutar de inmediato por si el usuario recarga la página a mitad del sitio
+  handleScroll();
 }

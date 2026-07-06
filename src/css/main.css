@@ -238,15 +238,31 @@ button,
 /* ============================================================================================== */
 /* HEADER ======================================================================================= */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-  background-color: var(--bg-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
   padding: 2.4rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* Oculto al inicio */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+}
+
+.header--scrolled {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: rgba(19, 19, 19, 0.98);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -264,7 +280,22 @@ button,
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 3.2rem;
+  gap: 2.4rem; /* Reducimos gap para centrar con el margen de la barra */
+}
+
+.header__item {
+  display: flex;
+  align-items: center;
+}
+
+/* Divisores verticales | entre secciones */
+.header__item:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1.2rem; /* Altura corta y elegante */
+  background-color: var(--border-color);
+  margin-left: 2.4rem; /* Centrado perfecto con el gap */
 }
 .header__link {
   font-family: var(--font-main);
@@ -304,14 +335,30 @@ button,
   .header__menu {
     gap: 2rem;
   }
+
+  /* Ocultar divisores en móviles para evitar que se vea apretado */
+  .header__item:not(:last-child)::after {
+    display: none;
+  }
 }
 
 /* SIDEBAR ====================================================================================== */
 /* MAIN ========================================================================================= */
 /* ABOUT */
 .about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: 8rem 4rem;
   border-bottom: 1px solid var(--border-color);
+  background-image: linear-gradient(
+      rgba(19, 19, 19, 0.93), 
+      rgba(19, 19, 19, 0.93)
+    ), 
+    url('../assets/img/blueprint_hero_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about__container {
@@ -327,7 +374,10 @@ button,
   grid-column: span 5; /* ocupa 5 columnas */
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centra horizontalmente el título y socials */
+  text-align: center;  /* Centra el texto del título */
   gap: 2.4rem;
+  align-self: center;  /* Centra esta sección verticalmente en la fila de la grilla */
 }
 
 .about__title {
@@ -339,6 +389,8 @@ button,
 
 .about__socials {
   display: flex;
+  justify-content: center; /* Centra los links horizontalmente */
+  flex-wrap: wrap;         /* Acomoda en filas si la pantalla es muy pequeña */
   gap: 2.4rem;
 }
 
