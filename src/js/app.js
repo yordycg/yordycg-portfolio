@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Portfolio initialized with Vanilla JS!');
-  
+
   // Inicializar interacción de scroll para el header (Opción B)
   initHeaderScroll();
 });
