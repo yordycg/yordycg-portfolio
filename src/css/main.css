@@ -221,9 +221,13 @@ button,
   *,
   *::before,
   *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
     animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
     animation-iteration-count: 1 !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
     transition-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
     scroll-behavior: auto !important;
   }
 }
@@ -271,9 +275,6 @@ button,
   font-weight: 700;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-}
-
-.header__nav {
 }
 
 .header__menu {
