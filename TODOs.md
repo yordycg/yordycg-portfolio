@@ -24,10 +24,10 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 - [ ] **Pendiente de decidir:** efecto "Desenfoque Pegajoso" (Sticky Blur) real del header (hoy es fondo sólido, sin `backdrop-filter`).
 
 ## 4. Optimización Final (Pendiente)
+- [x] Hero regenerado: `blueprint_hero_bg.webp` (1920×1080, 23 KB) con dos zonas — izquierda: planimetría 2D de vivienda con cotas; derecha: circuito de bits. Fuente vectorial en `scripts/hero.svg` (generación vía `scripts/hero.sh`).
 - [ ] Auditoría Lighthouse (rendimiento, accesibilidad, SEO).
 - [ ] Pruebas finales de diseño responsivo (Mobile First).
 - [ ] Añadir favicon.
-- [ ] Optimizar `blueprint_hero_bg.jpg` (564 KB).
 
 ## 5. Futuro / Deuda
 - [ ] Dominio propio: revisar JSON-LD (`url` apunta temporalmente a `https://github.com/yordycg`).
