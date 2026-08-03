@@ -1,0 +1,21 @@
+{
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "npx",
+          "arguments": ["-y", "@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+        },
+      },
+    },
+    "CSS": {
+      "formatter": {
+        "external": {
+          "command": "npx",
+          "arguments": ["-y", "@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+        },
+      },
+    },
+  },
+  "format_on_save": "on",
+}

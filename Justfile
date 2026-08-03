@@ -1,13 +1,16 @@
-# Justfile for yordycg-portfolio
+ENGINE := "podman"
 
-# Levanta el entorno de desarrollo
+default:
+  @just --list
+
 dev:
-  podman compose up
+  npx -y browser-sync start --server 'src' --files 'src' --no-notify
 
-# Ejecuta el linter (Biome) via npx
+prod:
+  {{ENGINE}} compose up --build
+
 lint:
-  npx @biomejs/biome lint src/
+  npx -y @biomejs/biome lint src/
 
-# Formatea el código (Biome) via npx
 format:
-  npx @biomejs/biome format --write src/
+  npx -y @biomejs/biome format --write src/
