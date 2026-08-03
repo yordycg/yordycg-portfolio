@@ -13,21 +13,29 @@ Personal portfolio project built with a "Vanilla Web" stack.
 - **HTML5 / CSS3 / ES Modules**
 - **Biome** (Linting & Formatting)
 - **Just** (Command Runner)
-- **Docker & Nginx Alpine** (Infrastructure)
+- **Podman & Nginx Alpine** (Production)
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Docker](https://www.docker.com/)
 - [Just](https://github.com/casey/just)
+- [Podman](https://podman.io/) (for `just prod`)
 - [Biome](https://biomejs.dev/) (Optional, but recommended)
 
 ### Development
 
-1. Start the development server:
+1. Start the development server (Browsersync with auto-reload):
    ```bash
    just dev
+   ```
+2. Open the URL printed in the terminal (default `http://localhost:3000`).
+
+### Production (local)
+
+1. Build and serve via Podman + Nginx:
+   ```bash
+   just prod
    ```
 2. Open `http://localhost:8080`.
 
