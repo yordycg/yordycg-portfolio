@@ -9,11 +9,11 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 - [x] **"Sobre Mí" (About Me):** contenido inyectado y alineado con la filosofía "Vanilla Web" (estudiante buscando primer empleo junior).
 - [x] **Sección de Contacto:**
     - [x] URLs verificadas (GitHub, LinkedIn, X) — todas responden 200.
-    - [x] Email confirmado: `yordy.carmona8@gmail.com`.
+    - [x] Email confirmado: `yordycarmona.dev@gmail.com`.
 
 ## 2. Activos Técnicos (Assets)
-- [ ] **Currículum (CV):**
-    - [ ] Preparar el archivo `assets/cv-yordy-carmona.pdf`. **Pendiente** — el link en header/about apunta al archivo pero no existe todavía.
+- [x] **Currículum (CV):**
+    - [x] Archivo `assets/yordy-carmona-cv.pdf` listo, enlazado en header y about.
 - [x] **Media de Proyectos:**
     - [x] Placeholders `.webp` 16:9 generados (`project-2.webp`, `project-3.webp`) vía `scripts/placeholder.sh`.
     - [ ] **Provisorio:** reemplazar placeholders por capturas reales (demo/GIF/imagen) cuando se tenga dominio propio.
@@ -24,7 +24,7 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 - [ ] **Pendiente de decidir:** efecto "Desenfoque Pegajoso" (Sticky Blur) real del header (hoy es fondo sólido, sin `backdrop-filter`).
 
 ## 4. Optimización Final (Pendiente)
-- [x] Hero regenerado: `blueprint_hero_bg.webp` (1920×1080, 23 KB) con dos zonas — izquierda: planimetría 2D de vivienda con cotas; derecha: circuito de bits. Fuente vectorial en `scripts/hero.svg` (generación vía `scripts/hero.sh`).
+- [x] Hero removido: imagen `blueprint_hero_bg.webp` eliminada, reemplazada por gradiente radial CSS (sin imagen). Scripts `scripts/hero.sh` / `scripts/hero.svg` retirados.
 - [ ] Auditoría Lighthouse (rendimiento, accesibilidad, SEO).
 - [ ] Pruebas finales de diseño responsivo (Mobile First).
 - [ ] Añadir favicon.
