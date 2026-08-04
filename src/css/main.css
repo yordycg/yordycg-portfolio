@@ -302,7 +302,9 @@ button,
   color: var(--primary-color);
 }
 
-.header__btn-cv {
+/* Botón CV compartido (header y about) */
+.btn-cv {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
@@ -313,9 +315,39 @@ button,
   color: var(--text-color);
   transition: var(--transition-smooth);
 }
-.header__btn-cv:hover {
+.btn-cv:hover {
   background-color: var(--text-color);
   color: var(--bg-color);
+}
+
+/* Tooltip CSS puro (sin JS) */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-active);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 @media (max-width: 30em) {
@@ -593,8 +625,21 @@ button,
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 3.2rem;
+}
+
+.contact__heading {
+  font-family: var(--font-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.contact__centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  text-align: center;
 }
 
 .contact__status {
