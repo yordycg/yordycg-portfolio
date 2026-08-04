@@ -259,7 +259,7 @@ button,
   transform: translateY(0);
   opacity: 1;
   background-color: rgba(19, 19, 19, 0.98);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .logo {
@@ -286,10 +286,10 @@ button,
 .header__item:not(:last-child)::after {
   content: "";
   display: inline-block;
-  width: 1px;
-  height: 1.2rem; /* Altura corta y elegante */
+  width: 1.5px;
+  height: 1.8rem;
   background-color: var(--border-color);
-  margin-left: 2.4rem; /* Centrado perfecto con el gap */
+  margin-left: 2.4rem;
 }
 .header__link {
   font-family: var(--font-main);
@@ -372,17 +372,38 @@ button,
 /* MAIN ========================================================================================= */
 /* ABOUT */
 .about {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 8rem 4rem;
-  border-bottom: 1px solid var(--border-color);
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse 80% 60% at 50% -10%,
       rgba(0, 153, 255, 0.12),
       transparent 60%
     ),
     var(--bg-color);
+}
+
+/* Separador de sección: centrado, 85% de ancho, con fade en los bordes */
+.about::after,
+.projects::after,
+.contact::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-color) 12%,
+    var(--border-color) 88%,
+    transparent 100%
+  );
 }
 
 .about__container {
@@ -462,8 +483,8 @@ button,
 
 /* PROJECTS */
 .projects {
+  position: relative;
   padding: 8rem 4rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .projects__title {
@@ -616,8 +637,8 @@ button,
 
 /* CONTACT */
 .contact {
+  position: relative;
   padding: 8rem 4rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .contact__container {
