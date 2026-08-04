@@ -4,7 +4,7 @@ default:
   @just --list
 
 dev:
-  npx -y browser-sync start --server 'src' --files 'src' --no-notify
+  npx -y browser-sync start --server 'src' --files 'src' --no-notify --no-ghost-mode
 
 prod:
   {{ENGINE}} compose up --build
