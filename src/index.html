@@ -1,35 +1,306 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YordyCG | Portfolio</title>
-  <meta name="description" content="Personal portfolio of YordyCG - Senior Software Engineer.">
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-  <header>
-    <h1>YordyCG</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YordyCG | Estudiante Ingeniería en Informática</title>
+    <meta
+      name="description"
+      content="Portafolio de Yordy Carmona, un estudiante de Ingeniería en Informática."
+    />
+    <link
+      rel="canonical"
+      href="https://yordycg.github.io/yordycg-portfolio/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="YordyCG | Estudiante Ingeniería en Informática" />
+    <meta
+      property="og:description"
+      content="Portafolio de Yordy Carmona, un estudiante de Ingeniería en Informática."
+    />
+    <meta property="og:url" content="https://yordycg.github.io/yordycg-portfolio/" />
+    <meta property="og:image" content="assets/img/og-image.png" />
+    <meta property="og:locale" content="es_CL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YordyCG | Estudiante Ingeniería en Informática" />
+    <meta
+      name="twitter:description"
+      content="Portafolio de Yordy Carmona, un estudiante de Ingeniería en Informática."
+    />
+    <meta name="twitter:image" content="assets/img/og-image.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="icon"
+      href="assets/favicon/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="assets/favicon/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="assets/favicon/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Technical SEO: JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yordy Nicolas Carmona Gonzalez",
+        "jobTitle": "Ingeniería en Informática - Junior",
+        "url": "https://yordycg.github.io/yordycg-portfolio/",
+        "sameAs": [
+          "https://github.com/yordycg",
+          "https://linkedin.com/in/yordy-carmona"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">YordyCG</div>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item">
+            <a href="#about" class="header__link">Sobre Mi</a>
+          </li>
+          <li class="header__item">
+            <a href="#projects" class="header__link">Proyectos</a>
+          </li>
+          <li class="header__item">
+            <a href="#contact" class="header__link">Contacto</a>
+          </li>
+          <li class="header__item">
+            <a
+              href="assets/yordy-carmona-cv.pdf"
+              class="btn-cv"
+              download
+              data-tooltip="Descargar CV"
+              >CV</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section id="hero">
-      <h2>Welcome to my portfolio</h2>
-      <p>Building high-performance, minimalist web experiences.</p>
-    </section>
-  </main>
+    <main>
+      <section id="about" class="about">
+        <div class="about__container">
+          <div class="about__identity">
+            <h1 class="about__title">Yordy Nicolas Carmona Gonzalez</h1>
+            <div class="about__socials">
+              <a
+                href="https://github.com/yordycg"
+                target="_blank"
+                rel="noopener"
+                class="about__social-link"
+                aria-label="Visita mi perfil en GitHub"
+                >GitHub</a
+              >
+              <a
+                href="https://linkedin.com/in/yordy-carmona"
+                target="_blank"
+                rel="noopener"
+                class="about__social-link"
+                aria-label="Visita mi perfil en LinkedIn"
+                >LinkedIn</a
+              >
+              <a
+                href="https://x.com/Yncg_8"
+                target="_blank"
+                rel="noopener"
+                class="about__social-link"
+                aria-label="Visita mi perfil en X"
+                >X</a
+              >
+            </div>
+            <a
+              href="assets/yordy-carmona-cv.pdf"
+              class="btn-cv"
+              download
+              data-tooltip="Descargar CV"
+              >CV</a
+            >
+          </div>
+          <div class="about__content">
+            <p class="about__text">
+              Soy estudiante de Ingeniería en Informática y actualmente curso mi
+              tercer año.
+            </p>
+            <p class="about__text">
+              Antes de esto, trabajé en Desarrollo de Proyectos Arquitectónicos,
+              donde participaba en las distintas etapas del proyecto y me
+              comunicaba directamente con las partes involucradas. Esa
+              experiencia me permitió desarrollar habilidades como la resolución
+              de problemas, la comprensión de requisitos y el trabajo
+              colaborativo con control de calidad.
+            </p>
+            <p class="about__text">
+              Ahora estoy en transición al sector TI, motivado por mi interés por
+              la tecnología y por participar en la construcción de soluciones a
+              diferentes problemáticas. Estoy en búsqueda de mi primera
+              oportunidad laboral.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>&copy; 2026 YordyCG. Built with Vanilla Web technology.</p>
-  </footer>
+      <section id="projects" class="projects">
+        <h2 class="projects__title">Proyectos</h2>
+        <div class="projects__grid">
+          <!-- Project 1 -->
+          <article class="project__card">
+            <div class="project__card-media">
+              <img
+                src="assets/img/project-2.webp"
+                alt="Proyecto Dos: Sistema Gestión Veterinario"
+                width="600"
+                height="337"
+                loading="lazy"
+                class="project__card-img"
+              />
+              <div class="project__card-overlay">
+                <p class="project__card-description">
+                  Relaciones de datos entidad-relación complejas (Dueños,
+                  Mascotas, Veterinarios, Citas, etc.)
+                </p>
+                <div class="project__card-links">
+                  <a
+                    href="https://github.com/yordycg/sistemaVeterinario"
+                    target="_blank"
+                    rel="noopener"
+                    class="project__card-btn project__card-btn--primary"
+                    aria-label="Vista código en GitHub"
+                    >Código</a
+                  >
+                  <a
+                    href="https://github.com/yordycg/sistemaVeterinario#readme"
+                    target="_blank"
+                    rel="noopener"
+                    class="project__card-btn project__card-btn--secondary"
+                    aria-label="Vista Demo"
+                    >Demo</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project__card-info">
+              <h3 class="project__card-title">Gestión de Veterinario</h3>
+              <div class="project__card-tech">
+                <span class="project__card-tag">C#</span>
+                <span class="project__card-tag">Entity Framework Core</span>
+                <span class="project__card-tag">SQL Server</span>
+                <span class="project__card-tag">Docker</span>
+                <span class="project__card-tag">Bootstrap 5</span>
+              </div>
+            </div>
+          </article>
 
-  <script type="module" src="js/app.js"></script>
-</body>
+          <!-- Project 2 -->
+          <article class="project__card">
+            <div class="project__card-media">
+              <img
+                src="assets/img/project-3.webp"
+                alt="Proyecto Tres: Sistema de Arriendo de Canchas"
+                width="600"
+                height="337"
+                loading="lazy"
+                class="project__card-img"
+              />
+              <div class="project__card-overlay">
+                <p class="project__card-description">
+                  Gestión de reservas y disponibilidad de los recursos.
+                </p>
+                <div class="project__card-links">
+                  <a
+                    href="https://github.com/yordycg/arriendo-canchas"
+                    target="_blank"
+                    rel="noopener"
+                    class="project__card-btn project__card-btn--primary"
+                    aria-label="Vista de código en GitHub"
+                    >Código</a
+                  >
+                  <a
+                    href="https://github.com/yordycg/arriendo-canchas#readme"
+                    target="_blank"
+                    rel="noopener"
+                    class="project__card-btn project__card-btn--secondary"
+                    aria-label="Vista Demo"
+                    >Demo</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="project__card-info">
+              <h3 class="project__card-title">
+                Sistema de Arriendo de Canchas
+              </h3>
+              <div class="project__card-tech">
+                <span class="project__card-tag">Python</span>
+                <span class="project__card-tag">Django</span>
+                <span class="project__card-tag">MySQL</span>
+                <span class="project__card-tag">Docker</span>
+                <span class="project__card-tag">Bootstrap 5</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="contact__container">
+          <h2 class="contact__heading">Contacto</h2>
+          <div class="contact__centered">
+            <div class="contact__status">
+              <span class="contact__status-dot"></span>
+              <span class="contact__status-text"
+                >Disponible para cualquier colaboración</span
+              >
+            </div>
+            <h2 class="contact__title">
+              Construyamos juntos el próximo gran éxito.
+            </h2>
+            <div class="contact__actions">
+              <a
+                href="mailto:yordycarmona.dev@gmail.com"
+                class="contact__btn contact__btn--primary"
+                >Envíame un email</a
+              >
+              <a
+                href="https://linkedin.com/in/yordy-carmona"
+                class="contact__btn contact__btn--secondary"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__copyright">&copy; 2026 YordyCG</p>
+        <p class="footer__meta">Chile</p>
+      </div>
+    </footer>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>

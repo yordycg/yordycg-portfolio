@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Dev Server (Auto-reload)",
+    "command": "just dev",
+    "use_new_terminal": true,
+  },
+  {
+    "label": "Prod Server (Podman Nginx)",
+    "command": "just prod",
+    "use_new_terminal": true,
+  },
+  {
+    "label": "Biome Lint",
+    "command": "just lint",
+  },
+  {
+    "label": "Biome Format",
+    "command": "just format",
+  },
+]

@@ -1,56 +1,822 @@
-:root {
-  --primary-color: #333;
-  --bg-color: #fff;
-  --text-color: #333;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+/*
+ * =================================================================================================
+ * --- DESIGN SYSTEM REFERENCE GUIDE
+ * =================================================================================================
+ * --- 01 TYPOGRAPHY SYSTEM
+   - Base scale: 1rem = 10px (gracias a html { font-size: 62.5% })
+   - Font sizes mapping:
+   10px  ->  1.0rem
+   12px  ->  1.2rem
+   14px  ->  1.4rem (Mínimo recomendado para textos largos en mobile)
+   16px  ->  1.6rem (Estándar de lectura en desktop)
+   18px  ->  1.8rem
+   20px  ->  2.0rem
+   24px  ->  2.4rem
+   30px  ->  3.0rem
+   36px  ->  3.6rem
+   44px  ->  4.4rem
+   52px  ->  5.2rem
+   62px  ->  6.2rem
+   74px  ->  7.4rem
+   86px  ->  8.6rem
+   98px  ->  9.8rem
 
-* {
+   - Font weights
+   Regular: 400 (Lectura)
+   Medium:  500 (Subtítulos, UI Elements)
+   Bold:    700 (Títulos de secciones)
+
+   - Line heights (Interlineado)
+   Default / Paragraphs: 1.5 - 1.6 (Accesible y legible)
+   Headings (Títulos):   1.1 - 1.2
+
+ * --- 02 COLORS
+   - Primary (Color de marca principal): #10b981 (Emerald / Esmeralda)
+   - Tints (Variaciones más CLARAS / mezcladas con blanco): #34d399 (Emerald 400)
+   - Shades (Variaciones más OSCURAS / mezcladas con negro): #047857 (Emerald 700)
+   - Accents (Colores llamativos / interactivos): #06b6d4 (Cyan)
+   - Greys (Escala de grises para textos y fondos):
+     - #0b0f19 (Fondo principal ultra oscuro)
+     - #111827 (Fondo de tarjetas / superficies)
+     - #f3f4f6 (Texto principal gris claro)
+     - #9ca3af (Texto secundario gris atenuado)
+
+ * --- 07 WHITESPACE / SPACING SYSTEM (px -> rem)
+   2px   ->  0.2rem
+   4px   ->  0.4rem
+   8px   ->  0.8rem
+   12px  ->  1.2rem
+   16px  ->  1.6rem
+   24px  ->  2.4rem
+   32px  ->  3.2rem
+   48px  ->  4.8rem
+   64px  ->  6.4rem
+   80px  ->  8.0rem
+   96px  ->  9.6rem
+   128px ->  12.8rem
+
+ * --- 08 BREAKPOINTS (Basados en EM para soporte de zoom del navegador)
+   - Mobile:  <= 30em (<= 480px)
+   - Tablet:  > 30em && < 64em (481px a 1023px)
+   - Desktop: >= 64em (>= 1024px)
+   - L-Deskt: >= 75em (>= 1200px)
+ * =================================================================================================
+ * --- NOTAS DE ARQUITECTURA
+   - color-scheme: dark -> Este sitio es DARK-ONLY por diseño. No hay modo claro planeado.
+   Si en el futuro se agrega, esta linea debe volverse dinámica (JS) o eliminarse.
+   - overflow-x: hidden en body -> Es una RED DE SEGURIDAD, no una solución.
+   Si aparece scroll horizontal, se debe cazar y arreglar en el elemento que lo causa.
+   No confiar en esta linea para "tapar" bugs de layout.
+ * =================================================================================================
+*/
+
+/* ============================================================================================== */
+/* CUSTOM PROPERTIES */
+/* ============================================================================================== */
+:root {
+  /* Habilita barras de scroll y elementos de formulario oscuros nativos */
+  color-scheme: dark;
+
+  /* Limites de Grid de la web */
+  --max-width-desktop: 120rem; /* 1200px */
+
+  /* Colores del Sistema */
+  --primary-color: #0099ff;
+  --primary-light-color: #9fcaff;
+  --primary-dark-color: #00497e;
+  --accent-color: #0099ff;
+  --bg-color: #131313;
+  --bg-surface: #1f1f1f;
+  --border-color: rgba(229, 226, 225, 0.1);
+  --border-active: #89919e;
+  --text-color: #e5e2e1;
+  --text-muted: #bfc7d5;
+
+  /* Estados */
+  --error-color: #ffb4ab;
+  --warning-color: #fba018;
+  --success-color: #38ce47;
+
+  /* Transiciones y Radios Estandar */
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 0rem;
+  --border-radius-md: 0rem;
+  --border-radius-lg: 0rem;
+
+  /* Fuentes del Sistema */
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+
+  /* Tipografia fluida para Headings */
+  --fs-h1: clamp(3.6rem, 2.8rem + 3vw, 4.8rem);
+  --fs-h2: clamp(3rem, 2.4rem + 2vw, 3.2rem);
+  --fs-h3: clamp(2.4rem, 2rem + 1vw, 2.4rem);
+}
+/* ============================================================================================== */
+/* RESET CSS */
+/* ============================================================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  font-weight: 400;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
 }
 
-header {
-  padding: 1rem 2rem;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.15;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heredar fuentes en elementos interactivos de formulario */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+/* Enlaces limpios por defecto */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accesibilidad de cursor en botones */
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Estado de foco visible y consistente en toda la interfaz */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Respetar preferencias de reduccion de movimiento del sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
+    animation-iteration-count: 1 !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
+    transition-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: override needed for accessibility reset */
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================================== */
+/* COMPONENTS */
+/* ============================================================================================== */
+/* UTILITIES */
+/* ============================================================================================== */
+/* ============================================================================================== */
+/* SITE STYLES */
+/* ============================================================================================== */
+/* HEADER ======================================================================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  padding: 2.4rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+
+  /* Oculto al inicio */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
 }
 
-nav ul {
+.header--scrolled {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: rgba(19, 19, 19, 0.98);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.header__menu {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 1rem;
+  gap: 2.4rem; /* Reducimos gap para centrar con el margen de la barra */
 }
 
-main {
-  padding: 2rem;
+.header__item {
+  display: flex;
+  align-items: center;
 }
 
-#hero {
-  text-align: center;
-  margin-top: 4rem;
+/* Divisores verticales | entre secciones */
+.header__item:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1.5px;
+  height: 1.8rem;
+  background-color: var(--border-color);
+  margin-left: 2.4rem;
+}
+.header__link {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+.header__link:hover {
+  color: var(--primary-color);
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #666;
+/* Botón CV compartido (header y about) */
+.btn-cv {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  transition: var(--transition-smooth);
+}
+.btn-cv:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
-@media (max-width: 600px) {
-  header {
+/* Tooltip CSS puro (sin JS) */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-active);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+@media (max-width: 30em) {
+  /* <= 480px */
+  .header {
+    padding: 2rem;
     flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .header__menu {
+    gap: 2rem;
+  }
+
+  /* Ocultar divisores en móviles para evitar que se vea apretado */
+  .header__item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* SIDEBAR ====================================================================================== */
+/* MAIN ========================================================================================= */
+/* ABOUT */
+.about {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 4rem;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      rgba(0, 153, 255, 0.12),
+      transparent 60%
+    ),
+    var(--bg-color);
+}
+
+/* Separador de sección: centrado, 85% de ancho, con fade en los bordes */
+.about::after,
+.projects::after,
+.contact::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-color) 12%,
+    var(--border-color) 88%,
+    transparent 100%
+  );
+}
+
+.about__container {
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4rem;
+}
+
+/* Columna Izquierda - Biografia */
+.about__identity {
+  grid-column: span 5; /* ocupa 5 columnas */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el título y socials */
+  text-align: center; /* Centra el texto del título */
+  gap: 2.4rem;
+  align-self: center; /* Centra esta sección verticalmente en la fila de la grilla */
+}
+
+.about__title {
+  font-family: var(--font-main);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.about__socials {
+  display: flex;
+  justify-content: center; /* Centra los links horizontalmente */
+  flex-wrap: wrap; /* Acomoda en filas si la pantalla es muy pequeña */
+  gap: 2.4rem;
+}
+
+.about__social-link {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+.about__social-link:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Columna Derecha - Biografia */
+.about__content {
+  grid-column: span 7; /* ocupa las y columnas restantes */
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.about__text {
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* <= 1024px */
+@media (max-width: 64em) {
+  .about__container {
+    display: block; /* sin grid en móvil: evita desborde por min-content / columnas implícitas */
+  }
+
+  .about__content {
+    margin-block-start: 4rem; /* conserva la separación que aportaba el gap del grid */
+  }
+
+  .about {
+    padding: 6rem 2rem;
+  }
+}
+
+/* PROJECTS */
+.projects {
+  position: relative;
+  padding: 8rem 4rem;
+}
+
+.projects__title {
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  margin-block-end: 4.8rem;
+  font-family: var(--font-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.projects__grid {
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(
+      auto-fit,
+      minmax(32rem, 1fr)
+    ); /* responsive automatic */
+  gap: 4rem;
+}
+
+/* Project Card */
+.project__card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+.project__card:hover {
+  border-color: var(--border-active);
+}
+
+.project__card-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.project__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+.project__card:hover .project__card-img {
+  transform: scale(1.03);
+}
+
+.project__card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(19, 19, 19, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.4rem;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+.project__card:hover .project__card-overlay {
+  opacity: 1;
+}
+
+.project__card-description {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-block-end: 2.4rem;
+}
+
+.project__card-links {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.project__card-btn {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.project__card-btn--primary {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
+}
+.project__card-btn--primary:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.project__card-btn--secondary {
+  border: 1px solid var(--border-active);
+  color: var(--text-color);
+}
+.project__card-btn--secondary:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+.project__card-info {
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex-grow: 1;
+}
+
+.project__card-title {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.project__card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.project__card-tag {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  background-color: var(--bg-color);
+}
+
+/* Responsive - <= 1024px */
+@media (max-width: 64em) {
+  .projects {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Responsive - pantallas angostas (< 576px): evita el desborde del minmax(32rem) */
+@media (max-width: 36em) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CONTACT */
+.contact {
+  position: relative;
+  padding: 8rem 4rem;
+}
+
+.contact__container {
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.contact__heading {
+  font-family: var(--font-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.contact__centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  text-align: center;
+}
+
+.contact__status {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1.6rem;
+}
+
+.contact__status-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--success-color);
+  border-radius: 50%;
+  position: relative;
+}
+.contact__status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.contact__status-text {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+}
+
+.contact__title {
+  font-family: var(--font-main);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--text-color);
+  max-width: 60rem;
+  line-height: 1.2;
+}
+
+.contact__actions {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.contact__btn {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.2rem 2.4rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.contact__btn--primary {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
+}
+.contact__btn--primary:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.contact__btn--secondary {
+  border: 1px solid var(--border-active);
+  color: var(--text-color);
+}
+.contact__btn--secondary:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 64em) {
+  .contact {
+    padding: 6rem 2rem;
+  }
+
+  .contact__title {
+    max-width: 100%;
+  }
+
+  .contact__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/* FOOTER ======================================================================================= */
+.footer {
+  padding: 4rem;
+  background-color: var(--bg-color);
+}
+
+.footer__content {
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.footer__meta {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* Responsive mobile */
+@media (max-width: 30em) {
+  .footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: 1.6rem;
     text-align: center;
   }
 }
