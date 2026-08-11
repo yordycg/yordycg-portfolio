@@ -471,9 +471,12 @@ button,
 
 /* <= 1024px */
 @media (max-width: 64em) {
-  .about__identity,
+  .about__container {
+    display: block; /* sin grid en móvil: evita desborde por min-content / columnas implícitas */
+  }
+
   .about__content {
-    grid-column: span 12; /* ambas columnas se apilan verticalmente */
+    margin-block-start: 4rem; /* conserva la separación que aportaba el gap del grid */
   }
 
   .about {
@@ -632,6 +635,13 @@ button,
 @media (max-width: 64em) {
   .projects {
     padding: 6rem 2rem;
+  }
+}
+
+/* Responsive - pantallas angostas (< 576px): evita el desborde del minmax(32rem) */
+@media (max-width: 36em) {
+  .projects__grid {
+    grid-template-columns: 1fr;
   }
 }
 
