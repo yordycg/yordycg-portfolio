@@ -26,8 +26,10 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 ## 3. Implementación
 - [x] **Contenido Real:** inyectado en `src/index.html` (about, proyectos, contacto, footer, JSON-LD).
 - [x] **Estilos (CSS):** sistema "Mono Dark", layout responsive de tarjetas, header scroll-triggered y hover en tarjetas.
-- [x] **Fix navegación por anclas:** header fijo ya no tapa los títulos (`scroll-padding-top: 10rem` en `html`, `16rem` en `<=480px` por el header en columna).
-    - [x] Secciones full-height: `About` con `100svh` (consistencia móvil), `Contact` centrada verticalmente (patrón de About), `Projects` con `min-height:100svh` sin centrado (crece con la grilla sin recortar arriba).
+- [x] **Fix navegación por anclas:** header fijo ya no tapa los títulos (`scroll-padding-top` ligeramente menor que la altura del header: `8rem` desktop, `12rem` en `<=480px` por el header en columna).
+    - [x] Franja de la sección anterior ya no se ve bajo el header: el offset queda bajo el header opaco y tapa el separador `::after` al aterrizar en `#projects` / `#contact`.
+    - [x] Secciones full-height: `About` con `100svh` (consistencia móvil), `Projects` con `min-height:100svh` sin centrado (crece con la grilla sin recortar arriba).
+    - [x] `Contact` reestructurada: título "Contacto" arriba bajo el header + bloque (mono/título/acciones) centrado en el alto restante (`.contact__container` y `.contact__centered` con `flex: 1`).
 - [ ] **Pendiente de decidir:** efecto "Desenfoque Pegajoso" (Sticky Blur) real del header (hoy es fondo sólido, sin `backdrop-filter`).
 
 ## 4. Optimización Final (Pendiente)
