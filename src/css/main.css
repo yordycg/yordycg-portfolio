@@ -146,6 +146,8 @@ html {
   font-weight: 400;
   line-height: 1.5;
   scroll-behavior: smooth;
+  /* Compensa el header fijo al navegar por anclas (#about, #projects, #contact) */
+  scroll-padding-top: 10rem;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -154,6 +156,13 @@ html {
   font-family:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
+}
+
+/* Header en columna (<=480px): más alto, requiere más offset de anclas */
+@media (max-width: 30em) {
+  html {
+    scroll-padding-top: 16rem;
+  }
 }
 
 body {
@@ -392,7 +401,7 @@ button,
 /* ABOUT */
 .about {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding: 8rem 4rem;
@@ -506,6 +515,7 @@ button,
 /* PROJECTS */
 .projects {
   position: relative;
+  min-height: 100svh; /* sección al menos de una pantalla; crece con el contenido */
   padding: 8rem 4rem;
 }
 
@@ -667,6 +677,9 @@ button,
 /* CONTACT */
 .contact {
   position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center; /* centra verticalmente el contenido (patrón de About) */
   padding: 8rem 4rem;
 }
 

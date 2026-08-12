@@ -6,7 +6,7 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 - [x] **Grilla de Proyectos:** definida con **2 proyectos** (decisión tomada, no se amplía a 6):
     - [x] Sistema Veterinario (C#, EF Core, SQL Server, Docker, Bootstrap 5).
     - [x] Sistema de Arriendo de Canchas (Python, Django, MySQL, Docker, Bootstrap 5).
-- [x] **"Sobre Mí" (About Me):** contenido inyectado y alineado con la filosofía "Vanilla Web" (estudiante buscando primer empleo junior).
+- [x] **"Sobre Mí" (About Me):** contenido reescrito a 3 párrafos balanceados (presentación → experiencia → objetivo), alineado con la filosofía "Vanilla Web" (estudiante buscando primer empleo junior).
 - [x] **Sección de Contacto:**
     - [x] URLs verificadas (GitHub, LinkedIn, X) — todas responden 200.
     - [x] Email confirmado: `yordycarmona.dev@gmail.com`.
@@ -26,6 +26,8 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 ## 3. Implementación
 - [x] **Contenido Real:** inyectado en `src/index.html` (about, proyectos, contacto, footer, JSON-LD).
 - [x] **Estilos (CSS):** sistema "Mono Dark", layout responsive de tarjetas, header scroll-triggered y hover en tarjetas.
+- [x] **Fix navegación por anclas:** header fijo ya no tapa los títulos (`scroll-padding-top: 10rem` en `html`, `16rem` en `<=480px` por el header en columna).
+    - [x] Secciones full-height: `About` con `100svh` (consistencia móvil), `Contact` centrada verticalmente (patrón de About), `Projects` con `min-height:100svh` sin centrado (crece con la grilla sin recortar arriba).
 - [ ] **Pendiente de decidir:** efecto "Desenfoque Pegajoso" (Sticky Blur) real del header (hoy es fondo sólido, sin `backdrop-filter`).
 
 ## 4. Optimización Final (Pendiente)
@@ -34,15 +36,19 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
     - [x] `robots.txt` y `sitemap.xml` con la URL `https://yordycg.github.io/yordycg-portfolio/`.
     - [x] JSON-LD `url` corregido; `<link rel="canonical">` añadido.
     - [x] Open Graph + Twitter cards (`og:title`, `og:description`, `og:type`, `og:url`, `og:image`).
-- [x] **Auditoría Lighthouse:** mobile perf 99 · acc 100 · best-practices 100 · SEO 100; desktop 100/100/100/100.
+- [x] **Auditoría Lighthouse:**
+    - [x] Local: mobile perf 99 · acc 100 · best-practices 100 · SEO 100; desktop 100/100/100/100.
+    - [x] En vivo (GitHub Pages): mobile perf 91 → **97** tras self-hosting de fuentes · acc 100 · best-practices 100 · SEO 100.
+- [x] **Fuentes self-hosted (variable fonts):** `inter-var.woff2` y `space-grotesk-var.woff2` en `src/assets/fonts/`; eliminadas las `preconnect` y el `<link>` de Google Fonts (0 requests externos).
 - [x] **Pruebas de diseño responsivo (Mobile First):** sin overflow en 320/375/390/768/1440.
     - [x] Fix: About desbordaba 460px en móvil (grid 12 cols -> `display:block` en `@media (max-width: 64em)`).
     - [x] Fix: tarjetas de proyectos desbordaban 20px a 320px (`minmax(32rem)` -> `grid-template-columns: 1fr` en `@media (max-width: 36em)`).
     - [x] Fix: URL de Google Fonts con saltos de línea/espacios codificados (`wght@400;500;600;700`).
 
 ## 5. Publicación
-- [ ] **CI/CD:** workflow GitHub Actions (lint Biome) y deploy a GitHub Pages al pushear a `main`.
-- [ ] Integrar `develop` → `main` cuando el sitio esté completo (Git Flow Lite: `main` es solo releases estables).
+- [x] **CI/CD:** workflow GitHub Actions — lint Biome en PRs/push + deploy a GitHub Pages al pushear a `main`. Actions en versiones actuales (checkout/setup-node v5, pages v6/v5), sin warnings.
+- [x] **Merge `develop` → `main`:** release v1.0 publicado.
+- [x] **Sitio en vivo:** `https://yordycg.github.io/yordycg-portfolio/` — recursos verificados (sitio, `robots.txt`, `sitemap.xml`, `og:image`, CV, favicon, fuentes).
 
 ## 6. Futuro / Deuda
 - [ ] Dominio propio: actualizar JSON-LD, canonical, `og:url`, `robots.txt` y `sitemap.xml`.
