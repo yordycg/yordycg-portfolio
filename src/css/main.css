@@ -146,8 +146,10 @@ html {
   font-weight: 400;
   line-height: 1.5;
   scroll-behavior: smooth;
-  /* Compensa el header fijo al navegar por anclas (#about, #projects, #contact) */
-  scroll-padding-top: 10rem;
+  /* Compensa el header fijo al navegar por anclas (#about, #projects, #contact).
+     Ligeramente menor que la altura del header para que la línea separadora de la
+     sección anterior quede tapada por el header opaco. */
+  scroll-padding-top: 8rem;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -161,7 +163,7 @@ html {
 /* Header en columna (<=480px): más alto, requiere más offset de anclas */
 @media (max-width: 30em) {
   html {
-    scroll-padding-top: 16rem;
+    scroll-padding-top: 12rem;
   }
 }
 
@@ -679,7 +681,6 @@ button,
   position: relative;
   min-height: 100svh;
   display: flex;
-  align-items: center; /* centra verticalmente el contenido (patrón de About) */
   padding: 8rem 4rem;
 }
 
@@ -689,6 +690,7 @@ button,
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  flex: 1; /* ocupa el alto: título arriba, bloque centrado en el resto */
 }
 
 .contact__heading {
@@ -701,8 +703,10 @@ button,
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* centra verticalmente el bloque restante */
   gap: 3.2rem;
   text-align: center;
+  flex: 1;
 }
 
 .contact__status {
