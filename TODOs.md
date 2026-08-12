@@ -26,6 +26,8 @@ Este archivo realiza un seguimiento del progreso y las definiciones pendientes p
 ## 3. Implementación
 - [x] **Contenido Real:** inyectado en `src/index.html` (about, proyectos, contacto, footer, JSON-LD).
 - [x] **Estilos (CSS):** sistema "Mono Dark", layout responsive de tarjetas, header scroll-triggered y hover en tarjetas.
+- [x] **Fix navegación por anclas:** header fijo ya no tapa los títulos (`scroll-padding-top: 10rem` en `html`, `16rem` en `<=480px` por el header en columna).
+    - [x] Secciones full-height: `About` con `100svh` (consistencia móvil), `Contact` centrada verticalmente (patrón de About), `Projects` con `min-height:100svh` sin centrado (crece con la grilla sin recortar arriba).
 - [ ] **Pendiente de decidir:** efecto "Desenfoque Pegajoso" (Sticky Blur) real del header (hoy es fondo sólido, sin `backdrop-filter`).
 
 ## 4. Optimización Final (Pendiente)
