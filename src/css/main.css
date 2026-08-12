@@ -112,6 +112,25 @@
   --fs-h2: clamp(3rem, 2.4rem + 2vw, 3.2rem);
   --fs-h3: clamp(2.4rem, 2rem + 1vw, 2.4rem);
 }
+
+/* ============================================================================================== */
+/* FONTS SELF-HOSTED (variable fonts, subset latin)                                               */
+/* ============================================================================================== */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../assets/fonts/space-grotesk-var.woff2") format("woff2");
+}
 /* ============================================================================================== */
 /* RESET CSS */
 /* ============================================================================================== */
