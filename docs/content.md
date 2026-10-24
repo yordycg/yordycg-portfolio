@@ -8,7 +8,7 @@ Si un texto no está en esta página, no se publica.
 ## Metadatos
 
 - **title:** `Yordy Carmona — Desarrollador Backend en Formación`
-- **description:** `Estudiante de Ingeniería en Informática y desarrollador backend en formación. Construyo APIs y modelos de datos con C#/.NET y Django. Disponible para práctica remota.`
+- **description:** `Backend en formación. Estudiante de Ingeniería en Informática, 3er año. APIs y modelado de datos con C#/.NET y Django. Disponible para práctica remota.` (151 caracteres: entra sin truncarse en Google)
 - **og:title:** igual que `title`
 - **og:description:** igual que `description`
 - **og:locale:** `es_CL`

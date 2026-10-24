@@ -6,7 +6,7 @@
 ## Estado actual
 
 - Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.2 — reescribir title, description y OG
+- Próxima acción: F1.3 — reestructurar header y navegación
 - Release actual: v1.0 en GitHub Pages
 - Base definida: decisiones D7–D14 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack)
 
@@ -45,11 +45,11 @@
 **Criterio de salida:** contenido ES aprobado, sin links falsos y sin Go público.
 
 - [x] F1.1 Confirmar inglés, fechas, disponibilidad, métricas y teléfono.
-    - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
-    - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
-    - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
-    - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
-- [ ] F1.2 Reescribir title, description y OG.
+  - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
+  - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
+  - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
+  - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
+- [x] F1.2 Reescribir title, description y OG (description ajustada a 151 caracteres; OG y Twitter con URL absoluta).
 - [ ] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials.
 - [ ] F1.4 Crear hero con rol, propuesta y CTAs.
 - [ ] F1.5 Reescribir About: copy en dos párrafos + bloque compacto "Formación" (carrera + bootcamp). Absorbe la antigua F1.6; ya no existe el bloque "Trayectoria".
@@ -111,7 +111,7 @@
 **Depende de:** Fase 1.
 **Criterio de salida:** metadatos absolutos, JSON-LD válido y sitemap completo.
 
-- [ ] F5.1 OG y Twitter image absolutos.
+- [x] F5.1 OG y Twitter image absolutos (adelantado en F1.2).
 - [ ] F5.2 JSON-LD completo y correcto.
 - [ ] F5.3 `og:image:width/height/alt`, `twitter:image:alt`, `theme-color`.
 - [ ] F5.4 Completar `site.webmanifest`.
