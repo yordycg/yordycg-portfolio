@@ -8,7 +8,7 @@
 - Fase activa: Fase 1 — Contenido e IA
 - Próxima acción: F1.2 — reescribir title, description y OG
 - Release actual: v1.0 en GitHub Pages
-- Base definida: decisiones D7–D13 (idioma, trayectoria, disponibilidad, certificado, flujo de ramas)
+- Base definida: decisiones D7–D14 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack)
 
 ## Convenciones
 
@@ -17,7 +17,7 @@
 - Cada fase indica estado, objetivo, dependencias, subtareas y criterio de salida.
 - IDs de tarea: F1.1, F1.2, P1.1...
 - No se abre una fase nueva hasta cerrar la anterior. Excepción: Fase 2, postergada a 2027 y desacoplada.
-- Una rama por fase: `feature/f1-contenido`, `feature/f2-bilingue`, etc. Se integra a `develop` vía PR.
+- Una rama por fase: `feature/f1-content`, `feature/f2-bilingue`, etc. Se integra a `develop` vía PR.
 - `develop` se integra a `main` solo en release.
 
 ## Decisiones cerradas
@@ -29,12 +29,13 @@
 - **D5:** No habrá demos hasta tener evidencia real.
 - **D6:** Dark-only por diseño.
 - **D7:** El inglés no se publica hasta poder sostener una entrevista técnica en inglés. Sin sección Idiomas.
-- **D8:** La experiencia 2017–2022 no es sección propia: va como bloque "Trayectoria" dentro de About.
-- **D9:** Disponibilidad = práctica profesional / part-time remoto. La logística vive en Contacto, no en el hero.
+- **D8:** El rubro anterior (proyectos de arquitectura, 2017–2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
+- **D9:** Disponibilidad = práctica · remoto. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
 - **D10:** Ambos proyectos son académicos. Sin métricas de uso: se usa alcance técnico verificable.
 - **D11:** El certificado del bootcamp no se publica en el sitio (contiene RUT). Vive en `docs/credentials/`, fuera de `src/`. Si se muestra, solo versión redactada.
 - **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript.
 - **D13:** Los proyectos se evalúan al final, uno por uno, después de cerrar la base (portfolio + CV + LinkedIn). Ver sección "Proyectos — evaluación final".
+- **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
 
 ## Fase 1 — Contenido e IA
 
@@ -46,18 +47,18 @@
 - [x] F1.1 Confirmar inglés, fechas, disponibilidad, métricas y teléfono.
     - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
     - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
-    - Disponibilidad: part-time fines de semana, remoto, desde ya (D9).
+    - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
     - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
 - [ ] F1.2 Reescribir title, description y OG.
-- [ ] F1.3 Reestructurar header y navegación.
+- [ ] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials.
 - [ ] F1.4 Crear hero con rol, propuesta y CTAs.
-- [ ] F1.5 Reescribir "Sobre mí" uniendo formación, trayectoria y práctica.
-- [ ] F1.6 Añadir bloque "Trayectoria" compacto en About (Ariancif 2017–2022 → bootcamp 2023 → Ing. 2024–2027).
-- [ ] F1.9 Añadir Stack y Educación (Ing. Informática + bootcamp Full-Stack JS). Sin sección Idiomas.
-- [ ] F1.10 Reescribir Contacto y Footer.
-- [ ] F1.11 Actualizar `docs/content.md` como fuente de contenido.
+- [ ] F1.5 Reescribir About: copy en dos párrafos + bloque compacto "Formación" (carrera + bootcamp). Absorbe la antigua F1.6; ya no existe el bloque "Trayectoria".
+- [ ] F1.9 Stack: línea en el hero. Sin sección Idiomas y sin lista de "aprendiendo".
+- [ ] F1.10 Reescribir Contacto y Footer (canales: email, LinkedIn, GitHub; ventana full-time dic–feb).
+- [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
 - [ ] F1.12 QA de contenido y aprobación.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
+- [ ] F1.14 Auditar el stack con la prueba de defensa (60 s sin notas + poder modificarlo). Lo que no pase, sale de la línea (D14).
 
 ## Fase 2 — Bilingüe ES/EN
 
@@ -143,7 +144,7 @@
 
 - [ ] F7.1 README con URL, screenshot, estructura y scripts.
 - [ ] F7.2 CV con link al portfolio.
-- [x] F7.3 Aclarar los 6 años en proyectos arquitectónicos (lo resuelve el bloque Trayectoria de F1.6).
+- [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
 - [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
 - [ ] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado.
 - [ ] F7.7 Actualizar LinkedIn: headline, Acerca de, certificación y experiencia, alineados con el sitio.
@@ -170,7 +171,7 @@
 
 **Estado:** Pendiente — se abre después de Fase 8
 **Depende de:** Fases 1–8.
-**Criterio de salida:** cada proyecto tiene alcance documentado, repo presentable y evidencia real (sin placeholders).
+**Criterio de salida:** cada proyecto tiene alcance documentado, repo presentable y evidencia real (sin placeholders), y el autor puede explicar y modificar su código sin IA.
 
 - [ ] P1.1 Evaluar `sistemaVeterinario` (C#/EF Core/SQL Server): entidades, módulos, auth, tests, Docker, estado del repo.
 - [ ] P1.2 Evaluar `arriendo-canchas` (Django/MySQL): modelos, vistas/endpoints, auth, tests, Docker, estado del repo.
@@ -178,6 +179,7 @@
 - [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders.
 - [ ] P1.5 Convertir cada proyecto en caso de estudio (reemplaza la antigua F1.7).
 - [ ] P1.6 Quitar "Demo" y el overlay hover-only (reemplaza la antigua F1.8).
+- [ ] P1.7 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA. Sin esto no se publica el caso de estudio.
 
 ## Backlog
 
@@ -199,6 +201,8 @@
 - Certificado del bootcamp verificado (Awakelab / Talento Digital para Chile · 472 h · mar–ago 2023).
 - Fase 2 desacoplada de la cadena y postergada a 2027.
 - Proyectos movidos a evaluación final, uno por uno (D13).
+- Rubro anterior (arquitectura) fuera del sitio; una línea neutra en el CV (D8).
+- Stack redefinido con prueba de defensa; PostgreSQL queda fuera del sitio (D14).
 
 ### v1.0 — Portfolio base
 
