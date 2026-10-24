@@ -6,7 +6,7 @@
 ## Estado actual
 
 - Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.3 — reestructurar header y navegación
+- Próxima acción: F1.4 — crear el hero con rol, propuesta y CTAs
 - Release actual: v1.0 en GitHub Pages
 - Base definida: decisiones D7–D14 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack)
 
@@ -36,6 +36,7 @@
 - **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript.
 - **D13:** Los proyectos se evalúan al final, uno por uno, después de cerrar la base (portfolio + CV + LinkedIn). Ver sección "Proyectos — evaluación final".
 - **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
+- **D15:** Nomenclatura: clases CSS, `id`, nombres de archivo y de atributo en inglés; `aria-label`, `alt`, valores de `data-tooltip` y copy visible en español.
 
 ## Fase 1 — Contenido e IA
 
@@ -50,7 +51,7 @@
   - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
   - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
 - [x] F1.2 Reescribir title, description y OG (description ajustada a 151 caracteres; OG y Twitter con URL absoluta).
-- [ ] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials.
+- [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (logo con nombre real y enlace a `#home`, `aria-label` en el nav, header visible desde el inicio).
 - [ ] F1.4 Crear hero con rol, propuesta y CTAs.
 - [ ] F1.5 Reescribir About: copy en dos párrafos + bloque compacto "Formación" (carrera + bootcamp). Absorbe la antigua F1.6; ya no existe el bloque "Trayectoria".
 - [ ] F1.9 Stack: línea en el hero. Sin sección Idiomas y sin lista de "aprendiendo".
@@ -81,7 +82,7 @@
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
 
-- [ ] F3.1 Header visible desde el inicio.
+- [x] F3.1 Header visible desde el inicio (adelantado en F1.3).
 - [ ] F3.2 Skip link y landmarks.
 - [ ] F3.3 Navegación por teclado y foco visible.
 - [ ] F3.4 Proyectos accesibles sin hover.
