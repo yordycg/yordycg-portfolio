@@ -160,10 +160,10 @@ html {
     Ubuntu, Cantarell, sans-serif;
 }
 
-/* Header en columna (<=480px): más alto, requiere más offset de anclas */
+/* Header en columna (<=480px): más alto que en desktop, requiere más offset de anclas */
 @media (max-width: 30em) {
   html {
-    scroll-padding-top: 12rem;
+    scroll-padding-top: 8.5rem;
   }
 }
 
@@ -271,23 +271,24 @@ button,
   width: 100%;
   z-index: 100;
   background-color: transparent;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   padding: 2.4rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* Oculto al inicio */
-  transform: translateY(-100%);
-  opacity: 0;
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s ease;
-}
-
-.header--scrolled {
+  /* Visible desde el inicio: en el tope de la página va transparente sobre el hero */
   transform: translateY(0);
   opacity: 1;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Al hacer scroll solo se suma el fondo opaco; la visibilidad ya no cambia */
+.header--scrolled {
   background-color: rgba(19, 19, 19, 0.98);
   border-bottom: 2px solid var(--border-color);
 }
@@ -383,13 +384,17 @@ button,
 @media (max-width: 30em) {
   /* <= 480px */
   .header {
-    padding: 2rem;
+    padding: 1.2rem 2rem;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
   }
 
   .header__menu {
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   /* Ocultar divisores en móviles para evitar que se vea apretado */
