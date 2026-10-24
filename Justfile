@@ -3,8 +3,9 @@ ENGINE := "podman"
 default:
   @just --list
 
+# Servidor de desarrollo. Detecta escritorio vs. SSH/headless. Ver scripts/dev.sh
 dev:
-  npx -y browser-sync start --server 'src' --files 'src' --no-notify --no-ghost-mode
+  @bash scripts/dev.sh
 
 prod:
   {{ENGINE}} compose up --build
