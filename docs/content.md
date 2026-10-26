@@ -8,7 +8,7 @@ Si un texto no está en esta página, no se publica.
 ## Metadatos
 
 - **title:** `Yordy Carmona — Desarrollador Backend en Formación`
-- **description:** `Backend en formación. Estudiante de Ingeniería en Informática, 3er año. APIs y modelado de datos con C#/.NET y Django. Disponible para práctica remota.` (151 caracteres: entra sin truncarse en Google)
+- **description:** `Backend en formación. Estudiante de Ingeniería en Informática, 3er año. APIs y datos con C#/.NET y Django. Busco mi primera oportunidad laboral, remoto.` (152 caracteres: entra sin truncarse en Google)
 - **og:title:** igual que `title`
 - **og:description:** igual que `description`
 - **og:locale:** `es_CL`
@@ -17,36 +17,31 @@ Si un texto no está en esta página, no se publica.
 
 ## Hero
 
-- **badge:** `Práctica · Remoto`
-- **h1:** `Desarrollador backend en formación`
-- **lead:** `Construyo APIs y modelos de datos con C#/.NET y Django. Estudiante de Ingeniería en Informática, tercer año.`
+Primera pantalla y, a la vez, todo el "sobre mí" del sitio. Absorbe la antigua sección About (F1.5).
+
+- **badge:** `Disponible · Remoto`
+- **h1:** `Yordy Carmona`
+- **subtítulo:** `Desarrollador backend en formación`
 - **stack:** `C# · .NET · EF Core · SQL Server · Python · Django · MySQL · HTML/CSS/JS`
-- **CTA primario:** `Ver proyectos` → `#projects`
-- **CTA secundario:** `Descargar CV` → `assets/yordy-carmona-cv.pdf`
+- **párrafo 1:** `Egresado de un bootcamp full-stack y actualmente estudiante de tercer año de Ingeniería en Informática. Explorando activamente nuevas formas de aprender y crecer en el sector TI.`
+- **párrafo 2:** `Busco mi primera oportunidad laboral para integrarme en un equipo real y aportar en problemas concretos.`
+- **botones:** `GitHub` · `LinkedIn` · `Descargar CV`
+  - El CV es la acción primaria (único con relleno).
+  - GitHub y LinkedIn van con borde.
+- **navegación:** `Sobre mí` · `Proyectos` · `Contacto` · `CV`
+  - `Sobre mí` apunta a `#home`: la primera pantalla y el about son la misma sección.
+  - No hay logo en el header: el nombre ya está en el `h1`.
 
 Regla del stack: solo entra lo que pasa la prueba de defensa (explicarlo 60 s sin notas y
 poder modificarlo). Lo que no pase, no se publica.
 
----
+Decisiones que este hero fija:
 
-## About
-
-**Párrafo 1**
-
-Mi foco es el backend: modelado de datos, lógica de negocio y APIs. Me interesa entender el
-problema completo antes de escribir código: qué necesita el usuario, qué reglas tiene el negocio
-y qué se puede mantener en el tiempo.
-
-**Párrafo 2**
-
-En 2023 hice un bootcamp full-stack y en 2024 entré a Ingeniería en Informática para tener la base
-que un bootcamp no da. Ahora quiero contrastar eso en un equipo real.
-
-**Formación** — bloque compacto dentro de About, no sección propia.
-
-- **mar 2024 – nov 2027 · Ingeniería en Informática** (en curso)
-- **mar 2023 – ago 2023 · Bootcamp Desarrollo de Aplicaciones Full Stack JavaScript**
-  Awakelab / Talento Digital para Chile · 472 h
+- El `h1` es el nombre, no el rol: el rol baja a subtítulo.
+- El badge no dice "práctica". Se busca trabajo remunerado, no la pasantía curricular de la
+  carrera (ver D9).
+- Las 472 h del bootcamp no se publican en el sitio: el dato queda en el CV (F7).
+- No hay sección About ni bloque "Formación".
 
 ---
 
@@ -59,8 +54,8 @@ cada repositorio por separado. En Fase 1 la sección queda como está.
 
 ## Contacto
 
-- **status:** `Práctica · remoto`
-- **title:** `Busco mi primera práctica en backend. Si encaja, hablemos.`
+- **status:** `Disponible · remoto`
+- **title:** `Busco mi primera oportunidad en backend. Si encaja, hablemos.`
 - **note:** `Desde diciembre, disponibilidad full-time por tres meses (verano).`
 - **actions:** `Email` · `LinkedIn` · `GitHub`
   - email: `yordycarmona.dev@gmail.com`
@@ -80,8 +75,8 @@ cada repositorio por separado. En Fase 1 la sección queda como está.
 
 Abierto, no bloquea la escritura del sitio:
 
-- **Año de egreso:** el bloque Formación dice `nov 2027`, pero en 2026 se cursa tercer año.
-  Verificar si el programa es de 4 años o si el egreso real es 2028. Afecta también al CV (F7.2).
+- **Año de egreso:** no se publica en el sitio (el párrafo del hero no lleva fechas), pero
+  afecta al CV (F7.2). Verificar si el programa es de 4 años o si el egreso real es 2028.
 - **Ventana full-time dic–feb:** confirmar los meses exactos antes de publicarla en Contacto.
 - **Stack defendible:** confirmar que `EF Core`, `SQL Server`, `Django` y `MySQL` pasan la
   prueba de defensa (60 s + poder modificarlo). Si alguno no pasa, sale (F1.14).
