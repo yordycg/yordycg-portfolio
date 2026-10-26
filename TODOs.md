@@ -6,9 +6,9 @@
 ## Estado actual
 
 - Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.4 — crear el hero con rol, propuesta y CTAs
+- Próxima acción: F1.10 — reescribir Contacto y Footer
 - Release actual: v1.0 en GitHub Pages
-- Base definida: decisiones D7–D14 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack)
+- Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
 ## Convenciones
 
@@ -30,10 +30,10 @@
 - **D6:** Dark-only por diseño.
 - **D7:** El inglés no se publica hasta poder sostener una entrevista técnica en inglés. Sin sección Idiomas.
 - **D8:** El rubro anterior (proyectos de arquitectura, 2017–2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
-- **D9:** Disponibilidad = práctica · remoto. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
+- **D9:** Disponibilidad = oportunidad laboral · remoto. No se usa "práctica": esa palabra significa la pasantía curricular, no trabajo remunerado. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
 - **D10:** Ambos proyectos son académicos. Sin métricas de uso: se usa alcance técnico verificable.
 - **D11:** El certificado del bootcamp no se publica en el sitio (contiene RUT). Vive en `docs/credentials/`, fuera de `src/`. Si se muestra, solo versión redactada.
-- **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript.
+- **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript. En el sitio las horas no se publican (F1.4): el dato vive en el CV.
 - **D13:** Los proyectos se evalúan al final, uno por uno, después de cerrar la base (portfolio + CV + LinkedIn). Ver sección "Proyectos — evaluación final".
 - **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
 - **D15:** Nomenclatura: clases CSS, `id`, nombres de archivo y de atributo en inglés; `aria-label`, `alt`, valores de `data-tooltip` y copy visible en español.
@@ -51,11 +51,11 @@
   - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
   - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
 - [x] F1.2 Reescribir title, description y OG (description ajustada a 151 caracteres; OG y Twitter con URL absoluta).
-- [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (logo con nombre real y enlace a `#home`, `aria-label` en el nav, header visible desde el inicio).
-- [ ] F1.4 Crear hero con rol, propuesta y CTAs.
-- [ ] F1.5 Reescribir About: copy en dos párrafos + bloque compacto "Formación" (carrera + bootcamp). Absorbe la antigua F1.6; ya no existe el bloque "Trayectoria".
-- [ ] F1.9 Stack: línea en el hero. Sin sección Idiomas y sin lista de "aprendiendo".
-- [ ] F1.10 Reescribir Contacto y Footer (canales: email, LinkedIn, GitHub; ventana full-time dic–feb).
+- [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (`aria-label` en el nav, header visible desde el inicio). El logo se eliminó en F1.4: el nombre vive en el `h1` del hero.
+- [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · Remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
+- [x] F1.5 About: absorbido por F1.4. El párrafo del hero reemplaza la sección; no hay bloque "Formación" (el bootcamp entra en una frase, sin horas).
+- [x] F1.9 Stack: línea en el hero (absorbido por F1.4). Sin sección Idiomas y sin lista de "aprendiendo". La validación de cada tecnología queda en F1.14.
+- [ ] F1.10 Reescribir Contacto y Footer (canales: email, LinkedIn, GitHub; ventana full-time dic–feb). GitHub ya vive en el hero; falta el copy de Contacto y Footer.
 - [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
 - [ ] F1.12 QA de contenido y aprobación.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
@@ -86,9 +86,10 @@
 - [ ] F3.2 Skip link y landmarks.
 - [ ] F3.3 Navegación por teclado y foco visible.
 - [ ] F3.4 Proyectos accesibles sin hover.
-- [ ] F3.5 Tooltip del CV accesible o eliminado.
+- [ ] F3.5 Tooltip del CV accesible o eliminado (ahora se abre hacia arriba: el botón vive al pie del sidebar).
 - [ ] F3.6 Labels con nombre de proyecto y aviso de nueva pestaña.
 - [ ] F3.7 QA con teclado, axe y lector de pantalla básico.
+- [x] F3.8 Navegación lateral con sección activa (adelantada en F1). Barra fija de `16rem` a la izquierda en `>=1024px`, nav vertical con el CV como último ítem, estado activo con `aria-current="location"` + `.is-active` vía `IntersectionObserver`, y `scroll-padding-top: 0` en desktop. El header móvil queda opaco desde el inicio: se elimina el listener de scroll de `app.js`. El bloque del CV comparte `--footer-height` con el footer: si uno cambia de alto, el otro también.
 
 ## Fase 4 — CSS y JS
 
