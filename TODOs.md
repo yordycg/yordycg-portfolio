@@ -6,7 +6,7 @@
 ## Estado actual
 
 - Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.14 — auditar el stack con la prueba de defensa
+- Próxima acción: F1.12 — QA de contenido y aprobación
 - Release actual: v1.0 en GitHub Pages
 - Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
@@ -59,7 +59,7 @@
 - [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
 - [ ] F1.12 QA de contenido y aprobación.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
-- [ ] F1.14 Auditar el stack con la prueba de defensa (60 s sin notas + poder modificarlo). Lo que no pase, sale de la línea (D14).
+- [x] F1.14 Auditar el stack con la prueba de defensa (D14). Resultado: `EF Core` y `MySQL` salen de la línea del hero (siguen en las etiquetas de los proyectos). Línea publicada: `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`.
 
 ## Fase 2 — Bilingüe ES/EN
 

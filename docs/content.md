@@ -22,7 +22,7 @@ Primera pantalla y, a la vez, todo el "sobre mí" del sitio. Absorbe la antigua 
 - **badge:** `Disponible · remoto`
 - **h1:** `Yordy Carmona`
 - **subtítulo:** `Desarrollador backend en formación`
-- **stack:** `C# · .NET · EF Core · SQL Server · Python · Django · MySQL · HTML/CSS/JS`
+- **stack:** `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`
 - **párrafo 1:** `Egresado de un bootcamp full-stack y actualmente estudiante de tercer año de Ingeniería en Informática. Explorando activamente nuevas formas de aprender y crecer en el sector TI.`
 - **párrafo 2:** `Busco mi primera oportunidad laboral para integrarme en un equipo real y aportar en problemas concretos.`
 - **botones:** `GitHub` · `LinkedIn` · `Descargar CV`
@@ -82,8 +82,9 @@ Abierto, no bloquea la escritura del sitio:
 
 - **Año de egreso:** no se publica en el sitio (el párrafo del hero no lleva fechas), pero
   afecta al CV (F7.2). Verificar si el programa es de 4 años o si el egreso real es 2028.
-- **Stack defendible:** confirmar que `EF Core`, `SQL Server`, `Django` y `MySQL` pasan la
-  prueba de defensa (60 s + poder modificarlo). Si alguno no pasa, sale (F1.14).
+- **Stack defendible:** auditado en F1.14 con la prueba de defensa. `EF Core` y `MySQL` salieron de
+  la línea del hero: siguen en las etiquetas de los proyectos, donde son un hecho verificable.
+  `C#`, `.NET`, `SQL Server`, `Python`, `Django` y `HTML/CSS/JS` se mantienen.
 
 ## Fuera del sitio a propósito
 
