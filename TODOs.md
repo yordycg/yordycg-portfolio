@@ -1,12 +1,12 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-24
+> Última actualización: 2026-10-26
 
 ## Estado actual
 
 - Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.10 — reescribir Contacto y Footer
+- Próxima acción: F1.14 — auditar el stack con la prueba de defensa
 - Release actual: v1.0 en GitHub Pages
 - Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
@@ -48,14 +48,14 @@
 - [x] F1.1 Confirmar inglés, fechas, disponibilidad, métricas y teléfono.
   - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
   - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
-  - Disponibilidad: práctica · remoto. Ventana full-time dic–feb (verano).
+  - Disponibilidad: oportunidad laboral · remoto. Ventana full-time dic–feb (verano): clases hasta el 22 de noviembre y regreso la segunda semana de marzo.
   - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
 - [x] F1.2 Reescribir title, description y OG (description ajustada a 151 caracteres; OG y Twitter con URL absoluta).
 - [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (`aria-label` en el nav, header visible desde el inicio). El logo se eliminó en F1.4: el nombre vive en el `h1` del hero.
-- [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · Remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
+- [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
 - [x] F1.5 About: absorbido por F1.4. El párrafo del hero reemplaza la sección; no hay bloque "Formación" (el bootcamp entra en una frase, sin horas).
 - [x] F1.9 Stack: línea en el hero (absorbido por F1.4). Sin sección Idiomas y sin lista de "aprendiendo". La validación de cada tecnología queda en F1.14.
-- [ ] F1.10 Reescribir Contacto y Footer (canales: email, LinkedIn, GitHub; ventana full-time dic–feb). GitHub ya vive en el hero; falta el copy de Contacto y Footer.
+- [x] F1.10 Reescribir Contacto y Footer: badge `Disponible · remoto`, título "Busco mi primera oportunidad en backend. Si encaja, hablemos.", nota de la ventana full-time (dic–feb, 3 meses) y dos canales (email + LinkedIn). El título grande deja de ser `h2` para no duplicar el encabezado de la sección. Footer sin cambios.
 - [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
 - [ ] F1.12 QA de contenido y aprobación.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.

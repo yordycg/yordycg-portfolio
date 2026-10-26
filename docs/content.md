@@ -19,7 +19,7 @@ Si un texto no está en esta página, no se publica.
 
 Primera pantalla y, a la vez, todo el "sobre mí" del sitio. Absorbe la antigua sección About (F1.5).
 
-- **badge:** `Disponible · Remoto`
+- **badge:** `Disponible · remoto`
 - **h1:** `Yordy Carmona`
 - **subtítulo:** `Desarrollador backend en formación`
 - **stack:** `C# · .NET · EF Core · SQL Server · Python · Django · MySQL · HTML/CSS/JS`
@@ -56,18 +56,23 @@ cada repositorio por separado. En Fase 1 la sección queda como está.
 
 - **status:** `Disponible · remoto`
 - **title:** `Busco mi primera oportunidad en backend. Si encaja, hablemos.`
-- **note:** `Desde diciembre, disponibilidad full-time por tres meses (verano).`
-- **actions:** `Email` · `LinkedIn` · `GitHub`
+- **note:** `Full-time por 3 meses: diciembre a febrero.`
+  - Sale del calendario académico: clases hasta el 22 de noviembre y regreso la segunda
+    semana de marzo, así que diciembre, enero y febrero quedan completos.
+  - Sin año: la ventana es recurrente y no envejece.
+- **actions:** `Email` · `LinkedIn`
   - email: `yordycarmona.dev@gmail.com`
   - LinkedIn: `https://linkedin.com/in/yordy-carmona`
-  - GitHub: `https://github.com/yordycg`
+  - GitHub no se repite aquí: ya está en el hero y en el footer del sitio.
 
 ---
 
 ## Footer
 
-- `© 2026 Yordy Carmona · Chile`
-- `Hecho con HTML, CSS y JavaScript vanilla.`
+- `© 2026 YordyCG`
+- `Chile`
+  - Es el único lugar del sitio donde aparece el alias. El nombre completo vive en el `h1`,
+    el `title` y el OG.
 
 ---
 
@@ -77,7 +82,6 @@ Abierto, no bloquea la escritura del sitio:
 
 - **Año de egreso:** no se publica en el sitio (el párrafo del hero no lleva fechas), pero
   afecta al CV (F7.2). Verificar si el programa es de 4 años o si el egreso real es 2028.
-- **Ventana full-time dic–feb:** confirmar los meses exactos antes de publicarla en Contacto.
 - **Stack defendible:** confirmar que `EF Core`, `SQL Server`, `Django` y `MySQL` pasan la
   prueba de defensa (60 s + poder modificarlo). Si alguno no pasa, sale (F1.14).
 
