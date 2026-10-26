@@ -949,6 +949,13 @@ button,
   line-height: 1.2;
 }
 
+/* Línea de apoyo bajo el título: la ventana de disponibilidad */
+.contact__note {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
 .contact__actions {
   display: flex;
   gap: 1.6rem;
