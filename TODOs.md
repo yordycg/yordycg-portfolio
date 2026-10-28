@@ -1,12 +1,12 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-26
+> Última actualización: 2026-10-28
 
 ## Estado actual
 
-- Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.12 — QA de contenido y aprobación
+- Fase activa: ninguna — F1 cerrada, pendiente de merge
+- Próxima acción: merge `feature/f1-content` → `develop` (PR). Después, F3.2.
 - Release actual: v1.0 en GitHub Pages
 - Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
@@ -40,7 +40,7 @@
 
 ## Fase 1 — Contenido e IA
 
-**Estado:** En curso
+**Estado:** Cerrada — pendiente de merge a `develop`
 **Objetivo:** que el sitio explique rol, stack y disponibilidad en 10 segundos.
 **Depende de:** nada.
 **Criterio de salida:** contenido ES aprobado, sin links falsos y sin Go público.
@@ -50,14 +50,14 @@
   - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
   - Disponibilidad: oportunidad laboral · remoto. Ventana full-time dic–feb (verano): clases hasta el 22 de noviembre y regreso la segunda semana de marzo.
   - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
-- [x] F1.2 Reescribir title, description y OG (description ajustada a 151 caracteres; OG y Twitter con URL absoluta).
+- [x] F1.2 Reescribir title, description y OG (description de 156 caracteres; OG y Twitter con URL absoluta).
 - [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (`aria-label` en el nav, header visible desde el inicio). El logo se eliminó en F1.4: el nombre vive en el `h1` del hero.
 - [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
 - [x] F1.5 About: absorbido por F1.4. El párrafo del hero reemplaza la sección; no hay bloque "Formación" (el bootcamp entra en una frase, sin horas).
 - [x] F1.9 Stack: línea en el hero (absorbido por F1.4). Sin sección Idiomas y sin lista de "aprendiendo". La validación de cada tecnología queda en F1.14.
 - [x] F1.10 Reescribir Contacto y Footer: badge `Disponible · remoto`, título "Busco mi primera oportunidad en backend. Si encaja, hablemos.", nota de la ventana full-time (dic–feb, 3 meses) y dos canales (email + LinkedIn). El título grande deja de ser `h2` para no duplicar el encabezado de la sección. Footer sin cambios.
 - [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
-- [ ] F1.12 QA de contenido y aprobación.
+- [x] F1.12 QA de contenido y aprobación: description verificada (156), `site.webmanifest` con el nombre real, `alt` de los proyectos vaciado (las imágenes son placeholders decorativos) y revisión de links. El CV descargable queda desactualizado a propósito: se rehace en F7.2.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
 - [x] F1.14 Auditar el stack con la prueba de defensa (D14). Resultado: `EF Core` y `MySQL` salen de la línea del hero (siguen en las etiquetas de los proyectos). Línea publicada: `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`.
 
@@ -145,7 +145,7 @@
 **Criterio de salida:** README, CV y LinkedIn consistentes con el sitio y orientados al rol.
 
 - [ ] F7.1 README con URL, screenshot, estructura y scripts.
-- [ ] F7.2 CV con link al portfolio.
+- [ ] F7.2 CV con link al portfolio. El PDF publicado hoy es anterior a F1: puede seguir pidiendo "práctica" y no menciona el sitio.
 - [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
 - [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
 - [ ] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado.
@@ -178,7 +178,7 @@
 - [ ] P1.1 Evaluar `sistemaVeterinario` (C#/EF Core/SQL Server): entidades, módulos, auth, tests, Docker, estado del repo.
 - [ ] P1.2 Evaluar `arriendo-canchas` (Django/MySQL): modelos, vistas/endpoints, auth, tests, Docker, estado del repo.
 - [ ] P1.3 Decidir y aplicar mejoras por proyecto (código, README, entorno reproducible).
-- [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders.
+- [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders. Las imágenes actuales (`project-2.webp`, `project-3.webp`) son tarjetas de diseño que dicen "PREVIEW": llevan `alt=""` hasta que se reemplacen por capturas reales.
 - [ ] P1.5 Convertir cada proyecto en caso de estudio (reemplaza la antigua F1.7).
 - [ ] P1.6 Quitar "Demo" y el overlay hover-only (reemplaza la antigua F1.8).
 - [ ] P1.7 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA. Sin esto no se publica el caso de estudio.
