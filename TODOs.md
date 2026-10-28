@@ -5,9 +5,9 @@
 
 ## Estado actual
 
-- Fase activa: ninguna — F1 cerrada, pendiente de merge
-- Próxima acción: merge `feature/f1-content` → `develop` (PR). Después, F3.2.
-- Release actual: v1.0 en GitHub Pages
+- Fase activa: Fase 3 - Accesibilidad y UX
+- Próxima acción: F3.2 - skip link y landmarks.
+- Release actual: v1.1 en GitHub Pages
 - Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
 ## Convenciones
@@ -40,7 +40,7 @@
 
 ## Fase 1 — Contenido e IA
 
-**Estado:** Cerrada — pendiente de merge a `develop`
+**Estado:** Cerrada y publicada en v1.1
 **Objetivo:** que el sitio explique rol, stack y disponibilidad en 10 segundos.
 **Depende de:** nada.
 **Criterio de salida:** contenido ES aprobado, sin links falsos y sin Go público.
@@ -77,7 +77,7 @@
 
 ## Fase 3 — Accesibilidad y UX
 
-**Estado:** Pendiente
+**Estado:** En curso
 **Objetivo:** que el sitio sea usable con teclado, lector de pantalla y móvil.
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
@@ -205,6 +205,15 @@
 - Proyectos movidos a evaluación final, uno por uno (D13).
 - Rubro anterior (arquitectura) fuera del sitio; una línea neutra en el CV (D8).
 - Stack redefinido con prueba de defensa; PostgreSQL queda fuera del sitio (D14).
+
+### v1.1 — Contenido e IA (F1)
+
+- Hero de primera pantalla: nombre como `h1`, rol, stack, badge de disponibilidad y CTAs.
+- Sidebar fija de `16rem` en desktop con sección activa vía `IntersectionObserver`.
+- Contacto con dos canales (email + LinkedIn) y ventana full-time dic–feb.
+- Stack recortado a seis tecnologías tras la prueba de defensa: `EF Core` y `MySQL` salen de la línea.
+- Manifest con el nombre real y `alt` vacío en los placeholders de proyectos.
+- El CV descargable queda desactualizado a propósito; se rehace en F7.2.
 
 ### v1.0 — Portfolio base
 
