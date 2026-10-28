@@ -80,6 +80,23 @@
   /* Limites de Grid de la web */
   --max-width-desktop: 120rem; /* 1200px */
 
+  /* Halo azul que abre y cierra cada sección: las dos mitades forman una
+     elipse completa sobre el separador entre secciones */
+  --section-glow:
+    radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      rgba(0, 153, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 50% 110%,
+      rgba(0, 153, 255, 0.12),
+      transparent 60%
+    );
+
+  /* Alto del footer, compartido con el pie del sidebar para que sus bordes coincidan */
+  --footer-height: 10rem;
+
   /* Colores del Sistema */
   --primary-color: #0099ff;
   --primary-light-color: #9fcaff;
@@ -146,7 +163,7 @@ html {
   font-weight: 400;
   line-height: 1.5;
   scroll-behavior: smooth;
-  /* Compensa el header fijo al navegar por anclas (#about, #projects, #contact).
+  /* Compensa el header fijo al navegar por anclas (#home, #projects, #contact).
      Ligeramente menor que la altura del header para que la línea separadora de la
      sección anterior quede tapada por el header opaco. */
   scroll-padding-top: 8rem;
@@ -160,10 +177,10 @@ html {
     Ubuntu, Cantarell, sans-serif;
 }
 
-/* Header en columna (<=480px): más alto, requiere más offset de anclas */
+/* Header en móvil (<=480px): una sola fila, ~6rem de alto */
 @media (max-width: 30em) {
   html {
-    scroll-padding-top: 12rem;
+    scroll-padding-top: 6.5rem;
   }
 }
 
@@ -258,6 +275,39 @@ button,
 /* ============================================================================================== */
 /* COMPONENTS */
 /* ============================================================================================== */
+/* BUTTONS ====================================================================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.btn--primary {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
+}
+.btn--primary:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.btn--secondary {
+  border: 1px solid var(--border-active);
+  color: var(--text-color);
+}
+.btn--secondary:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
 /* UTILITIES */
 /* ============================================================================================== */
 /* ============================================================================================== */
@@ -270,41 +320,20 @@ button,
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-  padding: 2.4rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  /* Oculto al inicio */
-  transform: translateY(-100%);
-  opacity: 0;
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s ease;
-}
-
-.header--scrolled {
-  transform: translateY(0);
-  opacity: 1;
+  /* Opaco desde el inicio: el estado se resolvía con JS y ya no aporta nada */
   background-color: rgba(19, 19, 19, 0.98);
   border-bottom: 2px solid var(--border-color);
-}
-
-.logo {
-  font-family: var(--font-mono);
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
+  padding: 2.4rem 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header__menu {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 2.4rem; /* Reducimos gap para centrar con el margen de la barra */
+  gap: 2.4rem; /* Separación entre ítems de la barra superior */
 }
 
 .header__item {
@@ -332,7 +361,7 @@ button,
   color: var(--primary-color);
 }
 
-/* Botón CV compartido (header y about) */
+/* Botón CV del header (el hero usa el componente .btn) */
 .btn-cv {
   position: relative;
   font-family: var(--font-mono);
@@ -383,13 +412,12 @@ button,
 @media (max-width: 30em) {
   /* <= 480px */
   .header {
-    padding: 2rem;
-    flex-direction: column;
-    gap: 1.6rem;
+    justify-content: center;
+    padding: 1.2rem 2rem;
   }
 
   .header__menu {
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   /* Ocultar divisores en móviles para evitar que se vea apretado */
@@ -398,26 +426,206 @@ button,
   }
 }
 
+/* Sidebar (>=1024px): la navegación pasa a una barra fija a la izquierda */
+@media (min-width: 64em) {
+  :root {
+    --sidebar-width: 16rem;
+  }
+
+  /* Sin barra superior no hay nada que compensar al navegar por anclas */
+  html {
+    scroll-padding-top: 0;
+  }
+
+  .header {
+    inset: 0 auto 0 0; /* top right bottom left */
+    width: var(--sidebar-width);
+    height: 100svh;
+    padding: 2.4rem 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    border-bottom: none;
+    border-right: 2px solid var(--border-color);
+  }
+
+  .header__menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .header__item {
+    width: 100%;
+  }
+
+  /* Los divisores horizontales no tienen sentido en una lista vertical */
+  .header__item:not(:last-child)::after {
+    display: none;
+  }
+
+  .header__link {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+    border-left: 2px solid transparent;
+  }
+
+  /* Sección visible: se marca con color y una línea en el borde izquierdo */
+  .header__link.is-active {
+    color: var(--text-color);
+    border-left-color: var(--primary-color);
+  }
+
+  /* El CV cierra la barra: no es una sección, es una acción.
+     Misma altura que el footer, para que sus bordes superiores coincidan. */
+  .header__item:last-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Sin esto, el width: 100% de arriba ignora `right` y desborda la barra */
+    width: auto;
+    height: var(--footer-height);
+    justify-content: center;
+    padding: 0 2.4rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .header__item:last-child .btn-cv {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Pegado al borde inferior, el tooltip debe abrirse hacia arriba */
+  .header__item:last-child .btn-cv::after {
+    top: auto;
+    bottom: calc(100% + 1rem);
+  }
+
+  main,
+  .footer {
+    margin-left: var(--sidebar-width);
+  }
+}
+
 /* SIDEBAR ====================================================================================== */
 /* MAIN ========================================================================================= */
-/* ABOUT */
-.about {
+/* HERO */
+.hero {
   position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 8rem 4rem;
-  background:
-    radial-gradient(
-      ellipse 80% 60% at 50% -10%,
-      rgba(0, 153, 255, 0.12),
-      transparent 60%
-    ),
-    var(--bg-color);
+  padding: 14rem 4rem 8rem;
+}
+
+.hero__grid {
+  width: 100%;
+  max-width: var(--max-width-desktop);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero__identity {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+}
+
+.hero__badge-dot {
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--success-color);
+  border-radius: 50%;
+}
+.hero__badge-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--success-color);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hero__name {
+  letter-spacing: -0.02em;
+}
+
+/* El rol es una línea de posicionamiento, no un encabezado de sección */
+.hero__role {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  text-wrap: balance;
+}
+
+.hero__stack {
+  max-width: 34rem;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-block-start: 0.8rem;
+}
+
+.hero__bio {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.hero__bio p {
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Halo compartido: la misma luz abre cada sección (hero, proyectos, contacto) */
+.hero,
+.projects,
+.contact {
+  background: var(--section-glow), var(--bg-color);
 }
 
 /* Separador de sección: centrado, 85% de ancho, con fade en los bordes */
-.about::after,
+.hero::after,
 .projects::after,
 .contact::after {
   content: "";
@@ -436,81 +644,59 @@ button,
   );
 }
 
-.about__container {
-  max-width: var(--max-width-desktop);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 4rem;
-}
-
-/* Columna Izquierda - Biografia */
-.about__identity {
-  grid-column: span 5; /* ocupa 5 columnas */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente el título y socials */
-  text-align: center; /* Centra el texto del título */
-  gap: 2.4rem;
-  align-self: center; /* Centra esta sección verticalmente en la fila de la grilla */
-}
-
-.about__title {
-  font-family: var(--font-main);
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  color: var(--text-color);
-}
-
-.about__socials {
-  display: flex;
-  justify-content: center; /* Centra los links horizontalmente */
-  flex-wrap: wrap; /* Acomoda en filas si la pantalla es muy pequeña */
-  gap: 2.4rem;
-}
-
-.about__social-link {
-  font-family: var(--font-mono);
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  border-bottom: 1px solid transparent;
-  transition: var(--transition-smooth);
-}
-.about__social-link:hover {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
-}
-
-/* Columna Derecha - Biografia */
-.about__content {
-  grid-column: span 7; /* ocupa las y columnas restantes */
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.about__text {
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
 /* <= 1024px */
 @media (max-width: 64em) {
-  .about__container {
-    display: block; /* sin grid en móvil: evita desborde por min-content / columnas implícitas */
+  .hero {
+    /* Apilado, el contenido es más alto: alinear arriba evita recortes bajo el header */
+    align-items: flex-start;
+    padding: 12rem 2rem 6rem;
   }
 
-  .about__content {
-    margin-block-start: 4rem; /* conserva la separación que aportaba el gap del grid */
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
   }
 
-  .about {
-    padding: 6rem 2rem;
+  .hero__identity,
+  .hero__bio {
+    grid-column: auto;
+  }
+
+  /* Justificar en una columna angosta abre huecos entre palabras */
+  .hero__bio p {
+    text-align: start;
+  }
+}
+
+/* <= 480px */
+@media (max-width: 30em) {
+  .hero {
+    padding: 11rem 2rem 5rem;
+  }
+
+  .hero__identity {
+    gap: 1.6rem;
+  }
+
+  /* Ancho completo = objetivo táctil: se recupera la altura típica de 44px */
+  .btn {
+    padding: 1.2rem 2.4rem;
+  }
+
+  .hero__bio p {
+    font-size: 1.6rem;
+  }
+
+  .hero__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/* >=1024px: sin barra superior, el aire vertical se reparte parejo */
+@media (min-width: 64em) {
+  .hero {
+    padding: 8rem 4rem;
   }
 }
 
@@ -763,6 +949,13 @@ button,
   line-height: 1.2;
 }
 
+/* Línea de apoyo bajo el título: la ventana de disponibilidad */
+.contact__note {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
 .contact__actions {
   display: flex;
   gap: 1.6rem;
@@ -817,11 +1010,15 @@ button,
 
 /* FOOTER ======================================================================================= */
 .footer {
-  padding: 4rem;
+  display: flex;
+  align-items: center;
+  min-height: var(--footer-height);
+  padding: 0 4rem;
   background-color: var(--bg-color);
 }
 
 .footer__content {
+  width: 100%;
   max-width: var(--max-width-desktop);
   margin-inline: auto;
   display: flex;
@@ -847,7 +1044,7 @@ button,
 /* Responsive mobile */
 @media (max-width: 30em) {
   .footer {
-    padding: 3rem 2rem;
+    padding: 0 2rem;
   }
 
   .footer__content {

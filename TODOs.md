@@ -1,14 +1,14 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-24
+> Última actualización: 2026-10-28
 
 ## Estado actual
 
-- Fase activa: Fase 1 — Contenido e IA
-- Próxima acción: F1.2 — reescribir title, description y OG
+- Fase activa: ninguna — F1 cerrada, pendiente de merge
+- Próxima acción: merge `feature/f1-content` → `develop` (PR). Después, F3.2.
 - Release actual: v1.0 en GitHub Pages
-- Base definida: decisiones D7–D13 (idioma, trayectoria, disponibilidad, certificado, flujo de ramas)
+- Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
 
 ## Convenciones
 
@@ -17,7 +17,7 @@
 - Cada fase indica estado, objetivo, dependencias, subtareas y criterio de salida.
 - IDs de tarea: F1.1, F1.2, P1.1...
 - No se abre una fase nueva hasta cerrar la anterior. Excepción: Fase 2, postergada a 2027 y desacoplada.
-- Una rama por fase: `feature/f1-contenido`, `feature/f2-bilingue`, etc. Se integra a `develop` vía PR.
+- Una rama por fase: `feature/f1-content`, `feature/f2-bilingue`, etc. Se integra a `develop` vía PR.
 - `develop` se integra a `main` solo en release.
 
 ## Decisiones cerradas
@@ -29,35 +29,37 @@
 - **D5:** No habrá demos hasta tener evidencia real.
 - **D6:** Dark-only por diseño.
 - **D7:** El inglés no se publica hasta poder sostener una entrevista técnica en inglés. Sin sección Idiomas.
-- **D8:** La experiencia 2017–2022 no es sección propia: va como bloque "Trayectoria" dentro de About.
-- **D9:** Disponibilidad = práctica profesional / part-time remoto. La logística vive en Contacto, no en el hero.
+- **D8:** El rubro anterior (proyectos de arquitectura, 2017–2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
+- **D9:** Disponibilidad = oportunidad laboral · remoto. No se usa "práctica": esa palabra significa la pasantía curricular, no trabajo remunerado. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
 - **D10:** Ambos proyectos son académicos. Sin métricas de uso: se usa alcance técnico verificable.
 - **D11:** El certificado del bootcamp no se publica en el sitio (contiene RUT). Vive en `docs/credentials/`, fuera de `src/`. Si se muestra, solo versión redactada.
-- **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript.
+- **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript. En el sitio las horas no se publican (F1.4): el dato vive en el CV.
 - **D13:** Los proyectos se evalúan al final, uno por uno, después de cerrar la base (portfolio + CV + LinkedIn). Ver sección "Proyectos — evaluación final".
+- **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
+- **D15:** Nomenclatura: clases CSS, `id`, nombres de archivo y de atributo en inglés; `aria-label`, `alt`, valores de `data-tooltip` y copy visible en español.
 
 ## Fase 1 — Contenido e IA
 
-**Estado:** En curso
+**Estado:** Cerrada — pendiente de merge a `develop`
 **Objetivo:** que el sitio explique rol, stack y disponibilidad en 10 segundos.
 **Depende de:** nada.
 **Criterio de salida:** contenido ES aprobado, sin links falsos y sin Go público.
 
 - [x] F1.1 Confirmar inglés, fechas, disponibilidad, métricas y teléfono.
-    - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
-    - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
-    - Disponibilidad: part-time fines de semana, remoto, desde ya (D9).
-    - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
-- [ ] F1.2 Reescribir title, description y OG.
-- [ ] F1.3 Reestructurar header y navegación.
-- [ ] F1.4 Crear hero con rol, propuesta y CTAs.
-- [ ] F1.5 Reescribir "Sobre mí" uniendo formación, trayectoria y práctica.
-- [ ] F1.6 Añadir bloque "Trayectoria" compacto en About (Ariancif 2017–2022 → bootcamp 2023 → Ing. 2024–2027).
-- [ ] F1.9 Añadir Stack y Educación (Ing. Informática + bootcamp Full-Stack JS). Sin sección Idiomas.
-- [ ] F1.10 Reescribir Contacto y Footer.
-- [ ] F1.11 Actualizar `docs/content.md` como fuente de contenido.
-- [ ] F1.12 QA de contenido y aprobación.
+  - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
+  - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
+  - Disponibilidad: oportunidad laboral · remoto. Ventana full-time dic–feb (verano): clases hasta el 22 de noviembre y regreso la segunda semana de marzo.
+  - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
+- [x] F1.2 Reescribir title, description y OG (description de 156 caracteres; OG y Twitter con URL absoluta).
+- [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (`aria-label` en el nav, header visible desde el inicio). El logo se eliminó en F1.4: el nombre vive en el `h1` del hero.
+- [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
+- [x] F1.5 About: absorbido por F1.4. El párrafo del hero reemplaza la sección; no hay bloque "Formación" (el bootcamp entra en una frase, sin horas).
+- [x] F1.9 Stack: línea en el hero (absorbido por F1.4). Sin sección Idiomas y sin lista de "aprendiendo". La validación de cada tecnología queda en F1.14.
+- [x] F1.10 Reescribir Contacto y Footer: badge `Disponible · remoto`, título "Busco mi primera oportunidad en backend. Si encaja, hablemos.", nota de la ventana full-time (dic–feb, 3 meses) y dos canales (email + LinkedIn). El título grande deja de ser `h2` para no duplicar el encabezado de la sección. Footer sin cambios.
+- [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
+- [x] F1.12 QA de contenido y aprobación: description verificada (156), `site.webmanifest` con el nombre real, `alt` de los proyectos vaciado (las imágenes son placeholders decorativos) y revisión de links. El CV descargable queda desactualizado a propósito: se rehace en F7.2.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
+- [x] F1.14 Auditar el stack con la prueba de defensa (D14). Resultado: `EF Core` y `MySQL` salen de la línea del hero (siguen en las etiquetas de los proyectos). Línea publicada: `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`.
 
 ## Fase 2 — Bilingüe ES/EN
 
@@ -80,13 +82,14 @@
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
 
-- [ ] F3.1 Header visible desde el inicio.
+- [x] F3.1 Header visible desde el inicio (adelantado en F1.3).
 - [ ] F3.2 Skip link y landmarks.
 - [ ] F3.3 Navegación por teclado y foco visible.
 - [ ] F3.4 Proyectos accesibles sin hover.
-- [ ] F3.5 Tooltip del CV accesible o eliminado.
+- [ ] F3.5 Tooltip del CV accesible o eliminado (ahora se abre hacia arriba: el botón vive al pie del sidebar).
 - [ ] F3.6 Labels con nombre de proyecto y aviso de nueva pestaña.
 - [ ] F3.7 QA con teclado, axe y lector de pantalla básico.
+- [x] F3.8 Navegación lateral con sección activa (adelantada en F1). Barra fija de `16rem` a la izquierda en `>=1024px`, nav vertical con el CV como último ítem, estado activo con `aria-current="location"` + `.is-active` vía `IntersectionObserver`, y `scroll-padding-top: 0` en desktop. El header móvil queda opaco desde el inicio: se elimina el listener de scroll de `app.js`. El bloque del CV comparte `--footer-height` con el footer: si uno cambia de alto, el otro también.
 
 ## Fase 4 — CSS y JS
 
@@ -110,7 +113,7 @@
 **Depende de:** Fase 1.
 **Criterio de salida:** metadatos absolutos, JSON-LD válido y sitemap completo.
 
-- [ ] F5.1 OG y Twitter image absolutos.
+- [x] F5.1 OG y Twitter image absolutos (adelantado en F1.2).
 - [ ] F5.2 JSON-LD completo y correcto.
 - [ ] F5.3 `og:image:width/height/alt`, `twitter:image:alt`, `theme-color`.
 - [ ] F5.4 Completar `site.webmanifest`.
@@ -142,8 +145,8 @@
 **Criterio de salida:** README, CV y LinkedIn consistentes con el sitio y orientados al rol.
 
 - [ ] F7.1 README con URL, screenshot, estructura y scripts.
-- [ ] F7.2 CV con link al portfolio.
-- [x] F7.3 Aclarar los 6 años en proyectos arquitectónicos (lo resuelve el bloque Trayectoria de F1.6).
+- [ ] F7.2 CV con link al portfolio. El PDF publicado hoy es anterior a F1: puede seguir pidiendo "práctica" y no menciona el sitio.
+- [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
 - [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
 - [ ] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado.
 - [ ] F7.7 Actualizar LinkedIn: headline, Acerca de, certificación y experiencia, alineados con el sitio.
@@ -170,14 +173,15 @@
 
 **Estado:** Pendiente — se abre después de Fase 8
 **Depende de:** Fases 1–8.
-**Criterio de salida:** cada proyecto tiene alcance documentado, repo presentable y evidencia real (sin placeholders).
+**Criterio de salida:** cada proyecto tiene alcance documentado, repo presentable y evidencia real (sin placeholders), y el autor puede explicar y modificar su código sin IA.
 
 - [ ] P1.1 Evaluar `sistemaVeterinario` (C#/EF Core/SQL Server): entidades, módulos, auth, tests, Docker, estado del repo.
 - [ ] P1.2 Evaluar `arriendo-canchas` (Django/MySQL): modelos, vistas/endpoints, auth, tests, Docker, estado del repo.
 - [ ] P1.3 Decidir y aplicar mejoras por proyecto (código, README, entorno reproducible).
-- [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders.
+- [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders. Las imágenes actuales (`project-2.webp`, `project-3.webp`) son tarjetas de diseño que dicen "PREVIEW": llevan `alt=""` hasta que se reemplacen por capturas reales.
 - [ ] P1.5 Convertir cada proyecto en caso de estudio (reemplaza la antigua F1.7).
 - [ ] P1.6 Quitar "Demo" y el overlay hover-only (reemplaza la antigua F1.8).
+- [ ] P1.7 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA. Sin esto no se publica el caso de estudio.
 
 ## Backlog
 
@@ -199,6 +203,8 @@
 - Certificado del bootcamp verificado (Awakelab / Talento Digital para Chile · 472 h · mar–ago 2023).
 - Fase 2 desacoplada de la cadena y postergada a 2027.
 - Proyectos movidos a evaluación final, uno por uno (D13).
+- Rubro anterior (arquitectura) fuera del sitio; una línea neutra en el CV (D8).
+- Stack redefinido con prueba de defensa; PostgreSQL queda fuera del sitio (D14).
 
 ### v1.0 — Portfolio base
 
