@@ -1,27 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Portfolio initialized with Vanilla JS!');
-
-  // Inicializar interacción de scroll para el header (Opción B)
-  initHeaderScroll();
-});
+const links = [...document.querySelectorAll('.header__link[href^="#"]')];
 
 /**
- * Controla la visibilidad del header al hacer scroll
+ * Marca como activa la sección visible en la navegación.
+ * `aria-current="location"` porque es la sección actual dentro de la misma página.
  */
-function initHeaderScroll() {
-  const header = document.querySelector('.header');
-  if (!header) return;
+function setActiveSection(id) {
+  for (const link of links) {
+    const isActive = link.hash === `#${id}`;
+    link.classList.toggle('is-active', isActive);
 
-  const handleScroll = () => {
-    // Si bajamos más de 120px, revelamos el header
-    if (window.scrollY > 120) {
-      header.classList.add('header--scrolled');
+    if (isActive) {
+      link.setAttribute('aria-current', 'location');
     } else {
-      header.classList.remove('header--scrolled');
+      link.removeAttribute('aria-current');
     }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  // Ejecutar de inmediato por si el usuario recarga la página a mitad del sitio
-  handleScroll();
+  }
 }
+
+/**
+ * Observa las secciones enlazadas desde el header y actualiza el estado activo.
+ * La franja de detección es una banda horizontal en el centro del viewport.
+ */
+function initActiveSection() {
+  const sections = links
+    .map((link) => document.querySelector(link.hash))
+    .filter(Boolean); // el CV es un enlace externo, no una sección
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) setActiveSection(entry.target.id);
+      }
+    },
+    { rootMargin: '-45% 0px -50% 0px' },
+  );
+
+  for (const section of sections) observer.observe(section);
+}
+
+initActiveSection();

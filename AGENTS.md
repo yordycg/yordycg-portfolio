@@ -12,6 +12,11 @@ Este repositorio es el portfolio personal de Yordy, construido con una filosofí
 - **Performance:** minimizar dependencias externas, optimizar assets (imágenes, fuentes), apuntar a Lighthouse casi perfecto.
 - **Estándares modernos:** HTML5 semántico y CSS moderno (Grid, Flexbox).
 
+## Nomenclatura
+
+- **Identificadores en inglés:** clases CSS, `id`, nombres de archivo y nombres de atributo (`data-tooltip`, no `data-tooltip-texto`).
+- **Contenido en español:** copy visible y todo lo que consume una persona, incluidos `aria-label`, `alt` y los valores de `data-tooltip`. Son texto para leer, no identificadores.
+
 ## Git & Workflow
 
 - **Conventional Commits:** obligatorio. Patrón `<type>(<scope>): <description>`.
