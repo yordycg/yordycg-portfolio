@@ -43,3 +43,7 @@ Personal portfolio project built with a "Vanilla Web" stack.
 
 - Check for issues: `just lint`
 - Auto-fix issues: `just format`
+
+### Assets
+
+- Regenerate the Open Graph image: `just og`
