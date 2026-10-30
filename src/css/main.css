@@ -1,74 +1,37 @@
 /*
  * =================================================================================================
- * --- DESIGN SYSTEM REFERENCE GUIDE
+ * DESIGN SYSTEM REFERENCE GUIDE
  * =================================================================================================
- * --- 01 TYPOGRAPHY SYSTEM
-   - Base scale: 1rem = 10px (gracias a html { font-size: 62.5% })
-   - Font sizes mapping:
-   10px  ->  1.0rem
-   12px  ->  1.2rem
-   14px  ->  1.4rem (Mínimo recomendado para textos largos en mobile)
-   16px  ->  1.6rem (Estándar de lectura en desktop)
-   18px  ->  1.8rem
-   20px  ->  2.0rem
-   24px  ->  2.4rem
-   30px  ->  3.0rem
-   36px  ->  3.6rem
-   44px  ->  4.4rem
-   52px  ->  5.2rem
-   62px  ->  6.2rem
-   74px  ->  7.4rem
-   86px  ->  8.6rem
-   98px  ->  9.8rem
-
-   - Font weights
-   Regular: 400 (Lectura)
-   Medium:  500 (Subtítulos, UI Elements)
-   Bold:    700 (Títulos de secciones)
-
-   - Line heights (Interlineado)
-   Default / Paragraphs: 1.5 - 1.6 (Accesible y legible)
-   Headings (Títulos):   1.1 - 1.2
-
- * --- 02 COLORS
-   - Primary (Color de marca principal): #10b981 (Emerald / Esmeralda)
-   - Tints (Variaciones más CLARAS / mezcladas con blanco): #34d399 (Emerald 400)
-   - Shades (Variaciones más OSCURAS / mezcladas con negro): #047857 (Emerald 700)
-   - Accents (Colores llamativos / interactivos): #06b6d4 (Cyan)
-   - Greys (Escala de grises para textos y fondos):
-     - #0b0f19 (Fondo principal ultra oscuro)
-     - #111827 (Fondo de tarjetas / superficies)
-     - #f3f4f6 (Texto principal gris claro)
-     - #9ca3af (Texto secundario gris atenuado)
-
- * --- 07 WHITESPACE / SPACING SYSTEM (px -> rem)
-   2px   ->  0.2rem
-   4px   ->  0.4rem
-   8px   ->  0.8rem
-   12px  ->  1.2rem
-   16px  ->  1.6rem
-   24px  ->  2.4rem
-   32px  ->  3.2rem
-   48px  ->  4.8rem
-   64px  ->  6.4rem
-   80px  ->  8.0rem
-   96px  ->  9.6rem
-   128px ->  12.8rem
-
- * --- 08 BREAKPOINTS (Basados en EM para soporte de zoom del navegador)
-   - Mobile:  <= 30em (<= 480px)
-   - Tablet:  > 30em && < 64em (481px a 1023px)
-   - Desktop: >= 64em (>= 1024px)
-   - L-Deskt: >= 75em (>= 1200px)
+ * Fuente de verdad: docs/mockup/DESIGN.md
+ *
+ * 01 TYPOGRAPHY
+ *  - Base: 1rem = 10px (html { font-size: 62.5% })
+ *  - Inter: lectura, títulos e interfaz.
+ *  - Space Grotesk (--font-accent): etiquetas, tags y metadatos. No es monoespaciada.
+ *  - Escala: 1.2, 1.4, 1.6, 1.8, 2.0, 2.4, 3.0, 3.2, 3.6–4.8rem.
+ *  - Headings: 700, line-height 1.15; body: 400, line-height 1.6.
+ *
+ * 02 COLORS (dark-only)
+ *  - bg #131313 · surface #1f1f1f
+ *  - text #e5e2e1 · muted #bfc7d5
+ *  - primary #0099ff · soft #9fcaff
+ *  - success #38ce47
+ *  - border rgba(229,226,225,.1) · strong #89919e
+ *  - --section-glow: único gradiente intencional.
+ *
+ * 03 SPACING
+ *  - 0.4, 0.8, 1.2, 1.6, 2.4, 3.2, 4.8, 6.4, 8rem.
+ *  - Container 120rem; gutters 2rem/4rem.
+ *
+ * 04 BREAKPOINTS
+ *  - Mobile <=30em · tablet 30–64em · desktop >=64em.
+ *
+ * 05 ARCHITECTURE NOTES
+ *  - color-scheme: dark es intencional.
+ *  - overflow-x: hidden en body es una red de seguridad, no una solución.
+ *  - Solo .hero reserva 100svh.
  * =================================================================================================
- * --- NOTAS DE ARQUITECTURA
-   - color-scheme: dark -> Este sitio es DARK-ONLY por diseño. No hay modo claro planeado.
-   Si en el futuro se agrega, esta linea debe volverse dinámica (JS) o eliminarse.
-   - overflow-x: hidden en body -> Es una RED DE SEGURIDAD, no una solución.
-   Si aparece scroll horizontal, se debe cazar y arreglar en el elemento que lo causa.
-   No confiar en esta linea para "tapar" bugs de layout.
- * =================================================================================================
-*/
+ */
 
 /* ============================================================================================== */
 /* CUSTOM PROPERTIES */
@@ -99,8 +62,6 @@
 
   /* Colores del Sistema */
   --primary-color: #0099ff;
-  --primary-light-color: #9fcaff;
-  --primary-dark-color: #00497e;
   --accent-color: #0099ff;
   --bg-color: #131313;
   --bg-surface: #1f1f1f;
@@ -110,24 +71,27 @@
   --text-muted: #bfc7d5;
 
   /* Estados */
-  --error-color: #ffb4ab;
-  --warning-color: #fba018;
   --success-color: #38ce47;
 
   /* Transiciones y Radios Estandar */
-  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.2s;
+  --transition-colors:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+  --transition-border: border-color var(--duration-fast) var(--ease-standard);
+  --transition-transform: transform var(--duration-fast) var(--ease-standard);
   --border-radius-sm: 0rem;
-  --border-radius-md: 0rem;
-  --border-radius-lg: 0rem;
 
   /* Fuentes del Sistema */
   --font-main: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "Space Grotesk", monospace;
+  --font-accent: "Space Grotesk", sans-serif;
 
   /* Tipografia fluida para Headings */
   --fs-h1: clamp(3.6rem, 2.8rem + 3vw, 4.8rem);
   --fs-h2: clamp(3rem, 2.4rem + 2vw, 3.2rem);
-  --fs-h3: clamp(2.4rem, 2rem + 1vw, 2.4rem);
+  --fs-h3: 2.4rem;
 }
 
 /* ============================================================================================== */
@@ -322,13 +286,13 @@ main:focus {
   justify-content: center;
   min-height: 4.4rem;
   padding: 1rem 2rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: var(--transition-smooth);
+  transition: var(--transition-colors);
 }
 
 .btn--primary {
@@ -402,7 +366,7 @@ main:focus {
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--text-muted);
-  transition: var(--transition-smooth);
+  transition: var(--transition-colors);
 }
 .header__link:hover {
   color: var(--primary-color);
@@ -415,14 +379,14 @@ main:focus {
   justify-content: center;
   min-height: 4.4rem;
   padding: 0.8rem 1.6rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border: 1px solid var(--text-color);
   color: var(--text-color);
-  transition: var(--transition-smooth);
+  transition: var(--transition-colors);
 }
 .btn-cv:hover {
   background-color: var(--text-color);
@@ -469,7 +433,6 @@ main:focus {
   .header {
     inset: 0 auto 0 0; /* top right bottom left */
     width: var(--sidebar-width);
-    height: 100svh;
     padding: 2.4rem 0;
     flex-direction: column;
     align-items: stretch;
@@ -569,7 +532,7 @@ main:focus {
   align-items: center;
   gap: 1.2rem;
   padding: 0.6rem 1.4rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -611,7 +574,7 @@ main:focus {
 
 .hero__stack {
   max-width: 34rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.3rem;
   letter-spacing: 0.02em;
   color: var(--text-muted);
@@ -691,6 +654,13 @@ main:focus {
   }
 }
 
+/* Tablet sin sidebar: el contenido apilado sigue cabiendo centrado */
+@media (min-width: 30.0625em) and (max-width: 63.99em) {
+  .hero {
+    align-items: center;
+  }
+}
+
 /* <= 480px */
 @media (max-width: 30em) {
   .hero {
@@ -719,6 +689,7 @@ main:focus {
 /* >=1024px: sin barra superior, el aire vertical se reparte parejo */
 @media (min-width: 64em) {
   .hero {
+    align-items: center;
     padding: 8rem 4rem;
   }
 }
@@ -726,7 +697,6 @@ main:focus {
 /* PROJECTS */
 .projects {
   position: relative;
-  min-height: 100svh; /* sección al menos de una pantalla; crece con el contenido */
   padding: 8rem 4rem;
 }
 
@@ -756,7 +726,7 @@ main:focus {
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  transition: var(--transition-smooth);
+  transition: var(--transition-border);
 }
 .project__card:hover,
 .project__card:focus-within {
@@ -773,7 +743,7 @@ main:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition-smooth);
+  transition: var(--transition-transform);
 }
 .project__card:hover .project__card-img {
   transform: scale(1.03);
@@ -798,13 +768,13 @@ main:focus {
   justify-content: center;
   min-height: 4.4rem;
   padding: 0.8rem 1.6rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: var(--transition-smooth);
+  transition: var(--transition-colors);
 }
 
 .project__card-btn--primary {
@@ -839,8 +809,8 @@ main:focus {
 }
 
 .project__card-tag {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -850,8 +820,8 @@ main:focus {
   background-color: var(--bg-color);
 }
 
-/* Responsive - <= 1024px */
-@media (max-width: 64em) {
+/* Responsive - tablet, antes del sidebar */
+@media (max-width: 63.99em) {
   .projects {
     padding: 6rem 2rem;
   }
@@ -867,18 +837,17 @@ main:focus {
 /* CONTACT */
 .contact {
   position: relative;
-  min-height: 100svh;
   display: flex;
   padding: 8rem 4rem;
 }
 
 .contact__container {
+  width: 100%;
   max-width: var(--max-width-desktop);
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  flex: 1; /* ocupa el alto: título arriba, bloque centrado en el resto */
 }
 
 .contact__heading {
@@ -891,10 +860,8 @@ main:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centra verticalmente el bloque restante */
   gap: 3.2rem;
   text-align: center;
-  flex: 1;
 }
 
 .contact__status {
@@ -934,7 +901,7 @@ main:focus {
 }
 
 .contact__status-text {
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -969,13 +936,13 @@ main:focus {
   justify-content: center;
   min-height: 4.4rem;
   padding: 1.2rem 2.4rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: var(--transition-smooth);
+  transition: var(--transition-colors);
 }
 
 .contact__btn--primary {
@@ -998,8 +965,8 @@ main:focus {
   border-color: var(--text-color);
 }
 
-/* Responsive */
-@media (max-width: 64em) {
+/* Responsive - tablet, antes del sidebar */
+@media (max-width: 63.99em) {
   .contact {
     padding: 6rem 2rem;
   }
@@ -1039,7 +1006,7 @@ main:focus {
 }
 
 .footer__meta {
-  font-family: var(--font-mono);
+  font-family: var(--font-accent);
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
