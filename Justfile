@@ -11,11 +11,14 @@ prod:
   {{ENGINE}} compose up --build
 
 lint:
-  npx -y @biomejs/biome lint src/
+  npm run lint
 
 format:
-  npx -y @biomejs/biome format --write src/
+  npm run format
+
+check:
+  npm run check
 
 # Regenera la og:image (1200x630). Ver scripts/og.sh
 og:
-  @bash scripts/og.sh
+  npm run og
