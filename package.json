@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
-    "@biomejs/biome": "2.5.2",
+    "@biomejs/biome": "2.6.3",
     "@lhci/cli": "0.15.1",
     "browser-sync": "3.0.4",
     "html-validate": "11.17.0",
