@@ -22,6 +22,8 @@ function setActiveSection(id) {
  * La franja de detección es una banda horizontal en el centro del viewport.
  */
 function initActiveSection() {
+  if (!('IntersectionObserver' in window)) return;
+
   const sections = links
     .map((link) => document.querySelector(link.hash))
     .filter(Boolean); // el CV es un enlace externo, no una sección
