@@ -86,6 +86,8 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
     <header class="header">
       <nav class="header__nav" aria-label="Navegación principal">
         <ul class="header__menu">
@@ -103,7 +105,7 @@
               href="assets/yordy-carmona-cv.pdf"
               class="btn-cv"
               download
-              data-tooltip="Descargar CV"
+              aria-label="Descargar CV en PDF"
               >CV</a
             >
           </li>
@@ -111,8 +113,8 @@
       </nav>
     </header>
 
-    <main>
-      <section id="home" class="hero">
+    <main id="main" tabindex="-1">
+      <section id="home" class="hero" aria-labelledby="home-title">
         <div class="hero__grid">
           <div class="hero__identity">
             <p class="hero__badge">
@@ -120,7 +122,7 @@
               Disponible · remoto
             </p>
 
-            <h1 class="hero__name">Yordy Carmona</h1>
+            <h1 id="home-title" class="hero__name">Yordy Carmona</h1>
 
             <p class="hero__role">Desarrollador backend en formación</p>
 
@@ -133,15 +135,19 @@
                 href="https://github.com/yordycg"
                 class="btn btn--secondary"
                 target="_blank"
-                rel="noopener"
-                >GitHub</a
+                rel="noopener noreferrer"
+                >GitHub<span class="sr-only">
+                  (se abre en una pestaña nueva)</span
+                ></a
               >
               <a
                 href="https://linkedin.com/in/yordy-carmona"
                 class="btn btn--secondary"
                 target="_blank"
-                rel="noopener"
-                >LinkedIn</a
+                rel="noopener noreferrer"
+                >LinkedIn<span class="sr-only">
+                  (se abre en una pestaña nueva)</span
+                ></a
               >
               <a
                 href="assets/yordy-carmona-cv.pdf"
@@ -166,11 +172,11 @@
         </div>
       </section>
 
-      <section id="projects" class="projects">
-        <h2 class="projects__title">Proyectos</h2>
+      <section id="projects" class="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="projects__title">Proyectos</h2>
         <div class="projects__grid">
           <!-- Project 1 -->
-          <article class="project__card">
+          <article class="project__card" aria-labelledby="project-1-title">
             <div class="project__card-media">
               <img
                 src="assets/img/project-2.webp"
@@ -180,25 +186,26 @@
                 loading="lazy"
                 class="project__card-img"
               />
-              <div class="project__card-overlay">
-                <p class="project__card-description">
-                  Relaciones de datos entidad-relación complejas (Dueños,
-                  Mascotas, Veterinarios, Citas, etc.)
-                </p>
-                <div class="project__card-links">
-                  <a
-                    href="https://github.com/yordycg/sistemaVeterinario"
-                    target="_blank"
-                    rel="noopener"
-                    class="project__card-btn project__card-btn--primary"
-                    aria-label="Ver código en GitHub"
-                    >Código</a
-                  >
-                </div>
-              </div>
             </div>
             <div class="project__card-info">
-              <h3 class="project__card-title">Sistema Veterinario</h3>
+              <h3 id="project-1-title" class="project__card-title">
+                Sistema Veterinario
+              </h3>
+              <p class="project__card-description">
+                Relaciones de datos entidad-relación complejas (Dueños,
+                Mascotas, Veterinarios, Citas, etc.)
+              </p>
+              <div class="project__card-links">
+                <a
+                  href="https://github.com/yordycg/sistemaVeterinario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project__card-btn project__card-btn--primary"
+                  >Código<span class="sr-only">
+                    de Sistema Veterinario (se abre en una pestaña nueva)</span
+                  ></a
+                >
+              </div>
               <div class="project__card-tech">
                 <span class="project__card-tag">C#</span>
                 <span class="project__card-tag">Entity Framework Core</span>
@@ -210,7 +217,7 @@
           </article>
 
           <!-- Project 2 -->
-          <article class="project__card">
+          <article class="project__card" aria-labelledby="project-2-title">
             <div class="project__card-media">
               <img
                 src="assets/img/project-3.webp"
@@ -220,26 +227,25 @@
                 loading="lazy"
                 class="project__card-img"
               />
-              <div class="project__card-overlay">
-                <p class="project__card-description">
-                  Gestión de reservas y disponibilidad de los recursos.
-                </p>
-                <div class="project__card-links">
-                  <a
-                    href="https://github.com/yordycg/arriendo-canchas"
-                    target="_blank"
-                    rel="noopener"
-                    class="project__card-btn project__card-btn--primary"
-                    aria-label="Ver código en GitHub"
-                    >Código</a
-                  >
-                </div>
-              </div>
             </div>
             <div class="project__card-info">
-              <h3 class="project__card-title">
+              <h3 id="project-2-title" class="project__card-title">
                 Sistema de Arriendo de Canchas
               </h3>
+              <p class="project__card-description">
+                Gestión de reservas y disponibilidad de los recursos.
+              </p>
+              <div class="project__card-links">
+                <a
+                  href="https://github.com/yordycg/arriendo-canchas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project__card-btn project__card-btn--primary"
+                  >Código<span class="sr-only">
+                    de Arriendo de Canchas (se abre en una pestaña nueva)</span
+                  ></a
+                >
+              </div>
               <div class="project__card-tech">
                 <span class="project__card-tag">Python</span>
                 <span class="project__card-tag">Django</span>
@@ -252,9 +258,9 @@
         </div>
       </section>
 
-      <section id="contact" class="contact">
+      <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="contact__container">
-          <h2 class="contact__heading">Contacto</h2>
+          <h2 id="contact-title" class="contact__heading">Contacto</h2>
           <div class="contact__centered">
             <div class="contact__status">
               <span class="contact__status-dot" aria-hidden="true"></span>
@@ -277,9 +283,11 @@
                 href="https://linkedin.com/in/yordy-carmona"
                 class="contact__btn contact__btn--secondary"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
-                LinkedIn
+                LinkedIn<span class="sr-only">
+                  (se abre en una pestaña nueva)</span
+                >
               </a>
             </div>
           </div>

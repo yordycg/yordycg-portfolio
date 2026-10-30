@@ -5,8 +5,8 @@
 
 ## Estado actual
 
-- Fase activa: Fase 3 - Accesibilidad y UX
-- Próxima acción: F3.2 - skip link y landmarks.
+- Fase activa: ninguna — F3 cerrada; próxima F4.1.
+- Próxima acción: F4.1 - quitar `transition: all`.
 - Release actual: v1.1.1 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
@@ -78,18 +78,18 @@
 
 ## Fase 3 — Accesibilidad y UX
 
-**Estado:** En curso
+**Estado:** Cerrada (en `develop`; se publica en el release v2.0)
 **Objetivo:** que el sitio sea usable con teclado, lector de pantalla y móvil.
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
 
 - [x] F3.1 Header visible desde el inicio (adelantado en F1.3).
-- [ ] F3.2 Skip link y landmarks.
-- [ ] F3.3 Navegación por teclado y foco visible.
-- [ ] F3.4 Proyectos accesibles sin hover.
-- [ ] F3.5 Tooltip del CV accesible o eliminado (ahora se abre hacia arriba: el botón vive al pie del sidebar).
-- [ ] F3.6 Labels con nombre de proyecto y aviso de nueva pestaña.
-- [ ] F3.7 QA con teclado, axe y lector de pantalla básico.
+- [x] F3.2 Skip link y landmarks: skip link visible al foco, `main#main` con `tabindex="-1"` y secciones nombradas con `aria-labelledby`.
+- [x] F3.3 Navegación por teclado y foco visible: orden de tabulación completo, `:focus-visible` global, `:focus-within` en tarjetas y targets táctiles de 44 px en header, botones y enlaces de proyecto.
+- [x] F3.4 Proyectos accesibles sin hover: overlay eliminado; descripción y enlace `Código` siempre visibles en `.project__card-info`; cada `article` se nombra con su `h3`.
+- [x] F3.5 Tooltip del CV eliminado: el enlace del header usa `aria-label="Descargar CV en PDF"`; no queda contenido dependiente de hover.
+- [x] F3.6 Labels con nombre de proyecto y aviso de nueva pestaña: nombres accesibles únicos y `rel="noopener noreferrer"` en enlaces externos.
+- [x] F3.7 QA con teclado, axe y árbol de accesibilidad: axe 0 violaciones en 1440 y 320; Lighthouse a11y 100; sin overflow en 320/375/768/1024/1440; probados reduced motion, sin JS y tabulación completa. Lectura con VoiceOver/NVDA queda como validación manual recomendada antes del release.
 - [x] F3.8 Navegación lateral con sección activa (adelantada en F1). Barra fija de `16rem` a la izquierda en `>=1024px`, nav vertical con el CV como último ítem, estado activo con `aria-current="location"` + `.is-active` vía `IntersectionObserver`, y `scroll-padding-top: 0` en desktop. El header móvil queda opaco desde el inicio: se elimina el listener de scroll de `app.js`. El bloque del CV comparte `--footer-height` con el footer: si uno cambia de alto, el otro también.
 
 ## Fase 4 — CSS y JS
@@ -181,7 +181,7 @@
 - [ ] P1.3 Decidir y aplicar mejoras por proyecto (código, README, entorno reproducible).
 - [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders. Las imágenes actuales (`project-2.webp`, `project-3.webp`) son tarjetas de diseño que dicen "PREVIEW": llevan `alt=""` hasta que se reemplacen por capturas reales.
 - [ ] P1.5 Convertir cada proyecto en caso de estudio (reemplaza la antigua F1.7).
-- [ ] P1.6 Quitar "Demo" y el overlay hover-only (reemplaza la antigua F1.8).
+- [x] P1.6 Quitar "Demo" y el overlay hover-only (adelantado en v1.1.1 y F3.4).
 - [ ] P1.7 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA. Sin esto no se publica el caso de estudio.
 
 ## Backlog
@@ -198,6 +198,15 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F3 — Accesibilidad y UX
+
+- Skip link, `main#main` enfocable y secciones nombradas con `aria-labelledby`.
+- Proyectos sin overlay hover-only: descripción y enlace `Código` visibles, con `article` nombrado por su `h3`.
+- Tooltip del CV eliminado; el enlace usa `aria-label` completo.
+- Nombres accesibles por proyecto y aviso de nueva pestaña; `rel="noopener noreferrer"` en enlaces externos.
+- Targets táctiles de 44 px y header móvil ajustado para 320 px sin overflow.
+- QA: axe 0 violaciones, Lighthouse a11y 100, teclado, árbol de accesibilidad, reduced motion y sin JS.
 
 ### v1.1.1 — Privacidad y cara pública
 

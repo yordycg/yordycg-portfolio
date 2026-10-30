@@ -51,8 +51,9 @@ Pendiente. Se define en la fase "Proyectos — evaluación final" (P1.5), despu�
 cada repositorio por separado. En Fase 1 la sección queda como está.
 
 - La primera tarjeta se rotula `Sistema Veterinario`, igual que la imagen y el repositorio.
-- Los enlaces `Demo` se retiraron en v1.1.1: apuntaban al README, no a una demo. P1.6
-  cierra el resto del trabajo de las tarjetas.
+- Los enlaces `Demo` se retiraron en v1.1.1: apuntaban al README, no a una demo.
+- Desde F3.4 la descripción y el enlace `Código` están siempre visibles; ya no hay
+  overlay dependiente de hover. P1.5 completa el copy de los casos de estudio.
 
 ---
 
