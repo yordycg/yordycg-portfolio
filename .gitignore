@@ -30,3 +30,6 @@ yarn-error.log*
 
 # Docker
 .docker/
+
+# Credenciales privadas (RUT, documentos personales)
+docs/credentials/*.pdf
