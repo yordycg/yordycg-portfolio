@@ -1,33 +1,44 @@
 #!/usr/bin/env bash
 # Genera la og:image (1200x630) para compartir en redes sociales.
 # Estética "Mono Dark" alineada con el sitio.
-# Requiere: ffmpeg con libfreetype.
+# Requiere: node/npx (sharp-cli se descarga con npx la primera vez).
 #
 # Uso: ./scripts/og.sh
 set -euo pipefail
 
-FONT="/home/yordycg/.local/share/fonts/JetBrainsMono/JetBrainsMonoNLNerdFontMono-Bold.ttf"
 OUT="src/assets/img/og-image.png"
-W=1200
-H=630
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 mkdir -p "$(dirname "$OUT")"
-printf 'ESTUDIANTE INGENIERÍA EN INFORMÁTICA' >"$TMP/tagline.txt"
-printf 'GITHUB · LINKEDIN · X' >"$TMP/social.txt"
 
-ffmpeg -y -hide_banner -loglevel error \
-  -f lavfi -i "color=c=0x131313:s=${W}x${H}:d=1" \
-  -vf "drawgrid=width=80:height=80:thickness=1:color=0x262626@0.35, \
-drawbox=x=0:y=0:w=${W}:h=1:color=0x9fcaff@0.6, \
-drawtext=fontfile='${FONT}':text=YordyCG\\/\\/PORTFOLIO:fontsize=22:fontcolor=0x9fcaff:x=80:y=72, \
-drawtext=fontfile='${FONT}':text='01/01':fontsize=22:fontcolor=0x89919e:x=w-tw-80:y=72, \
-drawtext=fontfile='${FONT}':text=YordyCG:fontsize=140:fontcolor=0xe5e2e1:x=(w-text_w)/2:y=210, \
-drawbox=x=455:y=352:w=290:h=4:color=0x0099ff, \
-drawtext=fontfile='${FONT}':textfile='${TMP}/tagline.txt':fontsize=34:fontcolor=0xbfc7d5:x=(w-text_w)/2:y=392, \
-drawtext=fontfile='${FONT}':textfile='${TMP}/social.txt':fontsize=22:fontcolor=0x89919e:x=(w-text_w)/2:y=$((H - 96))" \
-  -frames:v 1 \
-  "$OUT"
+cat >"$TMP/og.svg" <<'SVG'
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#262626" stroke-opacity="0.35" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#131313" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect width="1200" height="1" fill="#9fcaff" fill-opacity="0.6" />
+
+  <text x="80" y="72" fill="#9fcaff" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="700" letter-spacing="0.5">YORDY CARMONA // PORTFOLIO</text>
+  <text x="1120" y="72" fill="#89919e" font-family="DejaVu Sans Mono, monospace" font-size="22" text-anchor="end">01/01</text>
+
+  <text x="600" y="310" fill="#e5e2e1" font-family="DejaVu Sans Mono, monospace" font-size="120" font-weight="700" text-anchor="middle" letter-spacing="-2">Yordy Carmona</text>
+  <rect x="420" y="360" width="360" height="4" fill="#0099ff" />
+
+  <text x="600" y="420" fill="#bfc7d5" font-family="DejaVu Sans Mono, monospace" font-size="32" text-anchor="middle" letter-spacing="1">DESARROLLADOR BACKEND EN FORMACIÓN</text>
+  <text x="600" y="466" fill="#89919e" font-family="DejaVu Sans Mono, monospace" font-size="24" text-anchor="middle" letter-spacing="0.5">C# · .NET · SQL SERVER · PYTHON · DJANGO</text>
+
+  <circle cx="86" cy="568" r="6" fill="#38ce47" />
+  <text x="104" y="575" fill="#bfc7d5" font-family="DejaVu Sans Mono, monospace" font-size="22">DISPONIBLE · REMOTO</text>
+  <text x="1120" y="575" fill="#89919e" font-family="DejaVu Sans Mono, monospace" font-size="22" text-anchor="end">GITHUB · LINKEDIN</text>
+</svg>
+SVG
+
+npx -y sharp-cli@6.1.0 -i "$TMP/og.svg" -o "$OUT"
 
 echo "Generado: $OUT"

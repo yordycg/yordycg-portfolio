@@ -1,14 +1,14 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-28
+> Última actualización: 2026-10-30
 
 ## Estado actual
 
-- Fase activa: ninguna — F1 cerrada, pendiente de merge
-- Próxima acción: merge `feature/f1-content` → `develop` (PR). Después, F3.2.
-- Release actual: v1.0 en GitHub Pages
-- Base definida: decisiones D7–D15 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura)
+- Fase activa: Fase 3 - Accesibilidad y UX
+- Próxima acción: F3.2 - skip link y landmarks.
+- Release actual: v1.1.1 en GitHub Pages
+- Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
 
@@ -32,15 +32,16 @@
 - **D8:** El rubro anterior (proyectos de arquitectura, 2017–2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
 - **D9:** Disponibilidad = oportunidad laboral · remoto. No se usa "práctica": esa palabra significa la pasantía curricular, no trabajo remunerado. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
 - **D10:** Ambos proyectos son académicos. Sin métricas de uso: se usa alcance técnico verificable.
-- **D11:** El certificado del bootcamp no se publica en el sitio (contiene RUT). Vive en `docs/credentials/`, fuera de `src/`. Si se muestra, solo versión redactada.
+- **D11:** El certificado del bootcamp no se publica en el sitio ni se versiona en el repositorio (contiene RUT). Vive en almacenamiento privado, fuera de Git. Si se muestra, solo versión redactada.
 - **D12:** El bootcamp se presenta como formación (472 h, programa estatal), nunca como nivel autodeclarado de JavaScript. En el sitio las horas no se publican (F1.4): el dato vive en el CV.
 - **D13:** Los proyectos se evalúan al final, uno por uno, después de cerrar la base (portfolio + CV + LinkedIn). Ver sección "Proyectos — evaluación final".
 - **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
 - **D15:** Nomenclatura: clases CSS, `id`, nombres de archivo y de atributo en inglés; `aria-label`, `alt`, valores de `data-tooltip` y copy visible en español.
+- **D16:** El sitio no publica el teléfono. El CV descargable sí lo incluye, por decisión de reclutamiento; se revisa en F7.6.
 
 ## Fase 1 — Contenido e IA
 
-**Estado:** Cerrada — pendiente de merge a `develop`
+**Estado:** Cerrada y publicada en v1.1 (hotfix v1.1.1)
 **Objetivo:** que el sitio explique rol, stack y disponibilidad en 10 segundos.
 **Depende de:** nada.
 **Criterio de salida:** contenido ES aprobado, sin links falsos y sin Go público.
@@ -49,15 +50,15 @@
   - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
   - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
   - Disponibilidad: oportunidad laboral · remoto. Ventana full-time dic–feb (verano): clases hasta el 22 de noviembre y regreso la segunda semana de marzo.
-  - Teléfono: no se publica. Métricas: se recogen en "Proyectos — evaluación final" (P1).
-- [x] F1.2 Reescribir title, description y OG (description de 156 caracteres; OG y Twitter con URL absoluta).
+  - Teléfono: no se publica en el sitio; el CV descargable sí lo incluye (D16). Métricas: se recogen en "Proyectos — evaluación final" (P1).
+- [x] F1.2 Reescribir title, description y OG (description de 152 caracteres; OG y Twitter con URL absoluta).
 - [x] F1.3 Reestructurar header y navegación y eliminar el link a X de los socials (`aria-label` en el nav, header visible desde el inicio). El logo se eliminó en F1.4: el nombre vive en el `h1` del hero.
 - [x] F1.4 Crear el hero de la primera pantalla: `h1` = nombre, rol como subtítulo, stack, badge `Disponible · remoto` y CTAs GitHub/LinkedIn/CV. Sustituye a la sección About.
 - [x] F1.5 About: absorbido por F1.4. El párrafo del hero reemplaza la sección; no hay bloque "Formación" (el bootcamp entra en una frase, sin horas).
 - [x] F1.9 Stack: línea en el hero (absorbido por F1.4). Sin sección Idiomas y sin lista de "aprendiendo". La validación de cada tecnología queda en F1.14.
 - [x] F1.10 Reescribir Contacto y Footer: badge `Disponible · remoto`, título "Busco mi primera oportunidad en backend. Si encaja, hablemos.", nota de la ventana full-time (dic–feb, 3 meses) y dos canales (email + LinkedIn). El título grande deja de ser `h2` para no duplicar el encabezado de la sección. Footer sin cambios.
 - [x] F1.11 Actualizar `docs/content.md` como fuente de contenido (sección Proyectos se completa en P1.5).
-- [x] F1.12 QA de contenido y aprobación: description verificada (156), `site.webmanifest` con el nombre real, `alt` de los proyectos vaciado (las imágenes son placeholders decorativos) y revisión de links. El CV descargable queda desactualizado a propósito: se rehace en F7.2.
+- [x] F1.12 QA de contenido y aprobación: description verificada (152), `site.webmanifest` con el nombre real, `alt` de los proyectos vaciado (las imágenes son placeholders decorativos) y revisión de links. El CV descargable queda desactualizado a propósito: se rehace en F7.2.
 - [x] F1.13 Certificado del bootcamp recuperado y verificado: Awakelab/Adalid · "Desarrollo de Aplicaciones Full Stack JavaScript Trainee" · Talento Digital para Chile · mar–ago 2023 · 472 h.
 - [x] F1.14 Auditar el stack con la prueba de defensa (D14). Resultado: `EF Core` y `MySQL` salen de la línea del hero (siguen en las etiquetas de los proyectos). Línea publicada: `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`.
 
@@ -77,7 +78,7 @@
 
 ## Fase 3 — Accesibilidad y UX
 
-**Estado:** Pendiente
+**Estado:** En curso
 **Objetivo:** que el sitio sea usable con teclado, lector de pantalla y móvil.
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
@@ -115,9 +116,9 @@
 
 - [x] F5.1 OG y Twitter image absolutos (adelantado en F1.2).
 - [ ] F5.2 JSON-LD completo y correcto.
-- [ ] F5.3 `og:image:width/height/alt`, `twitter:image:alt`, `theme-color`.
+- [x] F5.3 `og:image:width/height/alt`, `twitter:image:alt`, `theme-color` (adelantado en v1.1.1).
 - [ ] F5.4 Completar `site.webmanifest`.
-- [ ] F5.5 Link a `favicon.ico`.
+- [x] F5.5 Link a `favicon.ico` (adelantado en v1.1.1).
 - [ ] F5.6 Página `404.html`.
 - [ ] F5.7 Preparar migración a dominio propio.
 
@@ -148,7 +149,7 @@
 - [ ] F7.2 CV con link al portfolio. El PDF publicado hoy es anterior a F1: puede seguir pidiendo "práctica" y no menciona el sitio.
 - [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
 - [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
-- [ ] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado.
+- [x] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado. Decisión v1.1.1: certificado fuera del repositorio e historial; el sitio no publica teléfono y el CV descargable sí lo incluye (D16).
 - [ ] F7.7 Actualizar LinkedIn: headline, Acerca de, certificación y experiencia, alineados con el sitio.
 
 ## Fase 8 — QA y release
@@ -197,14 +198,33 @@
 
 ## Historial
 
+### v1.1.1 — Privacidad y cara pública
+
+- Certificado del bootcamp retirado del repositorio y de todo el historial; queda en almacenamiento privado (D11).
+- Teléfono: el sitio no lo publica; el CV descargable sí lo incluye por decisión de reclutamiento (D16, F7.6).
+- OG image regenerada con la identidad v1.1: nombre, rol, stack, disponibilidad y solo GitHub/LinkedIn.
+- Metadatos sociales completos (`og:image:width/height/alt`, `twitter:image:alt`, `theme-color`) y link a `favicon.ico` (F5.3/F5.5).
+- Enlaces `Demo` retirados: apuntaban al README; la tarjeta 1 pasa a llamarse `Sistema Veterinario`.
+- Description documentada con su longitud real (152 caracteres).
+- Fuente base del `body` fijada a Inter para que el `h1` y el rol no hereden `system-ui`.
+
 ### 2026-10-24 — Base del roadmap v2
 
-- F1.1 cerrado: inglés A2 no se publica, disponibilidad part-time remoto, sin teléfono público.
+- F1.1 cerrado: inglés A2 no se publica, disponibilidad remota (sin etiqueta part-time; D9), sin teléfono en el sitio.
 - Certificado del bootcamp verificado (Awakelab / Talento Digital para Chile · 472 h · mar–ago 2023).
 - Fase 2 desacoplada de la cadena y postergada a 2027.
 - Proyectos movidos a evaluación final, uno por uno (D13).
 - Rubro anterior (arquitectura) fuera del sitio; una línea neutra en el CV (D8).
 - Stack redefinido con prueba de defensa; PostgreSQL queda fuera del sitio (D14).
+
+### v1.1 — Contenido e IA (F1)
+
+- Hero de primera pantalla: nombre como `h1`, rol, stack, badge de disponibilidad y CTAs.
+- Sidebar fija de `16rem` en desktop con sección activa vía `IntersectionObserver`.
+- Contacto con dos canales (email + LinkedIn) y ventana full-time dic–feb.
+- Stack recortado a seis tecnologías tras la prueba de defensa: `EF Core` y `MySQL` salen de la línea.
+- Manifest con el nombre real y `alt` vacío en los placeholders de proyectos.
+- El CV descargable queda desactualizado a propósito; se rehace en F7.2.
 
 ### v1.0 — Portfolio base
 

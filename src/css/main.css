@@ -189,6 +189,8 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   overflow-x: hidden;
+  /* La fuente de marca se hereda; los componentes que necesitan la monoespaciada la declaran */
+  font-family: var(--font-main);
 }
 
 h1,

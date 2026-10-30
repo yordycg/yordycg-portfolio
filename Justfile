@@ -15,3 +15,7 @@ lint:
 
 format:
   npx -y @biomejs/biome format --write src/
+
+# Regenera la og:image (1200x630). Ver scripts/og.sh
+og:
+  @bash scripts/og.sh
