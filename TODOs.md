@@ -5,9 +5,9 @@
 
 ## Estado actual
 
-- Fase activa: ninguna — F4 cerrada; próxima F5.2.
-- Próxima acción: F5.2 - completar JSON-LD.
-- Release actual: v1.3 en GitHub Pages
+- Fase activa: ninguna — F5 cerrada; próxima F6.1.
+- Próxima acción: F6.1 - `package.json` + lockfile.
+- Release actual: v1.4 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -25,7 +25,7 @@
 - **D1:** Vanilla Web, sin frameworks.
 - **D2:** Go no se muestra públicamente hasta tener un proyecto real.
 - **D3:** Bilingüe con páginas estáticas ES/EN, no traducción por JS. (Postergado: ver D7 y Fase 2.)
-- **D4:** Dominio propio más adelante.
+- **D4:** Dominio propio más adelante (objetivo 2027–2028). Checklist en `docs/domain-migration.md`.
 - **D5:** No habrá demos hasta tener evidencia real.
 - **D6:** Dark-only por diseño.
 - **D7:** El inglés no se publica hasta poder sostener una entrevista técnica en inglés. Sin sección Idiomas.
@@ -109,18 +109,18 @@
 
 ## Fase 5 — SEO técnico
 
-**Estado:** Pendiente
+**Estado:** Cerrada y publicada en v1.4
 **Objetivo:** dejar el SEO listo para compartir y para una futura migración de dominio.
 **Depende de:** Fase 1.
 **Criterio de salida:** metadatos absolutos, JSON-LD válido y sitemap completo.
 
 - [x] F5.1 OG y Twitter image absolutos (adelantado en F1.2).
-- [ ] F5.2 JSON-LD completo y correcto.
+- [x] F5.2 JSON-LD completo y correcto: `Person` con `@id`, nombre, alias, rol, description, URL, imagen, email, redes, stack, país, bootcamp y ocupación. Validado como JSON y revisado contra Schema.org.
 - [x] F5.3 `og:image:width/height/alt`, `twitter:image:alt`, `theme-color` (adelantado en v1.1.1).
-- [ ] F5.4 Completar `site.webmanifest`.
+- [x] F5.4 Completar `site.webmanifest`: movido a `src/site.webmanifest`; añadidos `id`, `description`, `lang`, `dir`, `start_url`, `scope` e iconos con rutas desde la raíz.
 - [x] F5.5 Link a `favicon.ico` (adelantado en v1.1.1).
-- [ ] F5.6 Página `404.html`.
-- [ ] F5.7 Preparar migración a dominio propio.
+- [x] F5.6 Página `404.html`: branded, `noindex`, skip link, `main` accesible, enlaces a inicio/proyectos y `<base>` para el path actual.
+- [x] F5.7 Preparar migración a dominio propio: checklist en `docs/domain-migration.md`; la migración real queda en el backlog (2027–2028).
 
 ## Fase 6 — Tooling y CI
 
@@ -190,7 +190,7 @@
 - [ ] CV en inglés — junto con la versión EN.
 - [ ] Añadir nivel de inglés al sitio y al CV cuando exista.
 - [ ] Proyecto Go con tests y README.
-- [ ] Dominio propio.
+- [ ] Dominio propio (2027–2028; checklist en `docs/domain-migration.md`).
 - [ ] Analytics privacy-friendly.
 - [ ] Formulario de contacto.
 - [ ] Notas técnicas.
@@ -198,6 +198,14 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F5 — SEO técnico (v1.4)
+
+- JSON-LD `Person` completo con email, imagen, stack, país, bootcamp y ocupación.
+- Manifest movido a la raíz y completado para instalación/PWA.
+- Página 404 propia, accesible y `noindex`.
+- Checklist de migración a dominio propio para 2027–2028.
+- QA: JSON-LD válido, HTML validado, Lighthouse SEO/a11y en verde y 404 verificado en live.
 
 ### F4 — CSS y JS (v1.3)
 
