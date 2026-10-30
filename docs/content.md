@@ -8,7 +8,7 @@ Si un texto no está en esta página, no se publica.
 ## Metadatos
 
 - **title:** `Yordy Carmona — Desarrollador Backend en Formación`
-- **description:** `Backend en formación. Estudiante de Ingeniería en Informática, 3er año. APIs y datos con C#/.NET y Django. Busco mi primera oportunidad laboral, remoto.` (156 caracteres: justo en el límite de escritorio; en móvil Google corta cerca de 120 igual)
+- **description:** `Backend en formación. Estudiante de Ingeniería en Informática, 3er año. APIs y datos con C#/.NET y Django. Busco mi primera oportunidad laboral, remoto.` (152 caracteres: dentro del límite de escritorio; en móvil Google corta cerca de 120 igual)
 - **og:title:** igual que `title`
 - **og:description:** igual que `description`
 - **og:locale:** `es_CL`
@@ -50,6 +50,10 @@ Decisiones que este hero fija:
 Pendiente. Se define en la fase "Proyectos — evaluación final" (P1.5), después de evaluar
 cada repositorio por separado. En Fase 1 la sección queda como está.
 
+- La primera tarjeta se rotula `Sistema Veterinario`, igual que la imagen y el repositorio.
+- Los enlaces `Demo` se retiraron en v1.1.1: apuntaban al README, no a una demo. P1.6
+  cierra el resto del trabajo de las tarjetas.
+
 ---
 
 ## Contacto
@@ -63,7 +67,9 @@ cada repositorio por separado. En Fase 1 la sección queda como está.
 - **actions:** `Email` · `LinkedIn`
   - email: `yordycarmona.dev@gmail.com`
   - LinkedIn: `https://linkedin.com/in/yordy-carmona`
-  - GitHub no se repite aquí: ya está en el hero y en el footer del sitio.
+  - GitHub no se repite aquí: ya está en el hero.
+  - **Teléfono:** no se publica en el sitio. El CV descargable sí lo incluye, por
+    decisión de reclutamiento (ver F7.6).
 
 ---
 
