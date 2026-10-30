@@ -7,7 +7,7 @@
 
 - Fase activa: ninguna — F3 cerrada; próxima F4.1.
 - Próxima acción: F4.1 - quitar `transition: all`.
-- Release actual: v1.1.1 en GitHub Pages
+- Release actual: v1.2 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -78,7 +78,7 @@
 
 ## Fase 3 — Accesibilidad y UX
 
-**Estado:** Cerrada (en `develop`; se publica en el release v2.0)
+**Estado:** Cerrada y publicada en v1.2
 **Objetivo:** que el sitio sea usable con teclado, lector de pantalla y móvil.
 **Depende de:** Fase 1.
 **Criterio de salida:** navegación completa por teclado y sin contenido oculto inaccesible.
@@ -199,8 +199,9 @@
 
 ## Historial
 
-### F3 — Accesibilidad y UX
+### F3 — Accesibilidad y UX (v1.2)
 
+- Publicada en v1.2.
 - Skip link, `main#main` enfocable y secciones nombradas con `aria-labelledby`.
 - Proyectos sin overlay hover-only: descripción y enlace `Código` visibles, con `article` nombrado por su `h3`.
 - Tooltip del CV eliminado; el enlace usa `aria-label` completo.
