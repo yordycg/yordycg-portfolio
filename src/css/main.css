@@ -180,7 +180,7 @@ html {
 /* Header en móvil (<=480px): una sola fila, ~6rem de alto */
 @media (max-width: 30em) {
   html {
-    scroll-padding-top: 6.5rem;
+    scroll-padding-top: 7.2rem;
   }
 }
 
@@ -258,6 +258,44 @@ button,
   border-radius: var(--border-radius-sm);
 }
 
+/* El skip link solo aparece al recibir foco con teclado */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 1rem 1.6rem;
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  border: 1px solid var(--text-color);
+  transform: translateY(-200%);
+  transition: transform 0.15s ease-in-out;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* El foco programático en main no necesita un anillo alrededor de toda la sección */
+main:focus {
+  outline: none;
+}
+
+/* Contenido solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Respetar preferencias de reduccion de movimiento del sistema */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -279,14 +317,17 @@ button,
 /* ============================================================================================== */
 /* BUTTONS ====================================================================================== */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 1rem 2rem;
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 1rem 2rem;
-  text-align: center;
   transition: var(--transition-smooth);
 }
 
@@ -325,7 +366,7 @@ button,
   /* Opaco desde el inicio: el estado se resolvía con JS y ya no aporta nada */
   background-color: rgba(19, 19, 19, 0.98);
   border-bottom: 2px solid var(--border-color);
-  padding: 2.4rem 4rem;
+  padding: 1.2rem 4rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -353,6 +394,10 @@ button,
   margin-left: 2.4rem;
 }
 .header__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 4.4rem;
+  padding: 0 0.8rem;
   font-family: var(--font-main);
   font-size: 1.4rem;
   font-weight: 500;
@@ -365,13 +410,16 @@ button,
 
 /* Botón CV del header (el hero usa el componente .btn) */
 .btn-cv {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 0.8rem 1.6rem;
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 0.8rem 1.6rem;
   border: 1px solid var(--text-color);
   color: var(--text-color);
   transition: var(--transition-smooth);
@@ -379,36 +427,6 @@ button,
 .btn-cv:hover {
   background-color: var(--text-color);
   color: var(--bg-color);
-}
-
-/* Tooltip CSS puro (sin JS) */
-[data-tooltip] {
-  position: relative;
-}
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 1rem);
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-active);
-  color: var(--text-color);
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  padding: 0.4rem 0.8rem;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
-  transition: var(--transition-smooth);
-}
-[data-tooltip]:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
 }
 
 @media (max-width: 30em) {
@@ -419,7 +437,16 @@ button,
   }
 
   .header__menu {
-    gap: 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .header__link {
+    padding: 0 0.4rem;
+    font-size: 1.3rem;
+  }
+
+  .btn-cv {
+    padding-inline: 1.2rem;
   }
 
   /* Ocultar divisores en móviles para evitar que se vea apretado */
@@ -499,12 +526,6 @@ button,
     display: block;
     width: 100%;
     text-align: center;
-  }
-
-  /* Pegado al borde inferior, el tooltip debe abrirse hacia arriba */
-  .header__item:last-child .btn-cv::after {
-    top: auto;
-    bottom: calc(100% + 1rem);
   }
 
   main,
@@ -737,7 +758,8 @@ button,
   flex-direction: column;
   transition: var(--transition-smooth);
 }
-.project__card:hover {
+.project__card:hover,
+.project__card:focus-within {
   border-color: var(--border-active);
 }
 
@@ -757,27 +779,11 @@ button,
   transform: scale(1.03);
 }
 
-.project__card-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(19, 19, 19, 0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2.4rem;
-  opacity: 0;
-  transition: var(--transition-smooth);
-}
-.project__card:hover .project__card-overlay {
-  opacity: 1;
-}
-
 .project__card-description {
   font-family: var(--font-main);
   font-size: 1.4rem;
   line-height: 1.6;
   color: var(--text-muted);
-  margin-block-end: 2.4rem;
 }
 
 .project__card-links {
@@ -786,14 +792,18 @@ button,
 }
 
 .project__card-btn {
+  display: inline-flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 0.8rem 1.6rem;
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.8rem 1.6rem;
-  text-align: center;
   transition: var(--transition-smooth);
 }
 
@@ -805,16 +815,6 @@ button,
 .project__card-btn--primary:hover {
   background-color: transparent;
   color: var(--text-color);
-}
-
-.project__card-btn--secondary {
-  border: 1px solid var(--border-active);
-  color: var(--text-color);
-}
-.project__card-btn--secondary:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  border-color: var(--text-color);
 }
 
 .project__card-info {
@@ -964,13 +964,17 @@ button,
 }
 
 .contact__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 1.2rem 2.4rem;
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 1.2rem 2.4rem;
-  text-align: center;
   transition: var(--transition-smooth);
 }
 
