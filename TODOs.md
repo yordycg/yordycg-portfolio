@@ -195,6 +195,7 @@
 - [ ] Formulario de contacto.
 - [ ] Notas técnicas.
 - [ ] Sticky Blur opcional (revisar contra D6 y el design system).
+- [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
 
@@ -207,6 +208,7 @@
 - Enlaces `Demo` retirados: apuntaban al README; la tarjeta 1 pasa a llamarse `Sistema Veterinario`.
 - Description documentada con su longitud real (152 caracteres).
 - Fuente base del `body` fijada a Inter para que el `h1` y el rol no hereden `system-ui`.
+- Pendiente externo: GitHub mantiene accesible el commit antiguo por SHA; solicitar la purga de vistas cacheadas a soporte.
 
 ### 2026-10-24 — Base del roadmap v2
 
