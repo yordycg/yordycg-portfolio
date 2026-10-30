@@ -1,11 +1,11 @@
-version: "3.8"
-
 services:
   web:
     build: .
+    init: true
     ports:
-      - "8080:80"
-    volumes:
-      - ./src:/usr/share/nginx/html:z
-    environment:
-      - NODE_ENV=development
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/ >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

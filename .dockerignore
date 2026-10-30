@@ -1,0 +1,9 @@
+.git
+.github
+.lighthouseci
+docs
+node_modules
+tests
+*.md
+package-lock.json
+package.json
