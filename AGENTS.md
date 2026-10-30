@@ -10,6 +10,7 @@ Este repositorio es el portfolio personal de Yordy, construido con una filosofí
 - **CSS Variables:** usar custom properties para temas y valores consistentes en toda la aplicación.
 - **Mobile-First:** diseñar y desarrollar primero para móvil, luego escalar con media queries.
 - **Performance:** minimizar dependencias externas, optimizar assets (imágenes, fuentes), apuntar a Lighthouse casi perfecto.
+- **Sin dependencias de runtime:** npm y `package.json` son solo tooling. `dependencies` debe quedar vacío, no hay bundler y GitHub Pages publica únicamente `src/`.
 - **Estándares modernos:** HTML5 semántico y CSS moderno (Grid, Flexbox).
 
 ## Nomenclatura
@@ -30,9 +31,10 @@ Este repositorio es el portfolio personal de Yordy, construido con una filosofí
 
 ## Tooling
 
+- **Node.js 22 + npm:** dependencias de desarrollo fijadas en `package-lock.json`.
 - **Biome:** linting y formateo.
-- **Just:** command runner (`just dev`, `just prod`, `just lint`, `just format`).
-- **Podman + Nginx Alpine:** producción local y serving.
+- **Just:** command runner (`just dev`, `just prod`, `just lint`, `just format`, `just check`).
+- **Podman + Nginx unprivileged:** producción local y serving (`just prod` requiere `podman-compose`).
 
 ## Communication & Collaboration
 
