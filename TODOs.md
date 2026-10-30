@@ -5,9 +5,9 @@
 
 ## Estado actual
 
-- Fase activa: ninguna — F5 cerrada; próxima F6.1.
-- Próxima acción: F6.1 - `package.json` + lockfile.
-- Release actual: v1.4 en GitHub Pages
+- Fase activa: ninguna — F6 cerrada; próxima F7.1.
+- Próxima acción: F7.1 - README con URL, screenshot, estructura y scripts.
+- Release actual: v1.5 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -124,19 +124,19 @@
 
 ## Fase 6 — Tooling y CI
 
-**Estado:** Pendiente
+**Estado:** Cerrada y publicada en v1.5
 **Objetivo:** hacer el proyecto reproducible y evitar regresiones.
 **Depende de:** Fase 4.
 **Criterio de salida:** CI verde con lint, formato, HTML, links y Lighthouse.
 
-- [ ] F6.1 Crear `package.json` + lockfile.
-- [ ] F6.2 Scripts reproducibles.
-- [ ] F6.3 Validación HTML.
-- [ ] F6.4 Link checker.
-- [ ] F6.5 Lighthouse CI.
-- [ ] F6.6 Test de accesibilidad con axe.
-- [ ] F6.7 Dependabot.
-- [ ] F6.8 Nginx pinneado, non-root y headers de seguridad.
+- [x] F6.1 Crear `package.json` + lockfile: Node 22, scripts, `devDependencies` fijadas y `dependencies` vacío. npm es solo tooling; el deploy sigue siendo `src/`.
+- [x] F6.2 Scripts reproducibles: `browser-sync` y `sharp-cli` locales, `Justfile` delegando en npm, `.nvmrc` y README con `npm install`.
+- [x] F6.3 Validación HTML: `html-validate` con reglas para el estilo actual y validación de index/404.
+- [x] F6.4 Link checker: `linkinator` interno con fragmentos y CSS; 28 enlaces, 0 roto.
+- [x] F6.5 Lighthouse CI: configuración con accesibilidad/SEO como error, best practices/performance como warning; pasa en local y CI.
+- [x] F6.6 Test de accesibilidad con axe: index y 404 a 1440/320; 0 violaciones.
+- [x] F6.7 Dependabot: npm y GitHub Actions semanales, con agrupación minor/patch.
+- [x] F6.8 Nginx pinneado, non-root y headers: `nginx-unprivileged` con digest, puerto 8080, headers de seguridad, 404, gzip y healthcheck; probado con Podman.
 
 ## Fase 7 — README, CV y LinkedIn
 
@@ -198,6 +198,15 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F6 — Tooling y CI (v1.5)
+
+- `package.json` + `package-lock.json`; npm solo para tooling, sin dependencias de runtime.
+- Scripts reproducibles con binarios locales; `just` delega en npm.
+- CI con lint, formato, HTML, links, axe y Lighthouse CI.
+- Dependabot semanal para npm y Actions.
+- Nginx unprivileged pinneado, headers de seguridad, gzip y healthcheck.
+- QA: `npm ci`, `npm run check`, links 0 roto, axe 0, Lighthouse a11y/SEO 100.
 
 ### F5 — SEO técnico (v1.4)
 

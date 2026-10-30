@@ -8,7 +8,7 @@
 #      BS_MODE=headless ./scripts/dev.sh  (forzar loopback)
 #      BS_PORT=8080 ./scripts/dev.sh      (otro puerto)
 #
-# Requiere: node/npx (browser-sync se descarga con npx la primera vez).
+# Requiere: npm install (browser-sync queda fijado en package-lock.json).
 set -euo pipefail
 
 PORT="${BS_PORT:-3000}"
@@ -41,4 +41,4 @@ else
   printf 'browser-sync (%s) → abriendo el navegador en el puerto %s\n' "$MODE" "$PORT"
 fi
 
-exec npx -y browser-sync start "${flags[@]}"
+exec npx --no-install browser-sync start "${flags[@]}"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Genera la og:image (1200x630) para compartir en redes sociales.
 # Estética "Mono Dark" alineada con el sitio.
-# Requiere: node/npx (sharp-cli se descarga con npx la primera vez).
+# Requiere: npm install (sharp-cli queda fijado en package-lock.json).
 #
 # Uso: ./scripts/og.sh
 set -euo pipefail
@@ -39,6 +39,6 @@ cat >"$TMP/og.svg" <<'SVG'
 </svg>
 SVG
 
-npx -y sharp-cli@6.1.0 -i "$TMP/og.svg" -o "$OUT"
+npx --no-install sharp-cli -i "$TMP/og.svg" -o "$OUT"
 
 echo "Generado: $OUT"
