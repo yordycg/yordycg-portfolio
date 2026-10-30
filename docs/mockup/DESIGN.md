@@ -1,159 +1,179 @@
 ---
 name: Mono Dark
 colors:
-  surface: '#131313'
-  surface-dim: '#131313'
-  surface-bright: '#393939'
-  surface-container-lowest: '#0e0e0e'
-  surface-container-low: '#1c1b1b'
-  surface-container: '#201f1f'
-  surface-container-high: '#2a2a2a'
-  surface-container-highest: '#353534'
-  on-surface: '#e5e2e1'
-  on-surface-variant: '#bfc7d5'
-  inverse-surface: '#e5e2e1'
-  inverse-on-surface: '#313030'
-  outline: '#89919e'
-  outline-variant: '#3f4753'
-  surface-tint: '#9fcaff'
-  primary: '#9fcaff'
-  on-primary: '#003259'
-  primary-container: '#0099ff'
-  on-primary-container: '#002f54'
-  inverse-primary: '#0061a5'
-  secondary: '#c6c6c7'
-  on-secondary: '#2f3131'
-  secondary-container: '#454747'
-  on-secondary-container: '#b4b5b5'
-  tertiary: '#c8c6c5'
-  on-tertiary: '#303030'
-  tertiary-container: '#969595'
-  on-tertiary-container: '#2e2e2e'
-  error: '#ffb4ab'
-  on-error: '#690005'
-  error-container: '#93000a'
-  on-error-container: '#ffdad6'
-  primary-fixed: '#d2e4ff'
-  primary-fixed-dim: '#9fcaff'
-  on-primary-fixed: '#001d36'
-  on-primary-fixed-variant: '#00497e'
-  secondary-fixed: '#e2e2e2'
-  secondary-fixed-dim: '#c6c6c7'
-  on-secondary-fixed: '#1a1c1c'
-  on-secondary-fixed-variant: '#454747'
-  tertiary-fixed: '#e5e2e1'
-  tertiary-fixed-dim: '#c8c6c5'
-  on-tertiary-fixed: '#1b1b1c'
-  on-tertiary-fixed-variant: '#474746'
   background: '#131313'
-  on-background: '#e5e2e1'
-  surface-variant: '#353534'
+  surface: '#1f1f1f'
+  text: '#e5e2e1'
+  text-muted: '#bfc7d5'
+  primary: '#0099ff'
+  primary-soft: '#9fcaff'
+  success: '#38ce47'
+  border: 'rgba(229, 226, 225, 0.1)'
+  border-strong: '#89919e'
 typography:
   h1:
     fontFamily: Inter
-    fontSize: 48px
+    fontSize: clamp(3.6rem, 2.8rem + 3vw, 4.8rem)
     fontWeight: '700'
-    lineHeight: '1.1'
+    lineHeight: '1.15'
     letterSpacing: -0.02em
   h2:
     fontFamily: Inter
-    fontSize: 32px
-    fontWeight: '600'
-    lineHeight: '1.2'
-    letterSpacing: -0.01em
+    fontSize: clamp(3rem, 2.4rem + 2vw, 3.2rem)
+    fontWeight: '700'
+    lineHeight: '1.15'
+    letterSpacing: -0.02em
+  h3:
+    fontFamily: Inter
+    fontSize: 2.4rem
+    fontWeight: '700'
+    lineHeight: '1.15'
   body-lg:
     fontFamily: Inter
-    fontSize: 18px
+    fontSize: 1.8rem
     fontWeight: '400'
     lineHeight: '1.6'
     letterSpacing: '0'
   body-md:
     fontFamily: Inter
-    fontSize: 16px
+    fontSize: 1.6rem
     fontWeight: '400'
     lineHeight: '1.6'
     letterSpacing: '0'
   accent:
     fontFamily: Space Grotesk
-    fontSize: 14px
-    fontWeight: '400'
+    fontSize: 1.2rem
+    fontWeight: '600'
     lineHeight: '1.4'
     letterSpacing: 0.05em
   caption:
     fontFamily: Space Grotesk
-    fontSize: 12px
+    fontSize: 1.2rem
     fontWeight: '500'
     lineHeight: '1.2'
     letterSpacing: 0.1em
 spacing:
-  container-max: 1280px
-  gutter: 2rem
-  margin-x: 4rem
-  section-gap: 8rem
-  stack-sm: 0.5rem
-  stack-md: 1.5rem
-  stack-lg: 3rem
+  container-max: 1200px
+  gutter-mobile: 2rem
+  gutter-desktop: 4rem
+  section-padding-mobile: 6rem
+  section-padding-desktop: 8rem
+  sidebar-width: 16rem
+  footer-height: 10rem
+  stack-sm: 0.8rem
+  stack-md: 1.6rem
+  stack-lg: 3.2rem
+breakpoints:
+  mobile: 30em
+  projects-single-column: 36em
+  desktop: 64em
 ---
 
 ## Brand & Style
 
-This design system is a sophisticated exercise in minimalism and structural clarity, specifically tailored for high-end professional portfolios. It draws heavily from the Brutalist and Minimalist movements, prioritizing content hierarchy over decorative flourish. 
+This design system is a minimal, structural portfolio system. It prioritizes content hierarchy, generous whitespace and sharp geometry over decorative flourish.
 
-The aesthetic is defined by its architectural rigor: using thin structural lines to define boundaries and generous whitespace to create a sense of breathing room and premium quality. The emotional response is one of precision, technical expertise, and quiet confidence. It avoids all trends associated with "soft" UI—there are no shadows, no blurs, and no organic shapes. Instead, it relies on a strict grid and the juxtaposition of functional sans-serif typography with technical monospace accents to communicate a "maker" or "engineer" persona.
+The aesthetic is technical and architectural: thin structural lines define boundaries, flat surface shifts create depth, and there are no shadows, blurs or organic shapes. The only intentional gradient is the section halo described below.
 
 ## Colors
 
-The color palette is rooted in a "Pure Dark" philosophy. The background is nearly black, providing a high-contrast foundation for stark white and light gray text. 
+The palette is dark-only by design (`color-scheme: dark`).
 
-- **Primary:** An electric blue used exclusively for interactive highlights, focus states, or subtle links. It should be used sparingly to maintain the monochromatic feel.
-- **Surface Tiers:** The main background is a deep neutral (`#121212`), while secondary containers or cards use a slightly lighter gray (`#1F1F1F`) to create flat depth without shadows.
-- **Structural Lines:** Use a low-opacity white or a mid-tone gray to draw the 1px lines that separate the header, footer, and main content blocks.
-- **Text:** High-importance content uses near-white (`#F5F5F5`), while metadata and secondary descriptions use a muted gray (`#EBEBEB` at 60-70% opacity) to establish hierarchy.
+- **Background:** `#131313`.
+- **Surface:** `#1f1f1f` for cards and status badges.
+- **Text:** `#e5e2e1` for primary content.
+- **Muted text:** `#bfc7d5` for descriptions and metadata.
+- **Primary:** `#0099ff` for interactive highlights, focus rings and active navigation.
+- **Soft primary:** `#9fcaff` for small accent labels.
+- **Success:** `#38ce47` for availability dots.
+- **Borders:** `rgba(229, 226, 225, 0.1)` for structural lines; `#89919e` for hover/focus borders.
+
+### Section halo
+
+Each section opens and closes with the `--section-glow` radial gradient: a subtle blue ellipse over the section boundary. It is the single intentional exception to the “no gradients” rule. Do not add other decorative gradients.
 
 ## Typography
 
-Typography is the primary visual driver of this design system. We utilize a dual-font strategy: **Inter** for all functional reading and core interface elements, and **Space Grotesk** (as a modern monospace-adjacent substitute for technical feel) for metadata, labels, and accents.
+The system uses two families:
 
-Headlines should be tight, bold, and authoritative. Body text requires generous line heights to ensure readability against the dark background. The "Accent" and "Caption" styles should often be set in uppercase or with increased letter spacing to lean into the technical, blueprint-like aesthetic of the portfolio.
+- **Inter** for reading, headings and interface text.
+- **Space Grotesk** as the technical accent for labels, tags, badges, buttons and metadata.
+
+Space Grotesk is **not** a monospace font. The token is `--font-accent`, not `--font-mono`.
+
+Headings are tight and bold. Body copy uses generous line height. Accent and caption styles are usually uppercase with increased letter spacing.
 
 ## Layout & Spacing
 
-This design system uses a **Fixed Grid** model for desktop and a fluid model for smaller breakpoints. The layout is structured around horizontal "bands" separated by 1px solid lines.
+The layout is mobile-first and fluid until the desktop sidebar appears.
 
-- **The Grid:** A 12-column grid with wide gutters (2rem) and significant side margins (4rem+) to create a central column of content that feels curated.
-- **Vertical Rhythm:** Sections are separated by large gaps (8rem) to force the user to focus on one project or content block at a time.
-- **The Line:** Every major section change (Header to Main, Main to Footer) must be demarcated by a 1px border (`#F5F5F5` at 10% opacity). These lines should span the full width of the viewport, even if the content inside is constrained.
+- **Container:** `1200px` maximum width, centered with `2rem` gutters on mobile and `4rem` on desktop.
+- **Hero:** 12-column grid on desktop; two columns of content. This is the only section that reserves `100svh`.
+- **Sidebar:** fixed `16rem` at `>=64em`, with the CV action pinned to the bottom.
+- **Footer:** `10rem` minimum height, matching the sidebar CV block.
+- **Sections:** `6rem` vertical padding on mobile and `8rem` on desktop.
+- **Project grid:** `auto-fit` with a `32rem` minimum card width; single column below `36em`.
+
+### Structural lines
+
+Major boundaries (header, sidebar and section separators) use `2px` lines. Cards and internal surfaces use `1px` lines. Lines span the content width and fade at the edges where the design calls for it.
 
 ## Elevation & Depth
 
-Depth in this system is entirely **flat and 2D**. We explicitly reject shadows, blurs, or gradients.
+Depth is flat and 2D.
 
-- **Hierarchy through Contrast:** Importance is conveyed by text weight and color brightness.
-- **Structural Outlines:** Instead of using shadows to lift an element, use a 1px solid border to define it.
-- **Tonal Layering:** To separate a card or a code block from the background, use a subtle shift in fill color (e.g., moving from `#121212` to `#1F1F1F`). 
-- **The "Glassless" Effect:** Elements should feel like they are etched into a single plane or stacked as thin sheets of metal, rather than floating in 3D space.
+- **Hierarchy through contrast:** text weight and color brightness carry importance.
+- **Structural outlines:** use a `1px` border instead of a shadow.
+- **Tonal layering:** cards use `#1f1f1f` over the `#131313` background.
+- **No shadows or blurs:** elements are etched into a single plane.
 
 ## Shapes
 
-The shape language is **geometric and sharp**. To maintain the technical, architectural feel inspired by the reference, a `0px` border radius is the default for almost all elements.
+The shape language is geometric and sharp.
 
-- **Buttons & Inputs:** Hard 90-degree corners.
-- **Images:** Strictly rectangular with no rounding.
-- **Exception:** Small "pills" or tags may use a full border radius only if they are being used as secondary UI "chips," but the preferred style remains sharp.
+- **Default radius:** `0`.
+- **Buttons and inputs:** hard 90-degree corners.
+- **Images:** rectangular, no rounding.
+- **Tags:** keep square corners; no pill shapes in the current design.
 
 ## Components
 
 ### Buttons
-Buttons are rectangular with no radius. The primary button is an "Inverted" style: white background with black text. Secondary buttons use a transparent background with a 1px white border. Hover states should be a simple color inversion.
 
-### Chips / Tags
-Used for categories or tech stacks. These use the `Space Grotesk` font in uppercase. They are styled as light-gray backgrounds with dark-gray text, or simply outlined.
+Rectangular, no radius, minimum height `44px`.
 
-### Cards
-Cards are not "containers" in the traditional sense. They are defined by their alignment within the grid and an optional 1px top border. Do not wrap portfolio items in boxed containers unless the background color needs to change.
+- **Primary:** inverted; light background with dark text. Hover/focus inverts back to transparent.
+- **Secondary:** transparent with a `1px` border. Hover/focus fills with the text color.
+- **CV:** the header action uses the accent font, uppercase, with a `44px` minimum height.
 
-### Input Fields
-Minimalist 1px bottom border only. The label sits above in the `Caption` monospace style. Focus state changes the bottom border to the Primary Color (`#0099FF`).
+### Project cards
 
-### Structural Separators
-A signature component. A horizontal rule `<hr>` used to divide sections. On hover, these lines can subtly brighten to indicate interactivity in adjacent sections.
+- Image on top, information below.
+- Title, description, code link and tags are always visible. There is no hover-only overlay.
+- Each card is an `article` labelled by its title.
+- The code link includes the project name and a new-tab warning in its accessible name.
+
+### Tags
+
+Small technology labels use Space Grotesk uppercase at `1.2rem` minimum, with a `1px` border and the primary color.
+
+### Status badges
+
+Availability badges combine a success dot with uppercase accent text on a `#1f1f1f` surface.
+
+### Input fields
+
+Not used yet. If a form is added, use a single `1px` bottom border and the primary color for focus.
+
+## Accessibility
+
+- Skip link visible on keyboard focus.
+- Global `:focus-visible` outline in the primary color.
+- Minimum touch target of `44px` for interactive controls.
+- `prefers-reduced-motion` disables animations and smooth scrolling.
+- Sections are named with `aria-labelledby`; project articles are named by their headings.
+- The site must remain usable with JavaScript disabled.
+
+## Structural separators
+
+Section separators are horizontal lines with a soft fade at both ends. They are decorative and should not be the only way to understand section boundaries.

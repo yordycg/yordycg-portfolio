@@ -5,9 +5,9 @@
 
 ## Estado actual
 
-- Fase activa: ninguna — F3 cerrada; próxima F4.1.
-- Próxima acción: F4.1 - quitar `transition: all`.
-- Release actual: v1.2 en GitHub Pages
+- Fase activa: ninguna — F4 cerrada; próxima F5.2.
+- Próxima acción: F5.2 - completar JSON-LD.
+- Release actual: v1.3 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -94,18 +94,18 @@
 
 ## Fase 4 — CSS y JS
 
-**Estado:** Pendiente
+**Estado:** Cerrada y publicada en v1.3
 **Objetivo:** limpiar el sistema visual y eliminar deuda técnica del front-end.
 **Depende de:** Fase 3.
 **Criterio de salida:** sin anti-patrones, sin JS innecesario y responsive verificado.
 
-- [ ] F4.1 Quitar `transition: all`.
-- [ ] F4.2 Renombrar `--font-mono` o usar una monoespaciada real.
-- [ ] F4.3 Reservar `100svh` solo para el hero.
-- [ ] F4.4 Subir tags de 11px a 12px mínimo.
-- [ ] F4.5 Quitar `console.log` y JS innecesario.
-- [ ] F4.6 Sincronizar `docs/mockup/DESIGN.md` con los tokens reales.
-- [ ] F4.7 QA visual 320/375/768/1440.
+- [x] F4.1 Quitar `transition: all`: tokens `--transition-colors`, `--transition-border` y `--transition-transform`; se eliminó `--transition-smooth`.
+- [x] F4.2 Renombrar `--font-mono` a `--font-accent`: Space Grotesk es acento, no monoespaciada; fallback `sans-serif`.
+- [x] F4.3 Reservar `100svh` solo para el hero: se retiró de projects, contact y del sidebar; se usa `inset` para la altura del sidebar.
+- [x] F4.4 Subir tags de 11px a 12px mínimo: `.project__card-tag` a `1.2rem`.
+- [x] F4.5 Quitar `console.log` y JS innecesario: no había logs; se añadió guarda para `IntersectionObserver` y se mantiene solo el observer del estado activo.
+- [x] F4.6 Sincronizar `docs/mockup/DESIGN.md` con los tokens reales: colores, tipografía, layout, bordes y componentes; el halo de sección queda documentado como excepción intencional. Se eliminaron tokens sin uso y se actualizó la guía del CSS.
+- [x] F4.7 QA visual 320/375/768/1024/1440: sin overflow, axe 0 violaciones, Lighthouse a11y 100 y performance 100; probados teclado, reduced motion y sin JS.
 
 ## Fase 5 — SEO técnico
 
@@ -198,6 +198,15 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F4 — CSS y JS (v1.3)
+
+- Transiciones explícitas por propiedad; se elimina `transition: all`.
+- `--font-mono` pasa a `--font-accent` (Space Grotesk no es monoespaciada).
+- `100svh` queda reservado al hero; projects y contact recuperan altura natural.
+- Tags a 12px; tokens sin uso eliminados y guía del CSS actualizada.
+- `DESIGN.md` sincronizado con tokens reales; halo de sección documentado como excepción.
+- QA: sin overflow de 320 a 1440, axe 0, Lighthouse a11y 100 y performance 100.
 
 ### F3 — Accesibilidad y UX (v1.2)
 
