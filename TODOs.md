@@ -1,13 +1,13 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-30
+> Última actualización: 2026-10-31
 
 ## Estado actual
 
-- Fase activa: ninguna — F6 cerrada; próxima F7.1.
-- Próxima acción: F7.1 - README con URL, screenshot, estructura y scripts.
-- Release actual: v1.5 en GitHub Pages
+- Fase activa: ninguna — F7 cerrada; próxima F8.1.
+- Próxima acción: F8.1 - Lighthouse mobile/desktop.
+- Release actual: v1.6 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -29,7 +29,7 @@
 - **D5:** No habrá demos hasta tener evidencia real.
 - **D6:** Dark-only por diseño.
 - **D7:** El inglés no se publica hasta poder sostener una entrevista técnica en inglés. Sin sección Idiomas.
-- **D8:** El rubro anterior (proyectos de arquitectura, 2017–2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
+- **D8:** El rubro anterior (arquitectura, dic 2016 – dic 2022) no se menciona en el sitio. En el CV va una línea neutra, sin funciones. El sitio lidera con la identidad nueva.
 - **D9:** Disponibilidad = oportunidad laboral · remoto. No se usa "práctica": esa palabra significa la pasantía curricular, no trabajo remunerado. Sin distinción part-time/full-time en el badge; la ventana concreta (full-time dic–feb) vive en Contacto.
 - **D10:** Ambos proyectos son académicos. Sin métricas de uso: se usa alcance técnico verificable.
 - **D11:** El certificado del bootcamp no se publica en el sitio ni se versiona en el repositorio (contiene RUT). Vive en almacenamiento privado, fuera de Git. Si se muestra, solo versión redactada.
@@ -48,7 +48,7 @@
 
 - [x] F1.1 Confirmar inglés, fechas, disponibilidad, métricas y teléfono.
   - Inglés: A2 autodidacta, sin certificado → no se publica (D7).
-  - Fechas: Ariancif dic 2017 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
+  - Fechas: Ariancif dic 2016 – dic 2022 · bootcamp mar–ago 2023 · Ing. Informática mar 2024 – nov 2027.
   - Disponibilidad: oportunidad laboral · remoto. Ventana full-time dic–feb (verano): clases hasta el 22 de noviembre y regreso la segunda semana de marzo.
   - Teléfono: no se publica en el sitio; el CV descargable sí lo incluye (D16). Métricas: se recogen en "Proyectos — evaluación final" (P1).
 - [x] F1.2 Reescribir title, description y OG (description de 152 caracteres; OG y Twitter con URL absoluta).
@@ -140,17 +140,18 @@
 
 ## Fase 7 — README, CV y LinkedIn
 
-**Estado:** Pendiente
+**Estado:** Cerrada y publicada en v1.6
 **Objetivo:** alinear el paquete completo: repositorio, sitio, CV y LinkedIn.
 **Depende de:** Fase 1.
 **Criterio de salida:** README, CV y LinkedIn consistentes con el sitio y orientados al rol.
 
-- [ ] F7.1 README con URL, screenshot, estructura y scripts.
-- [ ] F7.2 CV con link al portfolio. El PDF publicado hoy es anterior a F1: puede seguir pidiendo "práctica" y no menciona el sitio.
-- [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
-- [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
+- [x] F7.1 README con URL, screenshots, estructura y scripts; `npm run screenshots` genera desktop/móvil.
+- [x] F7.2 CV con link al portfolio: fuente editable en `docs/cv/`, PDF generado con `npm run cv`; una página, ATS-friendly, teléfono y sin foto.
+- [x] F7.3 Empleo anterior (dic 2016 – dic 2022): una línea neutra en el CV, sin funciones (D8).
+- [x] F7.4 Añadir Django, React Native y Bootstrap al CV.
 - [x] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado. Decisión v1.1.1: certificado fuera del repositorio e historial; el sitio no publica teléfono y el CV descargable sí lo incluye (D16).
-- [ ] F7.7 Actualizar LinkedIn: headline, Acerca de, certificación y experiencia, alineados con el sitio.
+- [x] F7.7 Actualizar LinkedIn: copy y guía en `docs/linkedin.md`; perfil actualizado y confirmado por el autor. LinkedIn bloquea la verificación automatizada con reCAPTCHA.
+- [x] F7.8 Documentar la matriz de consistencia Portfolio/CV/LinkedIn en `docs/profile-consistency.md`.
 
 ## Fase 8 — QA y release
 
@@ -198,6 +199,14 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F7 — README, CV y LinkedIn (v1.6)
+
+- README con URL, screenshots, estructura y scripts.
+- CV reconstruido como fuente HTML/CSS + PDF con Playwright; ATS-friendly, una página, TrueType, teléfono y portfolio.
+- Línea neutra de arquitectura (dic 2016 – dic 2022) y stack Python-first con C#/.NET secundario.
+- Guía de LinkedIn con copy y pasos desktop/móvil; perfil actualizado.
+- Matriz de consistencia entre portfolio, CV y LinkedIn.
 
 ### F6 — Tooling y CI (v1.5)
 

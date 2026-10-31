@@ -34,3 +34,6 @@ yarn-error.log*
 
 # Credenciales privadas (RUT, documentos personales)
 docs/credentials/*.pdf
+
+# Export temporal del perfil de LinkedIn
+docs/Profile.pdf

@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #1a1a1a;
+  background: #ffffff;
+  font-family: Arial, "Liberation Sans", sans-serif;
+  font-size: 9.8pt;
+  line-height: 1.42;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: #0066b3;
+  text-decoration: none;
+}
+
+.cv {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 16mm 12mm;
+  background: #ffffff;
+}
+
+.cv__header {
+  padding-block-end: 3mm;
+  border-block-end: 1.5px solid #0099ff;
+  margin-block-end: 4mm;
+}
+
+.cv h1 {
+  margin: 0;
+  font-size: 24pt;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.cv__role {
+  margin: 1.5mm 0 0;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.cv__availability {
+  margin: 1mm 0 0;
+  font-size: 8.7pt;
+  color: #555555;
+}
+
+.cv__contact {
+  margin: 2mm 0 0;
+  font-size: 8.2pt;
+  line-height: 1.5;
+  color: #333333;
+  overflow-wrap: anywhere;
+}
+
+.cv__section {
+  margin-block-start: 4.5mm;
+}
+
+.cv h2 {
+  margin: 0 0 2mm;
+  padding-block-end: 1mm;
+  border-block-end: 1px solid #d9d9d9;
+  color: #0066b3;
+  font-family: Arial, "Liberation Sans", sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cv p {
+  margin: 0 0 1.2mm;
+}
+
+.cv__entry {
+  margin-block-end: 3mm;
+  break-inside: avoid;
+}
+
+.cv__entry-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.cv__entry-heading h3 {
+  margin: 0;
+  font-size: 10.2pt;
+  font-weight: 700;
+}
+
+.cv__entry-heading span {
+  flex: 0 0 auto;
+  color: #555555;
+  font-size: 9pt;
+  white-space: nowrap;
+}
+
+.cv__meta {
+  margin: 0.5mm 0 1mm;
+  color: #555555;
+  font-size: 8.7pt;
+}
+
+.cv ul {
+  margin: 0 0 0 4.5mm;
+  padding: 0;
+}
+
+.cv li {
+  margin: 0 0 0.8mm;
+  padding-inline-start: 1mm;
+}
+
+.cv__neutral {
+  margin-block-start: 1mm;
+  color: #444444;
+  font-size: 9.5pt;
+}
+
+.cv ul.cv__skills {
+  margin: 0;
+  list-style: none;
+}
+
+.cv__skills li {
+  margin: 0 0 1mm;
+  padding: 0;
+}
+
+.cv__link {
+  margin-block-start: 0.5mm;
+  font-size: 8.7pt;
+  overflow-wrap: anywhere;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}

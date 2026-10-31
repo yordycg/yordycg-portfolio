@@ -22,3 +22,11 @@ check:
 # Regenera la og:image (1200x630). Ver scripts/og.sh
 og:
   npm run og
+
+# Regenera el CV PDF desde docs/cv/index.html
+cv:
+  npm run cv
+
+# Regenera los screenshots del README
+screenshots:
+  npm run screenshots
