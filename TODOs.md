@@ -1,13 +1,13 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-30
+> Última actualización: 2026-10-31
 
 ## Estado actual
 
-- Fase activa: ninguna — F6 cerrada; próxima F7.1.
-- Próxima acción: F7.1 - README con URL, screenshot, estructura y scripts.
-- Release actual: v1.5 en GitHub Pages
+- Fase activa: Fase 7 - README, CV y LinkedIn.
+- Próxima acción: F7.7 - aplicar el copy de LinkedIn desde `docs/linkedin.md`.
+- Release actual: v1.5 en GitHub Pages; v1.6 pendiente de F7.7.
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -140,17 +140,18 @@
 
 ## Fase 7 — README, CV y LinkedIn
 
-**Estado:** Pendiente
+**Estado:** En curso — F7.1–F7.4 hechos; F7.7 pendiente de aplicación manual
 **Objetivo:** alinear el paquete completo: repositorio, sitio, CV y LinkedIn.
 **Depende de:** Fase 1.
 **Criterio de salida:** README, CV y LinkedIn consistentes con el sitio y orientados al rol.
 
-- [ ] F7.1 README con URL, screenshot, estructura y scripts.
-- [ ] F7.2 CV con link al portfolio. El PDF publicado hoy es anterior a F1: puede seguir pidiendo "práctica" y no menciona el sitio.
-- [ ] F7.3 Empleo anterior (2017–2022): una sola línea neutra en el CV, sin funciones (D8).
-- [ ] F7.4 Añadir Django, React Native y Bootstrap al CV.
+- [x] F7.1 README con URL, screenshots, estructura y scripts; `npm run screenshots` genera desktop/móvil.
+- [x] F7.2 CV con link al portfolio: fuente editable en `docs/cv/`, PDF generado con `npm run cv`; una página, ATS-friendly, teléfono y sin foto.
+- [x] F7.3 Empleo anterior (2017–2022): una línea neutra en el CV, sin funciones (D8).
+- [x] F7.4 Añadir Django, React Native y Bootstrap al CV.
 - [x] F7.6 Revisar privacidad del teléfono y del RUT en CV y certificado. Decisión v1.1.1: certificado fuera del repositorio e historial; el sitio no publica teléfono y el CV descargable sí lo incluye (D16).
-- [ ] F7.7 Actualizar LinkedIn: headline, Acerca de, certificación y experiencia, alineados con el sitio.
+- [ ] F7.7 Actualizar LinkedIn: copy y guía listos en `docs/linkedin.md`; falta aplicarlos manualmente y verificar.
+- [x] F7.8 Documentar la matriz de consistencia Portfolio/CV/LinkedIn en `docs/profile-consistency.md`.
 
 ## Fase 8 — QA y release
 
@@ -198,6 +199,14 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F7 — README, CV y LinkedIn (en curso)
+
+- README con URL, screenshots, estructura y scripts.
+- CV reconstruido como fuente HTML/CSS + PDF con Playwright; ATS-friendly, una página, TrueType, teléfono y portfolio.
+- Línea neutra de arquitectura y stack Python-first con C#/.NET secundario.
+- Guía de LinkedIn con copy y pasos desktop/móvil; pendiente de aplicar.
+- Matriz de consistencia entre portfolio, CV y LinkedIn.
 
 ### F6 — Tooling y CI (v1.5)
 
