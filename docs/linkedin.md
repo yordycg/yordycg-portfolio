@@ -21,9 +21,9 @@ Informática. Trabajo con Python/Django y C#/.NET, modelado de datos con SQL
 Server/MySQL y desarrollo móvil con React Native.
 
 Egresé de un bootcamp full-stack y complemento la carrera con proyectos propios
-de backend, APIs y datos. Antes de mi transición a TI trabajé en el sector de
-arquitectura (2017–2022), experiencia que me dejó hábitos de planificación y
-trabajo con equipos.
+de backend y datos. Antes de mi transición a TI trabajé en el sector de
+arquitectura (dic 2016 – dic 2022), experiencia que me dejó hábitos de
+planificación y trabajo con equipos.
 
 Busco mi primera oportunidad laboral remota como desarrollador backend. Tengo
 disponibilidad full-time entre diciembre y febrero.
@@ -53,7 +53,7 @@ a una línea neutra:
 Experiencia previa en el sector de arquitectura. Sin detalle de funciones.
 ```
 
-No borrar los puestos: crearía un hueco 2017–2022 y perdería contexto.
+No borrar los puestos: crearía un hueco dic 2016 – dic 2022 y perdería contexto.
 
 ### Educación
 

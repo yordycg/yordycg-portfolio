@@ -10,7 +10,7 @@ detalle. No deben contradecirse.
 | Rol objetivo | Desarrollador Backend en Formación | Desarrollador Backend en Formación | Desarrollador Backend en Formación |
 | Bootcamp | Sí, en el hero | Sí, en Educación | Sí, en Educación/Certificación |
 | Grado en curso | Sí, tercer año | Sí, 2024–2027 | Sí, 2024–2027 |
-| Arquitectura 2017–2022 | No se menciona (D8) | Una línea neutra | Puestos reales, sin detalle de funciones |
+| Arquitectura dic 2016 – dic 2022 | No se menciona (D8) | Una línea neutra | Puestos reales, sin detalle de funciones |
 | Práctica MPM | No se menciona | Sí, con bullets de desarrollo | Sí, con bullets de desarrollo |
 | Python/Django | Sí, en el stack | Primero en perfil y habilidades | Primero en headline y skills |
 | C#/.NET | Sí, en el stack | Segundo, como stack complementario | Segundo, como stack complementario |
