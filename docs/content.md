@@ -47,13 +47,22 @@ Decisiones que este hero fija:
 
 ## Proyectos
 
-Pendiente. Se define en la fase "Proyectos — evaluación final" (P1.5), después de evaluar
-cada repositorio por separado. En Fase 1 la sección queda como está.
+Copy provisional de las tarjetas. P1.5 lo reescribirá como caso de estudio después de
+evaluar cada repositorio. Las imágenes actuales son placeholders y llevan `alt=""` hasta
+que P1.4 las reemplace por capturas reales.
 
-- La primera tarjeta se rotula `Sistema Veterinario`, igual que la imagen y el repositorio.
+- **Sistema Veterinario**
+  - Descripción: `Relaciones de datos entidad-relación complejas (Dueños, Mascotas, Veterinarios, Citas, etc.)`
+  - Stack: `C# · Entity Framework Core · SQL Server · Docker · Bootstrap 5`
+  - Enlace: `https://github.com/yordycg/sistemaVeterinario`
+- **Sistema de Arriendo de Canchas**
+  - Descripción: `Gestión de reservas y disponibilidad de los recursos.`
+  - Stack: `Python · Django · MySQL · Docker · Bootstrap 5`
+  - Enlace: `https://github.com/yordycg/arriendo-canchas`
+
 - Los enlaces `Demo` se retiraron en v1.1.1: apuntaban al README, no a una demo.
 - Desde F3.4 la descripción y el enlace `Código` están siempre visibles; ya no hay
-  overlay dependiente de hover. P1.5 completa el copy de los casos de estudio.
+  overlay dependiente de hover.
 
 ---
 
@@ -83,18 +92,16 @@ cada repositorio por separado. En Fase 1 la sección queda como está.
 
 ---
 
-## Pendiente de confirmar
+## Notas de contenido
 
-Abierto, no bloquea la escritura del sitio:
-
-- **Año de egreso:** no se publica en el sitio (el párrafo del hero no lleva fechas), pero
-  afecta al CV (F7.2). Verificar si el programa es de 4 años o si el egreso real es 2028.
+- **Año de egreso:** el sitio no publica fechas; el CV y LinkedIn usan `2024–2027`. Si el
+  egreso real cambia, actualizar esas dos superficies.
 - **Stack defendible:** auditado en F1.14 con la prueba de defensa. `EF Core` y `MySQL` salieron de
   la línea del hero: siguen en las etiquetas de los proyectos, donde son un hecho verificable.
   `C#`, `.NET`, `SQL Server`, `Python`, `Django` y `HTML/CSS/JS` se mantienen.
 
 ## Fuera del sitio a propósito
 
-- **Experiencia en proyectos de arquitectura (2017–2022):** no se menciona en el sitio.
+- **Experiencia en arquitectura (dic 2016 – dic 2022):** no se menciona en el sitio.
   En el CV va una sola línea neutra, sin funciones (F7.3). El sitio lidera con la identidad
   nueva; el historial laboral completo vive en el CV y en LinkedIn.

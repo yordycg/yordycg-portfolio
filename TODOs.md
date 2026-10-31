@@ -5,9 +5,9 @@
 
 ## Estado actual
 
-- Fase activa: ninguna — F7 cerrada; próxima F8.1.
-- Próxima acción: F8.1 - Lighthouse mobile/desktop.
-- Release actual: v1.6 en GitHub Pages
+- Fase activa: ninguna — F8 cerrada; próxima P1.1.
+- Próxima acción: P1.1 - evaluar `sistemaVeterinario`.
+- Release actual: v2.0 en GitHub Pages
 - Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
 
 ## Convenciones
@@ -155,17 +155,17 @@
 
 ## Fase 8 — QA y release
 
-**Estado:** Pendiente
+**Estado:** Cerrada y publicada en v2.0
 **Objetivo:** publicar una versión estable y verificable.
 **Depende de:** Fases 1-7.
 **Criterio de salida:** release v2.0 con QA completo y PR integrado.
 
-- [ ] F8.1 Lighthouse mobile/desktop.
-- [ ] F8.2 Pruebas de responsive.
-- [ ] F8.3 Revisión de links.
-- [ ] F8.4 Revisión de contenido ES (y EN cuando Fase 2 se publique).
-- [ ] F8.5 PR `develop` → `main`.
-- [ ] F8.6 Tag y release v2.0.
+- [x] F8.1 Lighthouse mobile/desktop: local 99/100/100/100 mobile y 100/100/100/100 desktop; live 98/100/100/100 mobile y 100/100/100/100 desktop.
+- [x] F8.2 Pruebas de responsive: 320, 360, 375, 414, 667×375, 768, 1024, 1440 y 1920 sin overflow; header, sidebar, grid, contacto y 404 verificados.
+- [x] F8.3 Revisión de links: 28 internos, 0 roto; GitHub, repos y LinkedIn 200; assets, CV, manifest, sitemap, robots y 404 correctos.
+- [x] F8.4 Revisión de contenido ES: copy de Proyectos sincronizado en `docs/content.md`, arquitectura `dic 2016 – dic 2022`, sin teléfono/Demo/inglés; matriz Portfolio/CV/LinkedIn revisada.
+- [x] F8.5 PR `develop` → `main`: PR de release v2.0.
+- [x] F8.6 Tag y release v2.0: tag anotado, GitHub Release, deploy y verificación live.
 
 ## Proyectos — evaluación final
 
@@ -199,6 +199,14 @@
 - [ ] Privacidad: pedir a soporte de GitHub la purga de vistas cacheadas del commit antiguo del certificado.
 
 ## Historial
+
+### F8 — QA y release (v2.0)
+
+- Lighthouse local/live mobile y desktop; accesibilidad, SEO y best practices en 100.
+- Responsive de 320 a 1920 sin overflow; 404 y targets táctiles verificados.
+- Link checker interno y revisión de assets/enlaces externos.
+- Contenido ES auditado y `docs/content.md` sincronizado; placeholders de proyectos quedan para P1.4.
+- Release v2.0 con PR, tag, deploy y verificación live.
 
 ### F7 — README, CV y LinkedIn (v1.6)
 
