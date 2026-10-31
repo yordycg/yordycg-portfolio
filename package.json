@@ -13,13 +13,15 @@
     "lint": "biome lint src/",
     "format": "biome format --write src/",
     "format:check": "biome format src/",
-    "html": "html-validate src/index.html src/404.html",
+    "html": "html-validate src/index.html src/404.html docs/cv/index.html",
     "links": "node scripts/check-links.mjs",
     "a11y": "node scripts/qa-a11y.mjs",
     "lighthouse": "lhci autorun",
     "og": "bash scripts/og.sh",
     "audit:runtime": "npm audit --omit=dev",
-    "check": "npm run lint && npm run format:check && npm run html"
+    "check": "npm run lint && npm run format:check && npm run html",
+    "cv": "node scripts/cv.mjs",
+    "screenshots": "node scripts/screenshot.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
