@@ -22,7 +22,7 @@ Primera pantalla y, a la vez, todo el "sobre mí" del sitio. Absorbe la antigua 
 - **badge:** `Disponible · remoto`
 - **h1:** `Yordy Carmona`
 - **subtítulo:** `Desarrollador backend en formación`
-- **stack:** `C# · .NET · SQL Server · Python · Django · HTML/CSS/JS`
+- **stack:** `Python · Django · SQL · Docker · HTML/CSS/JS`
 - **párrafo 1:** `Egresado de un bootcamp full-stack y actualmente estudiante de tercer año de Ingeniería en Informática. Explorando activamente nuevas formas de aprender y crecer en el sector TI.`
 - **párrafo 2:** `Busco mi primera oportunidad laboral para integrarme en un equipo real y aportar en problemas concretos.`
 - **botones:** `GitHub` · `LinkedIn` · `Descargar CV`
@@ -53,7 +53,7 @@ que P1.4 las reemplace por capturas reales.
 
 - **Sistema Veterinario**
   - Descripción: `Relaciones de datos entidad-relación complejas (Dueños, Mascotas, Veterinarios, Citas, etc.)`
-  - Stack: `C# · Entity Framework Core · SQL Server · Docker · Bootstrap 5`
+  - Stack: `C# · Entity Framework Core · SQL Server · Bootstrap 5`
   - Enlace: `https://github.com/yordycg/sistemaVeterinario`
 - **Sistema de Arriendo de Canchas**
   - Descripción: `Gestión de reservas y disponibilidad de los recursos.`
@@ -96,9 +96,11 @@ que P1.4 las reemplace por capturas reales.
 
 - **Año de egreso:** el sitio no publica fechas; el CV y LinkedIn usan `2024–2027`. Si el
   egreso real cambia, actualizar esas dos superficies.
-- **Stack defendible:** auditado en F1.14 con la prueba de defensa. `EF Core` y `MySQL` salieron de
-  la línea del hero: siguen en las etiquetas de los proyectos, donde son un hecho verificable.
-  `C#`, `.NET`, `SQL Server`, `Python`, `Django` y `HTML/CSS/JS` se mantienen.
+- **Stack defendible:** auditado en F1.14 con la prueba de defensa y revisado el 2026-11-01 con
+  el perfil Python-first (D17). La línea del hero pasa a `Python · Django · SQL · Docker ·
+  HTML/CSS/JS`. `C#`, `.NET` y `SQL Server` salen del hero y quedan en las etiquetas de la
+  tarjeta del Sistema Veterinario, donde son un hecho verificable. `EF Core` y `MySQL` siguen
+  en las etiquetas de sus proyectos.
 
 ## Fuera del sitio a propósito
 
