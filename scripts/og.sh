@@ -31,7 +31,7 @@ cat >"$TMP/og.svg" <<'SVG'
   <rect x="420" y="360" width="360" height="4" fill="#0099ff" />
 
   <text x="600" y="420" fill="#bfc7d5" font-family="DejaVu Sans Mono, monospace" font-size="32" text-anchor="middle" letter-spacing="1">DESARROLLADOR BACKEND EN FORMACIÓN</text>
-  <text x="600" y="466" fill="#89919e" font-family="DejaVu Sans Mono, monospace" font-size="24" text-anchor="middle" letter-spacing="0.5">C# · .NET · SQL SERVER · PYTHON · DJANGO</text>
+  <text x="600" y="466" fill="#89919e" font-family="DejaVu Sans Mono, monospace" font-size="24" text-anchor="middle" letter-spacing="0.5">PYTHON · DJANGO · SQL · DOCKER · HTML/CSS/JS</text>
 
   <circle cx="86" cy="568" r="6" fill="#38ce47" />
   <text x="104" y="575" fill="#bfc7d5" font-family="DejaVu Sans Mono, monospace" font-size="22">DISPONIBLE · REMOTO</text>
