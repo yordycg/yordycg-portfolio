@@ -1,14 +1,14 @@
 # Roadmap — yordycg-portfolio
 
 > Fuente de verdad del trabajo. Una fase activa a la vez.
-> Última actualización: 2026-10-31
+> Última actualización: 2026-11-01
 
 ## Estado actual
 
-- Fase activa: ninguna — F8 cerrada; próxima P1.1.
-- Próxima acción: P1.1 - evaluar `sistemaVeterinario`.
+- Fase activa: ninguna en el sitio — P1 bloqueada hasta `v2.0` de `arriendo-canchas`.
+- Próxima acción: trabajo de proyectos en `arriendo-canchas/TASKS.md` (F0).
 - Release actual: v2.0 en GitHub Pages
-- Base definida: decisiones D7–D16 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura y privacidad del CV)
+- Base definida: decisiones D7–D19 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura, privacidad del CV, perfil, gate de proyectos y uso de IA)
 
 ## Convenciones
 
@@ -38,6 +38,9 @@
 - **D14:** Regla del stack: solo se publica lo que pasa la prueba de defensa (explicarlo 60 s sin notas y poder modificarlo). Lo que no pase no se publica; no hay lista de "aprendiendo".
 - **D15:** Nomenclatura: clases CSS, `id`, nombres de archivo y de atributo en inglés; `aria-label`, `alt`, valores de `data-tooltip` y copy visible en español.
 - **D16:** El sitio no publica el teléfono. El CV descargable sí lo incluye, por decisión de reclutamiento; se revisa en F7.6.
+- **D17:** Perfil objetivo = backend Python/Django. El stack del hero pasa a liderar con Python y Django; `C#/.NET/SQL Server` se conserva como rango en las etiquetas de proyecto, no como eje de identidad.
+- **D18:** El código heredado se reutiliza; la evidencia se reconstruye. Un proyecto no entra al sitio por su origen (académico o propio) sino por pasar el gate de `v2.0`: tests verdes en CI, entorno reproducible, demo, README con decisiones y prueba de defensa. Lo que no lo pase se archiva.
+- **D19:** Uso de IA declarado. Zonas de trabajo en cada proyecto: **roja** (esquema, reglas de negocio, auth, aserciones de tests, ADR y README de decisiones → escribe el autor), **verde** (plantillas, config, CI, seeds → puede escribir la IA) y **azul** (revisión, casos borde, tests que fallan, preguntas de defensa → IA obligatoria). Regla de reescritura: no se commitea código que el autor no pueda rehacer desde cero. Regla de los 60 segundos: antes de cada commit, el diff se explica en voz alta. Se declara en la sección "Proceso" del README del proyecto.
 
 ## Fase 1 — Contenido e IA
 
@@ -169,21 +172,31 @@
 
 ## Proyectos — evaluación final
 
-> **Nota de alcance (D13):** los proyectos se abordan al finalizar la base (portfolio + CV + LinkedIn).
-> Se evalúa cada proyecto por separado y se mejoran todos antes de publicarlos como casos de estudio.
-> Aquí se recogen además las métricas de alcance técnico que F1.1 dejó pendientes.
+> **Nota de alcance (D13 + D18):** los proyectos se trabajan fuera de este repositorio.
+> El estado y los próximos pasos viven en `arriendo-canchas/TASKS.md`. Aquí solo queda el
+> vínculo con el sitio, para no mantener dos fuentes de verdad: el análisis se hace allí y el
+> sitio consume el resultado.
 
-**Estado:** Pendiente — se abre después de Fase 8
-**Depende de:** Fases 1–8.
-**Criterio de salida:** cada proyecto tiene alcance documentado, repo presentable y evidencia real (sin placeholders), y el autor puede explicar y modificar su código sin IA.
+**Estado:** Bloqueada — arranca cuando `arriendo-canchas` publique `v2.0`
+**Depende de:** `arriendo-canchas/TASKS.md` F0–F7.
+**Criterio de salida:** cada proyecto publicado cumple el gate de D18; las tarjetas tienen capturas reales (sin placeholders) y caso de estudio.
 
-- [ ] P1.1 Evaluar `sistemaVeterinario` (C#/EF Core/SQL Server): entidades, módulos, auth, tests, Docker, estado del repo.
-- [ ] P1.2 Evaluar `arriendo-canchas` (Django/MySQL): modelos, vistas/endpoints, auth, tests, Docker, estado del repo.
-- [ ] P1.3 Decidir y aplicar mejoras por proyecto (código, README, entorno reproducible).
-- [ ] P1.4 Conseguir evidencia real (capturas o demo ejecutable) y retirar placeholders. Las imágenes actuales (`project-2.webp`, `project-3.webp`) son tarjetas de diseño que dicen "PREVIEW": llevan `alt=""` hasta que se reemplacen por capturas reales.
-- [ ] P1.5 Convertir cada proyecto en caso de estudio (reemplaza la antigua F1.7).
-- [x] P1.6 Quitar "Demo" y el overlay hover-only (adelantado en v1.1.1 y F3.4).
-- [ ] P1.7 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA. Sin esto no se publica el caso de estudio.
+### Auditoría inicial (2026-11-01) — hecha
+
+- [x] P1.1 `sistemaVeterinario` — 9.495 líneas C#, 7 controladores, BCrypt y autorización por rol. **0 tests**, **sin Docker** (la tarjeta lo anunciaba: corregido), conexión `Trusted_Connection` (solo Windows), README con placeholder `<URL_DEL_REPOSITORIO>` y andamiaje de agente (`.agents/`, `.pi/`, `Project.canvas`) en la raíz pública.
+- [x] P1.2 `arriendo-canchas` — 2.839 líneas Python, 7 apps, 18 tablas, Docker y Justfile. **0 tests** (7 `tests.py` vacíos). Encontrado: el flujo de reserva comprueba disponibilidad con un `SELECT` y después inserta, sin transacción ni restricción única → admite doble reserva por concurrencia. Dinero en `float`; `except Exception` con `print`. La documentación de negocio es sólida y aprovechable.
+- [x] P1.3 Decisiones de proyecto registradas como D17, D18 y D19.
+- [x] P1.6 (antigua) Quitar `Demo` y el overlay hover-only — adelantado en v1.1.1 y F3.4.
+
+### Pendiente de este repositorio
+
+- [ ] P1.4 `arriendo-canchas v2.0`: tag, tests verdes en CI, demo y `docs/caso-de-estudio.md`.
+- [ ] P1.5 Decisión sobre `sistemaVeterinario`: archivar o rescatar con timebox. Con D18 hoy no pasa el gate; queda visible con el stack corregido hasta que se decida.
+- [ ] P1.6 Capturas reales y retiro de los placeholders `PREVIEW` (`project-2.webp`, `project-3.webp`).
+- [ ] P1.7 Caso de estudio en el sitio: adaptar el copy desde `docs/caso-de-estudio.md`.
+- [ ] P1.8 Prueba de defensa por proyecto: explicar una parte del código y modificarla sin IA.
+
+> `biblioteca-viva` no entra como tarjeta técnica: es un proyecto de proceso (requisitos, diseño, QA y trazabilidad) en Node/Express, con el mismo dominio que `arriendo-canchas`. Su lugar es una tarjeta propia que muestre el proceso y el trabajo en equipo; su código es un demostrador, no profundidad de ingeniería.
 
 ## Backlog
 
