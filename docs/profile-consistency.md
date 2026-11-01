@@ -12,8 +12,8 @@ detalle. No deben contradecirse.
 | Grado en curso | Sí, tercer año | Sí, 2024–2027 | Sí, 2024–2027 |
 | Arquitectura dic 2016 – dic 2022 | No se menciona (D8) | Una línea neutra | Puestos reales, sin detalle de funciones |
 | Práctica MPM | No se menciona | Sí, con bullets de desarrollo | Sí, con bullets de desarrollo |
-| Python/Django | Sí, en el stack | Primero en perfil y habilidades | Primero en headline y skills |
-| C#/.NET | Sí, en el stack | Segundo, como stack complementario | Segundo, como stack complementario |
+| Python/Django | Primero en el stack (D17) | Primero en perfil y habilidades | Primero en headline y skills |
+| C#/.NET | Solo en las etiquetas del proyecto veterinario (D17) | Segundo, como stack complementario | Segundo, como stack complementario |
 | Teléfono | No | Sí (D16) | No necesario |
 | Email | Sí, en Contacto | Sí | Sí, en contacto |
 | Portfolio | — | Sí, enlace | Sí, website |
