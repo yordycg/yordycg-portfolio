@@ -7,7 +7,7 @@
 
 - Fase activa: ninguna en el sitio — P1 bloqueada hasta `v2.0` de `arriendo-canchas`.
 - Próxima acción: trabajo de proyectos en `arriendo-canchas/TASKS.md` (F0).
-- Release actual: v2.0 en GitHub Pages
+- Release actual: v2.1 en GitHub Pages
 - Base definida: decisiones D7–D19 (idioma, rubro anterior, disponibilidad, certificado, flujo de ramas, regla del stack, nomenclatura, privacidad del CV, perfil, gate de proyectos y uso de IA)
 
 ## Convenciones
